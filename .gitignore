@@ -1,0 +1,5 @@
+*.iws
+.DS_Store
+.idea/
+*.ipr
+build/
