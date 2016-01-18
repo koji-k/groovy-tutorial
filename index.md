@@ -9,4 +9,7 @@ println "Hello Groovy"
 
 このサイトは[Gaiden](https://github.com/kobo/gaiden)を利用して作成しています。  
 [Github](https://github.com/kobo/gaiden)  
-[Document](http://kobo.github.io/gaiden/)
+[Document](http://kobo.github.io/gaiden/)  
+
+このチュートリアルは[@saba1024](https://twitter.com/saba1024)が個人的に作成しているものです。  
+問題等ございましたら優しくお知らせください。。。
