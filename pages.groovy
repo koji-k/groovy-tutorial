@@ -10,5 +10,6 @@
 "collection/map.md"()
 "class/index.md"()
 "external-library/index.md"()
+"unit-test/index.md"()
 "regular-expression/index.md"()
 "meta/index.md"()
