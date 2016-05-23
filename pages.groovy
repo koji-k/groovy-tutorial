@@ -1,4 +1,5 @@
 "index.md"(title:"index")
+"what-is-groovy.md"()
 "startup/index.md"() {
     "startup/install.md"()
     "startup/execution.md"()
@@ -9,7 +10,11 @@
 "closure/index.md"()
 "collection/map.md"()
 "class/index.md"()
+"class/trait.md"()
 "external-library/index.md"()
 "unit-test/index.md"()
 "regular-expression/index.md"()
 "meta/index.md"()
+"practice/index.md"(){
+    "practice/cli-tool.md"()
+}
