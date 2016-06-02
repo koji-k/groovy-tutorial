@@ -15,6 +15,7 @@
 "unit-test/index.md"()
 "regular-expression/index.md"()
 "meta/index.md"()
+"static-groovy/index.md"()
 "practice/index.md"(){
     "practice/cli-tool.md"()
 }
