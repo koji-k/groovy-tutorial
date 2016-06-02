@@ -5,7 +5,7 @@ println "Hello Groovy"
 ```
 
 このサイトは[プログラミング言語 Apache Groovy](http://www.groovy-lang.org/)のチュートリアルです。  
-対象読者はJavaやPHP、Rubyなどのプログラミング言語を使った簡単なプログラミングの経験がある方です。  
+対象読者はこれからGroovyに入門しようとされている方で、JavaやPHP、Rubyなどのプログラミング言語を使った簡単なプログラミングの経験がある方です。  
 すでにGroovyの存在を知っている方は「あれ？Apacheってどういうこと？別の言語？」と思われるかもしれません。  
 いいえ、ApacheGroovyはあなたの知っているGroovyです。  
 Groovyは2015年11月より、 **Apacheソフトウェアファウンデーションのトップレベルプロジェクト** となりました！
