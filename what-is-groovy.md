@@ -171,7 +171,7 @@ document.select("a").collect {Element element ->
 これだけです。必要なのは上記のGroovyコードだけです。後は全てGroovyが面倒を見てくれます。  
 当然ある程度規模の大きなアプリケーションになってくるとGradleやMavenを利用したほうが良いですが、Groovyではこのように日々のちょっとした業務をサポートしてくれる強力な機能が非常に多く備わっています。  
 
-（Grabの詳細は本チュートリアルの **Groovyで外部ライブラリを利用する** を参照してください。）
+（Grabの詳細は本チュートリアルの [Groovyで外部ライブラリを利用する](external-library/index.html) を参照してください。）
 
 ## Javaの友達
 すでに述べたとおり、Javaコードは基本的にそのままGroovyとして動作します。  
