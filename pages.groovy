@@ -17,5 +17,6 @@
 "meta/index.md"()
 "static-groovy/index.md"()
 "practice/index.md"(){
+    "practice/samples-link.md"()
     "practice/cli-tool.md"()
 }
