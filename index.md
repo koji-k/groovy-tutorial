@@ -1,7 +1,7 @@
 #Apache Groovy チュートリアル
 
 ```groovy
-println "Hello Groovy"
+println "Hello Apache Groovy"
 ```
 
 このサイトは[プログラミング言語 Apache Groovy](http://www.groovy-lang.org/)のチュートリアルです。  
