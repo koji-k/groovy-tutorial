@@ -19,6 +19,12 @@ Groovyは2015年11月より、 **Apacheソフトウェアファウンデーシ�
 問題等ございましたら優しくお知らせください。。。
 なお、本チュートリアルはGroovy2.4.5で確認しています。  
 
+また、以下のチュートリアルも作成、公開中です。  
+[Groovy用のフルスタックフレームワークGrails](http://koji-k.github.io/grails-tutorial/)  
+[Groovy用のノンブロッキングなフレームワークRatpack](http://koji-k.github.io/ratpack-tutorial/)  
+[SpringBootとGroovyで超高速WEBアプリケーション開発](https://koji-k.github.io/spring-boot-groovy-tutorial//)  
+
+
 ## さぁ始めよう！...の前に
 このチュートリアルは、左のメニューの上から順番に見ていっていただければ、一番シンプルにGroovyが理解できるように構成しています。  
 [Install](startup/install.html)のページで、Groovyをインストールする方法を書いていますが、インストールしたくない、とりあえずパパっと試してみたいだけ、という方は、ブラウザからGroovyを実行できるサイトが有りますのでそちらを利用してみては如何でしょうか？  
@@ -29,6 +35,7 @@ Groovyは2015年11月より、 **Apacheソフトウェアファウンデーシ�
 2016/09/26 公開方法をgh-pagesブランチからmasterブランチのdocsに変更。
            コードの表示を少し綺麗に変更。
            Gaidenのバージョンを1.1にアップグレード
+           他チュートリアルへのリンクを追加
            
 2016/06/10 誤字脱字修正、サンプルリンク集追加
 ```

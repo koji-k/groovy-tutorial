@@ -195,11 +195,13 @@
             <p>このサイトは<a href="http://www.groovy-lang.org/">プログラミング言語 Apache Groovy</a>のチュートリアルです。<br/>対象読者はこれからGroovyに入門しようとされている方で、JavaやPHP、Rubyなどの他のプログラミング言語を使った簡単なプログラミングの経験がある方です。<br/>すでにGroovyの存在を知っている方は「あれ？Apacheってどういうこと？別の言語？」と思われるかもしれません。<br/>いいえ、ApacheGroovyはあなたの知っているGroovyです。<br/>Groovyは2015年11月より、 <strong>Apacheソフトウェアファウンデーションのトップレベルプロジェクト</strong> となりました！</p>
             <p>このサイトはマークダウン形式のドキュメントを簡単に作成できるドキュメンテーションツール<a href="https://github.com/kobo/gaiden">Gaiden</a>を利用して作成しています。<br/><a href="https://github.com/kobo/gaiden">Github</a><br/><a href="http://kobo.github.io/gaiden/">Document</a><br/>このGaiden自体もGroovyによって作成されたツールです。</p>
             <p>このチュートリアルは<a href="https://twitter.com/saba1024">@saba1024</a>が個人的に作成しているものです。<br/>問題等ございましたら優しくお知らせください。。。 なお、本チュートリアルはGroovy2.4.5で確認しています。 </p>
+            <p>また、以下のチュートリアルも作成、公開中です。<br/><a href="http://koji-k.github.io/grails-tutorial/">Groovy用のフルスタックフレームワークGrails</a><br/><a href="http://koji-k.github.io/ratpack-tutorial/">Groovy用のノンブロッキングなフレームワークRatpack</a><br/><a href="https://koji-k.github.io/spring-boot-groovy-tutorial//">SpringBootとGroovyで超高速WEBアプリケーション開発</a> </p>
             <h2 id="id-42307f13d9d6d9fe7f15eb0536255b824fe0af1c"><span class="number">1.1.</span>さぁ始めよう！&hellip;の前に</h2>
             <p>このチュートリアルは、左のメニューの上から順番に見ていっていただければ、一番シンプルにGroovyが理解できるように構成しています。<br/><a href="startup/install.html">Install</a>のページで、Groovyをインストールする方法を書いていますが、インストールしたくない、とりあえずパパっと試してみたいだけ、という方は、ブラウザからGroovyを実行できるサイトが有りますのでそちらを利用してみては如何でしょうか？<br/><a href="https://groovyconsole.appspot.com/">Groovy Web Console</a><br/>ただ、Groovyのインストールはとても簡単なので、インストールして本チュートリアルをご利用いただくのがお勧めです ;)</p>
             <pre><code class="nohighlight">2016/09/26 公開方法をgh-pagesブランチからmasterブランチのdocsに変更。
            コードの表示を少し綺麗に変更。
            Gaidenのバージョンを1.1にアップグレード
+           他チュートリアルへのリンクを追加
            
 2016/06/10 誤字脱字修正、サンプルリンク集追加
 </code></pre>
@@ -221,5 +223,13 @@
     <script src="js/highlight.js"></script>
     <script src="js/application.js"></script>
     <script src="js/my.js"></script>
+    <script>
+      if (window.WebSocket) {
+        var socket = new WebSocket("ws://localhost:36435/");
+        socket.onmessage = function () {
+          location.reload();
+        };
+      }
+    </script>
   </body>
 </html>
