@@ -1,0 +1,329 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>15. 静的Groovy - Apache Groovyチュートリアル</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/highlight.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/my.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <i class="fa fa-bars sidebar-toggle"></i>
+        <span class="title"><a href="../index.html">Apache Groovyチュートリアル</a></span>
+      </div>
+      <div class="sidebar">
+        <ul>
+          <li class="numbered visible">
+            <a href="../index.html" data-alt-hash="apache-groovy-"><span class="number">1.</span>Apache Groovy チュートリアル</a>
+            <ul>
+              <li class="numbered visible"><a href="../index.html#id-42307f13d9d6d9fe7f15eb0536255b824fe0af1c"><span class="number">1.1.</span>さぁ始めよう！&hellip;の前に</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="../what-is-groovy.html" data-alt-hash="apache-groovy"><span class="number">2.</span>Apache Groovyとは</a>
+            <ul>
+              <li class="numbered visible"><a href="../what-is-groovy.html#id-fcad98b6bc96cf66e20f986f0973d2575fce430b"><span class="number">2.1.</span>シンプル&amp;パワフル</a></li>
+              <li class="numbered visible"><a href="../what-is-groovy.html#id-f9356a26c4c26110d0fb85dbe07c07c28751e391"><span class="number">2.2.</span>巨大なエコシステム</a></li>
+              <li class="numbered visible"><a href="../what-is-groovy.html#id-5f52ad0dbb814a0559eb8aa4b4a645c74bbedd8d"><span class="number">2.3.</span>気軽に実行</a></li>
+              <li class="numbered visible"><a href="../what-is-groovy.html#id-6f37a8477bcb751f15dedcbcc9ee8a9cc90ef061"><span class="number">2.4.</span>実験コードのお供に</a></li>
+              <li class="numbered visible"><a href="../what-is-groovy.html#id-ef4e0df42b47b23ce15bc3ccadd1d8d8e43f8385"><span class="number">2.5.</span>ビルドツール要らず</a></li>
+              <li class="numbered visible"><a href="../what-is-groovy.html#java"><span class="number">2.6.</span>Javaの友達</a></li>
+              <li class="numbered visible"><a href="../what-is-groovy.html#id-319e80ab91fa4b24ead46ec990e7890d8a62c899"><span class="number">2.7.</span>もちろんプロダクトとしても</a></li>
+              <li class="numbered visible"><a href="../what-is-groovy.html#ok"><span class="number">2.8.</span>どこからでもOK</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="../startup/index.html" data-alt-hash="startup"><span class="number">3.</span>Startup</a>
+            <ul>
+              <li class="numbered visible"><a href="../startup/install.html" data-alt-hash="install"><span class="number">3.1.</span>Install</a></li>
+              <li class="numbered visible"><a href="../startup/install.html#hello-world"><span class="number">3.2.</span>Hello World</a></li>
+              <li class="numbered visible">
+                <a href="../startup/execution.html" data-alt-hash="id-947e8b547a7ee2d2d16471408918f148e7008486"><span class="number">3.3.</span>色々な実行方法</a>
+                <ul>
+                  <li class="numbered visible"><a href="../startup/execution.html#groovyconsole"><span class="number">3.3.1.</span>GroovyConsole</a></li>
+                  <li class="numbered visible"><a href="../startup/execution.html#groovysh"><span class="number">3.3.2.</span>Groovysh</a></li>
+                  <li class="numbered visible"><a href="../startup/execution.html#id-da28f0cd33cb1f1e6ce383dde43065522845c2e8"><span class="number">3.3.3.</span>ファイルに保存してスクリプトとして実行</a></li>
+                  <li class="numbered visible">
+                    <a href="../startup/execution.html#id-fcbfd717080ef34d6aa5a6da494d789c4907d1a2"><span class="number">3.3.4.</span>ファイルに保存してコンパイル&amp;実行</a>
+                    <ul>
+                      <li class="numbered invisible"><a href="../startup/execution.html#class"><span class="number">3.3.4.1.</span>ファイル名と生成されるclassファイル名の関係</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="../variable/index.html" data-alt-hash="id-5221440a56644419d70a10bd0ccf693a2126dc64"><span class="number">4.</span>変数</a>
+            <ul>
+              <li class="numbered visible"><a href="../variable/index.html#def"><span class="number">4.1.</span>defキーワード</a></li>
+              <li class="numbered visible"><a href="../variable/index.html#id-a6077d27e5f63be9d00575f8249b0ab98c2688cd"><span class="number">4.2.</span>型の変数名を同時に宣言</a></li>
+              <li class="numbered visible"><a href="../variable/index.html#id-bdb4879c8865cab8f31f2e02bedfab64275778af"><span class="number">4.3.</span>いきなり変数名</a></li>
+              <li class="numbered visible"><a href="../variable/index.html#id-94a94a68c07cac95e9dad0fb1b2cc0ac0080a74d"><span class="number">4.4.</span>まとめ</a></li>
+              <li class="numbered visible"><a href="../variable/index.html#other-memo"><span class="number">4.5.</span>Other memo</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="../if/index.html" data-alt-hash="if"><span class="number">5.</span>if文</a>
+            <ul>
+              <li class="numbered visible"><a href="../if/index.html#id-678b445de32757354dbd7b4d6d27a2679cb663a4"><span class="number">5.1.</span>普通のif</a></li>
+              <li class="numbered visible"><a href="../if/index.html#assert"><span class="number">5.2.</span>assert</a></li>
+              <li class="numbered visible"><a href="../if/index.html#id-b2368db87fc524b107821a7f97dc24e3c3fb7a3c"><span class="number">5.3.</span>三項演算子を使う</a></li>
+              <li class="numbered visible"><a href="../if/index.html#groovy-truth"><span class="number">5.4.</span>Groovy Truth</a></li>
+              <li class="numbered visible"><a href="../if/index.html#id-7f0ecf6d4f8badbce300a7cea1560cdc3eb80466"><span class="number">5.5.</span>エルビス演算子を使う</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="../collection/list.html" data-alt-hash="id-b096d14061757613f9bb4fc3fdebeed1df3d7feb"><span class="number">6.</span>リスト</a>
+            <ul>
+              <li class="numbered visible"><a href="../collection/list.html#collect"><span class="number">6.1.</span>collect</a></li>
+              <li class="numbered visible"><a href="../collection/list.html#inject"><span class="number">6.2.</span>inject</a></li>
+              <li class="numbered visible"><a href="../collection/list.html#find"><span class="number">6.3.</span>find</a></li>
+              <li class="numbered visible"><a href="../collection/list.html#findall"><span class="number">6.4.</span>findAll</a></li>
+              <li class="numbered visible"><a href="../collection/list.html#id-a3b0399fa150d0a6ed3d5fdb94debdbc965b43be"><span class="number">6.5.</span>まとめ</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="../closure/index.html" data-alt-hash="id-bc9ded214e97abd0647bbea508cb878324996e3e"><span class="number">7.</span>クロージャ</a>
+            <ul>
+              <li class="numbered visible"><a href="../closure/index.html#id-46071e2f627a54763ae382cb6ffc2b0b1e589013"><span class="number">7.1.</span>クロージャを使ってみる</a></li>
+              <li class="numbered visible"><a href="../closure/index.html#id-a6cf382c283896094fb20f51b389e9deec62dd3f"><span class="number">7.2.</span>さらに詳しく</a></li>
+              <li class="numbered visible"><a href="../closure/index.html#thisownerdelegate"><span class="number">7.3.</span>特殊変数this、owner、delegate</a></li>
+              <li class="numbered visible"><a href="../closure/index.html#id-6578dcdcd86d65fc13e0e91b122bc41b2ba1ba08"><span class="number">7.4.</span>まとめ</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="../collection/map.html" data-alt-hash="id-5408c1debd592f8b0779d2c9a302fbff89fb39ba"><span class="number">8.</span>マップ</a>
+            <ul>
+              <li class="numbered visible"><a href="../collection/map.html#id-44e8571a56f022b3396fee07d6450bfd950e1a67"><span class="number">8.1.</span>繰り返し</a></li>
+              <li class="numbered visible"><a href="../collection/map.html#id-f8648999b740988e6ed27a5561760fe061ecb760"><span class="number">8.2.</span>リストとマップを組みあせる</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="../class/index.html" data-alt-hash="id-8b27332ee07f76ea4db44d6a7bdcdcf813427e3a"><span class="number">9.</span>クラス</a>
+            <ul>
+              <li class="numbered visible"><a href="../class/index.html#2"><span class="number">9.1.</span>クラスは2つ以上定義しても良い</a></li>
+              <li class="numbered visible"><a href="../class/index.html#id-400faaa494727732c94af024c637e0d2129b72f9"><span class="number">9.2.</span>セッターとゲッター</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible"><a href="../class/trait.html" data-alt-hash="trait"><span class="number">10.</span>Trait（トレイト）</a></li>
+          <li class="numbered visible">
+            <a href="../external-library/index.html" data-alt-hash="groovy"><span class="number">11.</span>Groovyで外部ライブラリを利用する</a>
+            <ul>
+              <li class="numbered visible"><a href="../external-library/index.html#id-48131f790a0fdc19674de80e966b50d2d2954fa2"><span class="number">11.1.</span>実際に試してみよう</a></li>
+              <li class="numbered visible"><a href="../external-library/index.html#id-d3fd06b21472dc0e54bce2592d61eaa19369b573"><span class="number">11.2.</span>複数のライブラリを扱う</a></li>
+              <li class="numbered visible"><a href="../external-library/index.html#id-28df4375b1a38168d0fe528efd2d82fb65d313c0"><span class="number">11.3.</span>ちょっと補足</a></li>
+              <li class="numbered visible"><a href="../external-library/index.html#id-1ff68e378d712588bb7314663b7ec5f58e4ba62a"><span class="number">11.4.</span>まとめ</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="../unit-test/index.html" data-alt-hash="id-24ac0411c687979683b211ecda6744d511f0ac85"><span class="number">12.</span>ユニットテスト</a>
+            <ul>
+              <li class="numbered visible"><a href="../unit-test/index.html#spock"><span class="number">12.1.</span>初めてのSpock</a></li>
+              <li class="numbered visible">
+                <a href="../unit-test/index.html#id-be6ccbd026a73b061ec8e027551cad6733d3deb4"><span class="number">12.2.</span>フィーチャーメソッドとフィーチャーブロック</a>
+                <ul>
+                  <li class="numbered visible"><a href="../unit-test/index.html#whenthensetup"><span class="number">12.2.1.</span>whenとthen（そしてsetup）</a></li>
+                  <li class="numbered visible"><a href="../unit-test/index.html#expect"><span class="number">12.2.2.</span>expect</a></li>
+                  <li class="numbered visible"><a href="../unit-test/index.html#cleanup"><span class="number">12.2.3.</span>cleanup</a></li>
+                  <li class="numbered visible">
+                    <a href="../unit-test/index.html#where"><span class="number">12.2.4.</span>where</a>
+                    <ul>
+                      <li class="numbered invisible"><a href="../unit-test/index.html#unroll"><span class="number">12.2.4.1.</span>@Unrollアノテーション</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="numbered visible"><a href="../unit-test/index.html#id-bdd1a5a8c07a267571c3bd781ab9082669c5959f"><span class="number">12.3.</span>フィクスチャーメソッド</a></li>
+              <li class="numbered visible"><a href="../unit-test/index.html#id-b3c1ea2a3b540798f7cd793487a346fffeec9c09"><span class="number">12.4.</span>各フィーチャーメソッドで共通して利用する変数</a></li>
+              <li class="numbered visible"><a href="../unit-test/index.html#id-efba724c0eb52b004593236e37d0a25a1544ad6b"><span class="number">12.5.</span>実践</a></li>
+              <li class="numbered visible"><a href="../unit-test/index.html#id-0a441a00637070d401d9e5a2653510c5967d9a05"><span class="number">12.6.</span>まとめ</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible"><a href="../regular-expression/index.html" data-alt-hash="regular-expression"><span class="number">13.</span>Regular Expression</a></li>
+          <li class="numbered visible"><a href="../meta/index.html" data-alt-hash="meta-programming"><span class="number">14.</span>Meta programming</a></li>
+          <li class="numbered visible">
+            <a href="index.html" data-alt-hash="groovy"><span class="number">15.</span>静的Groovy</a>
+            <ul>
+              <li class="numbered visible"><a href="index.html#id-b940591a92fde629fb71008c7b7e053237d7b8b4"><span class="number">15.1.</span>メソッド</a></li>
+              <li class="numbered visible">
+                <a href="index.html#id-83dac9bdf0c71085ffa7a638a3bee37744fe1645"><span class="number">15.2.</span>ローカル変数</a>
+                <ul>
+                  <li class="numbered visible"><a href="index.html#compilestatictypechecked"><span class="number">15.2.1.</span>CompileStaticとTypeChecked</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="numbered visible"><a href="index.html#id-5af6083ed6fdbe3e7b8bee85529e65aa3468da09"><span class="number">16.</span>まとめ</a></li>
+          <li class="numbered visible">
+            <a href="../practice/index.html" data-alt-hash="id-0f8f1522a9609f45ebe45c4c425ad7a726b1bb7f"><span class="number">17.</span>実践/サンプル集</a>
+            <ul>
+              <li class="numbered visible"><a href="../practice/samples-link.html" data-alt-hash="id-0d3bb1d122715fe5433159eb6ea50caa02c25184"><span class="number">17.1.</span>サンプルリンク集</a></li>
+              <li class="numbered visible"><a href="../practice/cli-tool.html" data-alt-hash="cli"><span class="number">17.2.</span>CLIツールの実装</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <div class="content-handle"></div>
+        <div class="content-container">
+          <div class="content-nav content-nav-top">
+            <a class="prev-page" href="../meta/index.html">
+            <i class="fa fa-angle-left"></i>
+            <span class="number">14.</span>
+            Meta programming
+            </a>
+            <a class="next-page" href="../practice/index.html">
+            <span class="number">17.</span>
+            実践/サンプル集
+            <i class="fa fa-angle-right"></i>
+            </a>
+          </div>
+          <div class="page-toc">
+            <ul>
+              <li class="numbered visible">
+                <a href="#groovy"><span class="number">15.</span>静的Groovy</a>
+                <ul>
+                  <li class="numbered visible"><a href="#id-b940591a92fde629fb71008c7b7e053237d7b8b4"><span class="number">15.1.</span>メソッド</a></li>
+                  <li class="numbered visible">
+                    <a href="#id-83dac9bdf0c71085ffa7a638a3bee37744fe1645"><span class="number">15.2.</span>ローカル変数</a>
+                    <ul>
+                      <li class="numbered visible"><a href="#compilestatictypechecked"><span class="number">15.2.1.</span>CompileStaticとTypeChecked</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="numbered visible"><a href="#id-5af6083ed6fdbe3e7b8bee85529e65aa3468da09"><span class="number">16.</span>まとめ</a></li>
+            </ul>
+          </div>
+          <div class="main-content">
+            <h1 id="groovy"><span class="number">15.</span>静的Groovy</h1>
+            <p>さて、動的型付け言語Groovyですが、実はコンパイル時(<code>groovyc</code>)に型のチェックを行うことが出来ます。<br/>型のチェックが行えるので、JavaやScalaのようにコンパイルで実行前に明らかな変数の代入などのエラーが検出できます｡<br/>また、コンパイルされると当然classファイルが生成されますが、classファイルの中でも型情報が保持されていますので、実行速度の高速化が期待できます。<br/>方法は簡単で、クラスの先頭、もしくは型チェックを行いたいメソッドの頭に<code>CompileStatic</code>を付けるだけです。 </p>
+            <pre><code class="groovy">import groovy.transform.CompileStatic
+import groovy.transform.TypeChecked
+
+class A {
+    def hoge(){}
+}
+class B {
+    def piyo(){}
+}
+
+@CompileStatic
+//@TypeChecked // あとで説明
+class Test {
+
+    def Test() {
+        // 存在しないメソッドをコンパイルエラーに出来る。なお、オーバロードされているメソッドもちゃんとチェックしてくれる
+        //unknownMethod()
+    }
+
+    // def で引数を宣言するとObject型になるので、Object型にabsというメソッドは存在しないため、コンパイル時点でエラーに出来る
+    def foo (def a) {
+        //a.abs()
+    }
+
+    // Integer型にtoLowerCaseというメソッドは無いので、コンパイル時点でエラーに出来る
+    def foo(Integer a) {
+        //a.toLowerCase()
+    }
+
+    def propertyTest() {
+        //Integer a = &quot;a&quot;        // コンパイルエラーに出来る
+        A aObj = new A()
+        B bObj = new B()
+        //aObj = bObj // ここでコンパイルエラーに出来る
+
+        // ローカル変数の場合、型推論が働く！
+        def aObj2 = new A()
+        def bObj2 = new B()
+        aObj2 = bObj2 // ココは謎挙動。javapの結果、aObj2はAクラス、bObj2はBクラスとなっている、この代入を実行するとaObj2はObject型になる
+        //aObj.piyo() // 宣言時に型の指定があるので存在しないメソッド呼び出しはコンパイルエラーに出来る
+
+        // 上で少し触れたけど、defでもローカル変数の場合はちゃんと型情報が型推論される。
+        def aObj3 = new A()
+        //aObj3.piyo() // なので型推論されてaObj3はA型という事がわかっているので、ちゃんとコレもコンパイルエラーに出来る
+    }
+}
+</code></pre>
+            <h2 id="id-b940591a92fde629fb71008c7b7e053237d7b8b4"><span class="number">15.1.</span>メソッド</h2>
+            <p>もしメソッドの引数の変数宣言に<code>def</code>を利用した場合、その型は <strong>Object</strong> になります。 </p>
+            <p>上記のコードの中から例えばメソッド<code>foo</code>をjavapで見てると</p>
+            <pre><code class="terminal">[koji:type]$ /usr/lib/jvm/jdk1.8.0_60/bin/javap -l Test | grep foo 
+  public java.lang.Object foo(java.lang.Object);
+  public java.lang.Object foo(java.lang.Integer);
+
+</code></pre>
+            <p>のように、<code>def</code>を使った方はObject型になっています。</p>
+            <h2 id="id-83dac9bdf0c71085ffa7a638a3bee37744fe1645"><span class="number">15.2.</span>ローカル変数</h2>
+            <p>まず、ローカル変数を見てみます。</p>
+            <pre><code class="terminal">[koji:type]$ groovyc test.groovy | /usr/lib/jvm/jdk1.8.0_60/bin/javap -l Test | grep aObj
+          8      66     1  aObj   LA;
+         28      46     3 aObj2   Ljava/lang/Object;
+         61      13     6 aObj3   LA;
+[koji:type]$ groovyc test.groovy | /usr/lib/jvm/jdk1.8.0_60/bin/javap -l Test | grep bObj
+         18      56     2  bObj   LB;
+         39      35     4 bObj2   LB;
+[koji:type]$ groovyc test.groovy | /usr/lib/jvm/jdk1.8.0_60/bin/javap -l Test | grep typeCheckedOrCompileStatic
+         68       6     7 typeCheckedOrCompileStatic   I
+[koji:type]$ 
+</code></pre>
+            <p><em>ちなみに、aObj2がObject型になっていますが、この理由はわかりません。</em><br/><em>恐らく別の型の変数に代入したため、整合性を取るためにObject型になったのだと思われますが、本来はその時点でコンパイルエラーになるべき。。。とりあえず無視します。（要調査）</em> </p>
+            <p>さて、上記のjavapの結果を見れば一目瞭然ですが、ローカル変数の場合は、メソッド引数のdefと違い、ちゃんと代入される値に基づいて <strong>型推論が働きます。</strong><br/>そのため、例えば変数<code>typeCheckedOrCompileStatic</code>はちゃんとInteger型として判断されています。 </p>
+            <h3 id="compilestatictypechecked"><span class="number">15.2.1.</span>CompileStaticとTypeChecked</h3>
+            <p>さて、ではココでその変数<code>typeCheckedOrCompileStatic</code>を使って<code>@TypeChecked</code>と<code>@CompileStatic</code>の違いを見てみましょう。<br/>前提条件として、どちらのアノテーションを利用していたとしても、コンパイル時に型推論が働くので、例えば<code>typeCheckedOrCompileStatic</code>に対して<code>String#toLowerCase()</code>の様なメソッドを記述しておくとちゃんとコンパイルエラーになります。 </p>
+            <pre><code class="groovy">def typeCheckedOrCompileStatic = 111
+typeCheckedOrCompileStatic.toLowerCase() // コレを追加
+</code></pre>
+            <p>コンパイルしてみると、</p>
+            <pre><code class="terminal">[koji:type]$ groovyc test.groovy                                                        
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+test.groovy: 47: [Static type checking] - Cannot find matching method int#toLowerCase(). Please check if the declared type is right and if the method exists.
+ @ line 47, column 9.
+           typeCheckedOrCompileStatic.toLowerCase()
+           ^
+
+1 error
+
+</code></pre>
+            <p>ちゃんとint型にtoLowerCaseなんて無いよ、というメッセージが表示されています。<br/>では<code>@TypeChecked</code>と<code>@CompileStatic</code>で何が違うのかというと、<br/><code>@TypeChecked</code>の場合はコンパイル時のチェックの時にのみ、defで宣言されたローカル変数を型推論してチェックしますが、生成される <strong>classファイルにはその情報は残っておらず、Object型になります。</strong><br/><code>@CompileStatic</code>の場合は、同様にコンパイル時に型推論が働き、さらに <strong>classファイルのその情報が残ります。</strong></p>
+            <pre><code class="terminal"># @TypeChecked
+[koji:type]$ groovyc test.groovy | /usr/lib/jvm/jdk1.8.0_60/bin/javap -l Test | grep typeCheckedOrCompileStatic
+        114       3     8 typeCheckedOrCompileStatic   Ljava/lang/Object;
+
+# @CompileStatic
+[koji:type]$ groovyc test.groovy | /usr/lib/jvm/jdk1.8.0_60/bin/javap -l Test | grep typeCheckedOrCompileStatic
+         68       6     7 typeCheckedOrCompileStatic   I
+
+</code></pre>
+            <h1 id="id-5af6083ed6fdbe3e7b8bee85529e65aa3468da09"><span class="number">16.</span>まとめ</h1>
+            <p>Groovyでも型推論がちゃんと働くことが分かりました。<br/>しかし、静的Groovy（CompileStatic）を利用することで、速度の改善が図れる部分も有りますが、同時にGroovyらしさを失う事にもなります。<br/>Groovyの動的型付け言語のメリットを活かしたメタプログラミング等の利用が制限されてしまうためです。<br/>その一つの対策案として、Groovyでは必要なメソッドのみにCompileStaticを指定できるようになっています。<br/>色々試してみて、自分のプロダクトの何処にCompileStaticが導入出来るか調べてみましょう。 </p>
+          </div>
+          <div class="content-nav content-nav-bottom">
+            <a class="prev-page" href="../meta/index.html">
+            <i class="fa fa-angle-left"></i>
+            <span class="number">14.</span>
+            Meta programming
+            </a>
+            <a class="next-page" href="../practice/index.html">
+            <span class="number">17.</span>
+            実践/サンプル集
+            <i class="fa fa-angle-right"></i>
+            </a>
+          </div>
+          <div class="footer">
+            <p class="credit text-muted">Powered by <a href="https://github.com/kobo/gaiden">Gaiden</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/highlight.js"></script>
+    <script src="../js/application.js"></script>
+    <script src="../js/my.js"></script>
+  </body>
+</html>

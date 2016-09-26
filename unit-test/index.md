@@ -33,13 +33,13 @@ class MyFirstSpock extends Specification {
 ```
 このコードを実行すると、
 
-```
+```terminal
 JUnit 4 Runner, Tests: 1, Failures: 0, Time: 13
 ```
 と表示されます。テストが1つ合って、エラーが0件、となっていますね。  
 では、`1 > 0`というところを`1 == 0`に修正して再度実行してみましょう。
 
-```
+```terminal
 JUnit 4 Runner, Tests: 1, Failures: 1, Time: 25
 Test Failure: こんにちわSpock!(MyFirstSpock)
 Condition not satisfied:
@@ -77,7 +77,7 @@ class MyFirstSpock extends Specification {
 ```
 実行結果は、
 
-```
+```terminal
 JUnit 4 Runner, Tests: 2, Failures: 0, Time: 25
 ```
 となります。  
@@ -201,7 +201,7 @@ class MyFirstSpock extends Specification {
 ```
 実行結果は、
 
-```
+```terminal
 do clean!
 JUnit 4 Runner, Tests: 1, Failures: 1, Time: 11
 Test Failure: cleanupのテスト(MyFirstSpock)
@@ -241,7 +241,7 @@ class MyFirstSpock extends Specification {
 
 実行結果は、
 
-```
+```terminal
 JUnit 4 Runner, Tests: 1, Failures: 0, Time: 9
 ```
 
@@ -295,7 +295,7 @@ class MyFirstSpock extends Specification {
 `@Unroll`が追加された以外に、メソッド名に`#`がついた変な記号がありますね。とりあえず気にしないでください。  
 実行結果は、
 
-```
+```terminal
 JUnit 4 Runner, Tests: 3, Failures: 0, Time: 49
 ```
 
@@ -327,7 +327,7 @@ class MyFirstSpock extends Specification {
 `where`ブロックに明らかにテストが失敗するデータを追加しました。  
 実行結果は、
 
-```
+```terminal
 JUnit 4 Runner, Tests: 4, Failures: 1, Time: 52
 Test Failure: 1 と1 を足すと 100 になる(MyFirstSpock)
 Condition not satisfied:
@@ -412,7 +412,7 @@ class MyFirstSpock extends Specification {
 
 実行結果は、
 
-```
+```terminal
 全体のテストの実行前に1度だけ実行されます。
 全てのフィーチャーメソッド実行前に実行されます。
 test 1
@@ -478,7 +478,7 @@ class MyFirstSpock extends Specification {
 
 実行結果は、
 
-```
+```terminal
 1453245037474
 1453245037980
 1453245038481
@@ -513,7 +513,7 @@ class MyFirstSpock extends Specification {
 
 実行結果は以下のようになります。  
 
-```
+```terminal
 1453245425610
 1453245425610
 1453245425610
@@ -560,7 +560,7 @@ class Person {
 
 実行結果：  
 
-```
+```terminal
 JUnit 4 Runner, Tests: 3, Failures: 0, Time: 29
 Result: org.junit.runner.Result@6c0eb436
 ```
@@ -569,7 +569,7 @@ Result: org.junit.runner.Result@6c0eb436
 
 1点注意。GroovyConsoleでSpockを色々試して見る際に、上記の`Personクラス`のように同時にテスト用クラスも宣言できますが、テスト用クラスをテストの前に宣言すると、GroovyConsoleが何を実行していいのかわからなくなって、エラーになってしまいます。  
 
-```
+```terminal
 # GroovyConsoleにこんなエラーが出ます
 groovy.lang.GroovyRuntimeException: This script or class could not be run.
 It should either:

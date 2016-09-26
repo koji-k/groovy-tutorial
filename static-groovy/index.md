@@ -6,7 +6,7 @@
 方法は簡単で、クラスの先頭、もしくは型チェックを行いたいメソッドの頭に`CompileStatic`を付けるだけです。  
 
 
-```
+```groovy
 import groovy.transform.CompileStatic
 import groovy.transform.TypeChecked
 
@@ -60,7 +60,7 @@ class Test {
 
 上記のコードの中から例えばメソッド`foo`をjavapで見てると
 
-```
+```terminal
 [koji:type]$ /usr/lib/jvm/jdk1.8.0_60/bin/javap -l Test | grep foo 
   public java.lang.Object foo(java.lang.Object);
   public java.lang.Object foo(java.lang.Integer);
@@ -73,7 +73,7 @@ class Test {
 まず、ローカル変数を見てみます。
 
 
-```
+```terminal
 [koji:type]$ groovyc test.groovy | /usr/lib/jvm/jdk1.8.0_60/bin/javap -l Test | grep aObj
           8      66     1  aObj   LA;
          28      46     3 aObj2   Ljava/lang/Object;
@@ -96,14 +96,14 @@ class Test {
 さて、ではココでその変数`typeCheckedOrCompileStatic`を使って`@TypeChecked`と`@CompileStatic`の違いを見てみましょう。  
 前提条件として、どちらのアノテーションを利用していたとしても、コンパイル時に型推論が働くので、例えば`typeCheckedOrCompileStatic`に対して`String#toLowerCase()`の様なメソッドを記述しておくとちゃんとコンパイルエラーになります。  
 
-```
+```groovy
 def typeCheckedOrCompileStatic = 111
 typeCheckedOrCompileStatic.toLowerCase() // コレを追加
 ```
 
 コンパイルしてみると、
 
-```
+```terminal
 [koji:type]$ groovyc test.groovy                                                        
 org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
 test.groovy: 47: [Static type checking] - Cannot find matching method int#toLowerCase(). Please check if the declared type is right and if the method exists.
@@ -120,7 +120,7 @@ test.groovy: 47: [Static type checking] - Cannot find matching method int#toLowe
 `@TypeChecked`の場合はコンパイル時のチェックの時にのみ、defで宣言されたローカル変数を型推論してチェックしますが、生成される **classファイルにはその情報は残っておらず、Object型になります。**  
 `@CompileStatic`の場合は、同様にコンパイル時に型推論が働き、さらに **classファイルのその情報が残ります。**
 
-```
+```terminal
 # @TypeChecked
 [koji:type]$ groovyc test.groovy | /usr/lib/jvm/jdk1.8.0_60/bin/javap -l Test | grep typeCheckedOrCompileStatic
         114       3     8 typeCheckedOrCompileStatic   Ljava/lang/Object;

@@ -32,7 +32,7 @@ println "result is ${2 * 3}"
 Groovyは、文字列の中に`${...}`という箇所があると、その中をGroovyのコードとして扱います。その結果が文字列に結合されます。  
 Groovyコードなので、当然以下のように変数も使えます。
 
-```
+```groovy
 def hoge = "hogehoge"
 println "my name is ${hoge}"
 ```

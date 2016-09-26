@@ -2,7 +2,7 @@
 
 **作成中**
 
-```
+```groovy
 // http://docs.groovy-lang.org/next/html/documentation/core-traits.html
 trait Human {
     String name = "koji"

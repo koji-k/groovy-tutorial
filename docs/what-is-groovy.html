@@ -1,0 +1,351 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>2. Apache Groovyとは - Apache Groovyチュートリアル</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/highlight.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/my.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <i class="fa fa-bars sidebar-toggle"></i>
+        <span class="title"><a href="index.html">Apache Groovyチュートリアル</a></span>
+      </div>
+      <div class="sidebar">
+        <ul>
+          <li class="numbered visible">
+            <a href="index.html" data-alt-hash="apache-groovy-"><span class="number">1.</span>Apache Groovy チュートリアル</a>
+            <ul>
+              <li class="numbered visible"><a href="index.html#id-42307f13d9d6d9fe7f15eb0536255b824fe0af1c"><span class="number">1.1.</span>さぁ始めよう！&hellip;の前に</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="what-is-groovy.html" data-alt-hash="apache-groovy"><span class="number">2.</span>Apache Groovyとは</a>
+            <ul>
+              <li class="numbered visible"><a href="what-is-groovy.html#id-fcad98b6bc96cf66e20f986f0973d2575fce430b"><span class="number">2.1.</span>シンプル&amp;パワフル</a></li>
+              <li class="numbered visible"><a href="what-is-groovy.html#id-f9356a26c4c26110d0fb85dbe07c07c28751e391"><span class="number">2.2.</span>巨大なエコシステム</a></li>
+              <li class="numbered visible"><a href="what-is-groovy.html#id-5f52ad0dbb814a0559eb8aa4b4a645c74bbedd8d"><span class="number">2.3.</span>気軽に実行</a></li>
+              <li class="numbered visible"><a href="what-is-groovy.html#id-6f37a8477bcb751f15dedcbcc9ee8a9cc90ef061"><span class="number">2.4.</span>実験コードのお供に</a></li>
+              <li class="numbered visible"><a href="what-is-groovy.html#id-ef4e0df42b47b23ce15bc3ccadd1d8d8e43f8385"><span class="number">2.5.</span>ビルドツール要らず</a></li>
+              <li class="numbered visible"><a href="what-is-groovy.html#java"><span class="number">2.6.</span>Javaの友達</a></li>
+              <li class="numbered visible"><a href="what-is-groovy.html#id-319e80ab91fa4b24ead46ec990e7890d8a62c899"><span class="number">2.7.</span>もちろんプロダクトとしても</a></li>
+              <li class="numbered visible"><a href="what-is-groovy.html#ok"><span class="number">2.8.</span>どこからでもOK</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="startup/index.html" data-alt-hash="startup"><span class="number">3.</span>Startup</a>
+            <ul>
+              <li class="numbered visible"><a href="startup/install.html" data-alt-hash="install"><span class="number">3.1.</span>Install</a></li>
+              <li class="numbered visible"><a href="startup/install.html#hello-world"><span class="number">3.2.</span>Hello World</a></li>
+              <li class="numbered visible">
+                <a href="startup/execution.html" data-alt-hash="id-947e8b547a7ee2d2d16471408918f148e7008486"><span class="number">3.3.</span>色々な実行方法</a>
+                <ul>
+                  <li class="numbered visible"><a href="startup/execution.html#groovyconsole"><span class="number">3.3.1.</span>GroovyConsole</a></li>
+                  <li class="numbered visible"><a href="startup/execution.html#groovysh"><span class="number">3.3.2.</span>Groovysh</a></li>
+                  <li class="numbered visible"><a href="startup/execution.html#id-da28f0cd33cb1f1e6ce383dde43065522845c2e8"><span class="number">3.3.3.</span>ファイルに保存してスクリプトとして実行</a></li>
+                  <li class="numbered visible">
+                    <a href="startup/execution.html#id-fcbfd717080ef34d6aa5a6da494d789c4907d1a2"><span class="number">3.3.4.</span>ファイルに保存してコンパイル&amp;実行</a>
+                    <ul>
+                      <li class="numbered invisible"><a href="startup/execution.html#class"><span class="number">3.3.4.1.</span>ファイル名と生成されるclassファイル名の関係</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="variable/index.html" data-alt-hash="id-5221440a56644419d70a10bd0ccf693a2126dc64"><span class="number">4.</span>変数</a>
+            <ul>
+              <li class="numbered visible"><a href="variable/index.html#def"><span class="number">4.1.</span>defキーワード</a></li>
+              <li class="numbered visible"><a href="variable/index.html#id-a6077d27e5f63be9d00575f8249b0ab98c2688cd"><span class="number">4.2.</span>型の変数名を同時に宣言</a></li>
+              <li class="numbered visible"><a href="variable/index.html#id-bdb4879c8865cab8f31f2e02bedfab64275778af"><span class="number">4.3.</span>いきなり変数名</a></li>
+              <li class="numbered visible"><a href="variable/index.html#id-94a94a68c07cac95e9dad0fb1b2cc0ac0080a74d"><span class="number">4.4.</span>まとめ</a></li>
+              <li class="numbered visible"><a href="variable/index.html#other-memo"><span class="number">4.5.</span>Other memo</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="if/index.html" data-alt-hash="if"><span class="number">5.</span>if文</a>
+            <ul>
+              <li class="numbered visible"><a href="if/index.html#id-678b445de32757354dbd7b4d6d27a2679cb663a4"><span class="number">5.1.</span>普通のif</a></li>
+              <li class="numbered visible"><a href="if/index.html#assert"><span class="number">5.2.</span>assert</a></li>
+              <li class="numbered visible"><a href="if/index.html#id-b2368db87fc524b107821a7f97dc24e3c3fb7a3c"><span class="number">5.3.</span>三項演算子を使う</a></li>
+              <li class="numbered visible"><a href="if/index.html#groovy-truth"><span class="number">5.4.</span>Groovy Truth</a></li>
+              <li class="numbered visible"><a href="if/index.html#id-7f0ecf6d4f8badbce300a7cea1560cdc3eb80466"><span class="number">5.5.</span>エルビス演算子を使う</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="collection/list.html" data-alt-hash="id-b096d14061757613f9bb4fc3fdebeed1df3d7feb"><span class="number">6.</span>リスト</a>
+            <ul>
+              <li class="numbered visible"><a href="collection/list.html#collect"><span class="number">6.1.</span>collect</a></li>
+              <li class="numbered visible"><a href="collection/list.html#inject"><span class="number">6.2.</span>inject</a></li>
+              <li class="numbered visible"><a href="collection/list.html#find"><span class="number">6.3.</span>find</a></li>
+              <li class="numbered visible"><a href="collection/list.html#findall"><span class="number">6.4.</span>findAll</a></li>
+              <li class="numbered visible"><a href="collection/list.html#id-a3b0399fa150d0a6ed3d5fdb94debdbc965b43be"><span class="number">6.5.</span>まとめ</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="closure/index.html" data-alt-hash="id-bc9ded214e97abd0647bbea508cb878324996e3e"><span class="number">7.</span>クロージャ</a>
+            <ul>
+              <li class="numbered visible"><a href="closure/index.html#id-46071e2f627a54763ae382cb6ffc2b0b1e589013"><span class="number">7.1.</span>クロージャを使ってみる</a></li>
+              <li class="numbered visible"><a href="closure/index.html#id-a6cf382c283896094fb20f51b389e9deec62dd3f"><span class="number">7.2.</span>さらに詳しく</a></li>
+              <li class="numbered visible"><a href="closure/index.html#thisownerdelegate"><span class="number">7.3.</span>特殊変数this、owner、delegate</a></li>
+              <li class="numbered visible"><a href="closure/index.html#id-6578dcdcd86d65fc13e0e91b122bc41b2ba1ba08"><span class="number">7.4.</span>まとめ</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="collection/map.html" data-alt-hash="id-5408c1debd592f8b0779d2c9a302fbff89fb39ba"><span class="number">8.</span>マップ</a>
+            <ul>
+              <li class="numbered visible"><a href="collection/map.html#id-44e8571a56f022b3396fee07d6450bfd950e1a67"><span class="number">8.1.</span>繰り返し</a></li>
+              <li class="numbered visible"><a href="collection/map.html#id-f8648999b740988e6ed27a5561760fe061ecb760"><span class="number">8.2.</span>リストとマップを組みあせる</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="class/index.html" data-alt-hash="id-8b27332ee07f76ea4db44d6a7bdcdcf813427e3a"><span class="number">9.</span>クラス</a>
+            <ul>
+              <li class="numbered visible"><a href="class/index.html#2"><span class="number">9.1.</span>クラスは2つ以上定義しても良い</a></li>
+              <li class="numbered visible"><a href="class/index.html#id-400faaa494727732c94af024c637e0d2129b72f9"><span class="number">9.2.</span>セッターとゲッター</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible"><a href="class/trait.html" data-alt-hash="trait"><span class="number">10.</span>Trait（トレイト）</a></li>
+          <li class="numbered visible">
+            <a href="external-library/index.html" data-alt-hash="groovy"><span class="number">11.</span>Groovyで外部ライブラリを利用する</a>
+            <ul>
+              <li class="numbered visible"><a href="external-library/index.html#id-48131f790a0fdc19674de80e966b50d2d2954fa2"><span class="number">11.1.</span>実際に試してみよう</a></li>
+              <li class="numbered visible"><a href="external-library/index.html#id-d3fd06b21472dc0e54bce2592d61eaa19369b573"><span class="number">11.2.</span>複数のライブラリを扱う</a></li>
+              <li class="numbered visible"><a href="external-library/index.html#id-28df4375b1a38168d0fe528efd2d82fb65d313c0"><span class="number">11.3.</span>ちょっと補足</a></li>
+              <li class="numbered visible"><a href="external-library/index.html#id-1ff68e378d712588bb7314663b7ec5f58e4ba62a"><span class="number">11.4.</span>まとめ</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="unit-test/index.html" data-alt-hash="id-24ac0411c687979683b211ecda6744d511f0ac85"><span class="number">12.</span>ユニットテスト</a>
+            <ul>
+              <li class="numbered visible"><a href="unit-test/index.html#spock"><span class="number">12.1.</span>初めてのSpock</a></li>
+              <li class="numbered visible">
+                <a href="unit-test/index.html#id-be6ccbd026a73b061ec8e027551cad6733d3deb4"><span class="number">12.2.</span>フィーチャーメソッドとフィーチャーブロック</a>
+                <ul>
+                  <li class="numbered visible"><a href="unit-test/index.html#whenthensetup"><span class="number">12.2.1.</span>whenとthen（そしてsetup）</a></li>
+                  <li class="numbered visible"><a href="unit-test/index.html#expect"><span class="number">12.2.2.</span>expect</a></li>
+                  <li class="numbered visible"><a href="unit-test/index.html#cleanup"><span class="number">12.2.3.</span>cleanup</a></li>
+                  <li class="numbered visible">
+                    <a href="unit-test/index.html#where"><span class="number">12.2.4.</span>where</a>
+                    <ul>
+                      <li class="numbered invisible"><a href="unit-test/index.html#unroll"><span class="number">12.2.4.1.</span>@Unrollアノテーション</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="numbered visible"><a href="unit-test/index.html#id-bdd1a5a8c07a267571c3bd781ab9082669c5959f"><span class="number">12.3.</span>フィクスチャーメソッド</a></li>
+              <li class="numbered visible"><a href="unit-test/index.html#id-b3c1ea2a3b540798f7cd793487a346fffeec9c09"><span class="number">12.4.</span>各フィーチャーメソッドで共通して利用する変数</a></li>
+              <li class="numbered visible"><a href="unit-test/index.html#id-efba724c0eb52b004593236e37d0a25a1544ad6b"><span class="number">12.5.</span>実践</a></li>
+              <li class="numbered visible"><a href="unit-test/index.html#id-0a441a00637070d401d9e5a2653510c5967d9a05"><span class="number">12.6.</span>まとめ</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible"><a href="regular-expression/index.html" data-alt-hash="regular-expression"><span class="number">13.</span>Regular Expression</a></li>
+          <li class="numbered visible"><a href="meta/index.html" data-alt-hash="meta-programming"><span class="number">14.</span>Meta programming</a></li>
+          <li class="numbered visible">
+            <a href="static-groovy/index.html" data-alt-hash="groovy"><span class="number">15.</span>静的Groovy</a>
+            <ul>
+              <li class="numbered visible"><a href="static-groovy/index.html#id-b940591a92fde629fb71008c7b7e053237d7b8b4"><span class="number">15.1.</span>メソッド</a></li>
+              <li class="numbered visible">
+                <a href="static-groovy/index.html#id-83dac9bdf0c71085ffa7a638a3bee37744fe1645"><span class="number">15.2.</span>ローカル変数</a>
+                <ul>
+                  <li class="numbered visible"><a href="static-groovy/index.html#compilestatictypechecked"><span class="number">15.2.1.</span>CompileStaticとTypeChecked</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="numbered visible"><a href="static-groovy/index.html#id-5af6083ed6fdbe3e7b8bee85529e65aa3468da09"><span class="number">16.</span>まとめ</a></li>
+          <li class="numbered visible">
+            <a href="practice/index.html" data-alt-hash="id-0f8f1522a9609f45ebe45c4c425ad7a726b1bb7f"><span class="number">17.</span>実践/サンプル集</a>
+            <ul>
+              <li class="numbered visible"><a href="practice/samples-link.html" data-alt-hash="id-0d3bb1d122715fe5433159eb6ea50caa02c25184"><span class="number">17.1.</span>サンプルリンク集</a></li>
+              <li class="numbered visible"><a href="practice/cli-tool.html" data-alt-hash="cli"><span class="number">17.2.</span>CLIツールの実装</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <div class="content-handle"></div>
+        <div class="content-container">
+          <div class="content-nav content-nav-top">
+            <a class="prev-page" href="index.html">
+            <i class="fa fa-angle-left"></i>
+            <span class="number">1.</span>
+            index
+            </a>
+            <a class="next-page" href="startup/index.html">
+            <span class="number">3.</span>
+            Startup
+            <i class="fa fa-angle-right"></i>
+            </a>
+          </div>
+          <div class="page-toc">
+            <ul>
+              <li class="numbered visible">
+                <a href="#apache-groovy"><span class="number">2.</span>Apache Groovyとは</a>
+                <ul>
+                  <li class="numbered visible"><a href="#id-fcad98b6bc96cf66e20f986f0973d2575fce430b"><span class="number">2.1.</span>シンプル&amp;パワフル</a></li>
+                  <li class="numbered visible"><a href="#id-f9356a26c4c26110d0fb85dbe07c07c28751e391"><span class="number">2.2.</span>巨大なエコシステム</a></li>
+                  <li class="numbered visible"><a href="#id-5f52ad0dbb814a0559eb8aa4b4a645c74bbedd8d"><span class="number">2.3.</span>気軽に実行</a></li>
+                  <li class="numbered visible"><a href="#id-6f37a8477bcb751f15dedcbcc9ee8a9cc90ef061"><span class="number">2.4.</span>実験コードのお供に</a></li>
+                  <li class="numbered visible"><a href="#id-ef4e0df42b47b23ce15bc3ccadd1d8d8e43f8385"><span class="number">2.5.</span>ビルドツール要らず</a></li>
+                  <li class="numbered visible"><a href="#java"><span class="number">2.6.</span>Javaの友達</a></li>
+                  <li class="numbered visible"><a href="#id-319e80ab91fa4b24ead46ec990e7890d8a62c899"><span class="number">2.7.</span>もちろんプロダクトとしても</a></li>
+                  <li class="numbered visible"><a href="#ok"><span class="number">2.8.</span>どこからでもOK</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="main-content">
+            <h1 id="apache-groovy"><span class="number">2.</span>Apache Groovyとは</h1>
+            <p><a href="http://www.groovy-lang.org/">Apache Groovy</a>（以下Groovy）とは、現在 Apacheソフトウェアファウンデーション配下で開発が進められている <strong>動的型付け言語</strong> です。<br/>厳密な定義すると色々語弊があるかもしれませんが、 <strong>Groovyはいわゆるスクリプト言語です。</strong></p>
+            <p>GroovyはJava Virtual Machine(以下JVM)上で動作します。<br/>なお、JVM上で動くJava以外のプログラミング言語には他にも色々なものが有ります。<br/>代表的なものとしては<a href="http://www.scala-lang.org/">Scala</a>や<a href="https://kotlinlang.org/">Kotlin</a>があります。<br/>この2つのプログラミング言語は、いわゆる <strong>静的型付け言語</strong> に属し、Groovyとは少し毛色が違います。<br/>そういう意味では、Groovyは同じJVM上で動くLISP方言の<a href="https://clojure.org/">Clojure</a>の方に近いかもしれません。 </p>
+            <p>なお、Groovyの立ち位置としては、 <strong>Javaを置き換えるものではなく、Javaに寄り添うもの</strong> とよく表現されます。<br/>基本的にGroovyはJavaのコードをコピペすればそのままGroovyとして動作します。<br/><code>HelloWorld.java</code>をの拡張子を.groovyに変えて<code>HelloWorld.groovy</code>とするだけでOKなのです。<br/>このことから以下にGroovyがJavaとの親和性を大切にしているかが伺えます。 </p>
+            <h2 id="id-fcad98b6bc96cf66e20f986f0973d2575fce430b"><span class="number">2.1.</span>シンプル&amp;パワフル</h2>
+            <p>GroovyはJavaの良い点を踏襲しつつ、スクリプト言語らしく非常にシンプルにコーディングできるようになっています。<br/>さらに、関数型プログラミングのエッセンスも取り入れてコードをより簡潔に表現することも出来ます。 </p>
+            <p>例えば、1から10の整数の入ったリストから偶数のみ抜き出して、それぞれを2倍して、全ての数をかけあわせる、という処理を実装してみます。</p>
+            <pre><code class="groovy">(1..10).findAll {
+    it % 2 == 0
+}.collect {
+    it * 2
+}.inject {l, r -&gt;
+    l * r
+}
+</code></pre>
+            <p>非常に簡潔ですね！<br/>forの様なループやifによる条件分岐、さらに途中の計算結果を代入する一時変数すら登場しません。<br/>そしてGroovyはセミコロンと、明示的なreturnは不要です。<br/>また、型の指定も省略することが可能です。 </p>
+            <p>Groovyではクロージャー（Closure）が簡単に利用できます。<br/>クロージャーを利用することで、Java8から導入されたStreamやLambdaと同じような事を、より簡潔に表現することが出来ます。<br/>例えば、クロージャーを利用して数学のシグマ（Σ）を実装してみます。</p>
+            <pre><code class="groovy">def sigma = {Integer k, Integer to, Closure exp -&gt;
+    (k..to).collect {
+        exp(it)
+    }.sum()
+}
+assert 25 == sigma(1, 5) {it + 2}
+</code></pre>
+            <p>これまた簡潔ですね。<br/>すでにGroovyでは型を省略できると書きましたが、逆に型を明示することも当然可能です。</p>
+            <h2 id="id-f9356a26c4c26110d0fb85dbe07c07c28751e391"><span class="number">2.2.</span>巨大なエコシステム</h2>
+            <p>Groovyにはすでに10年以上の歴史が有り、Groovyの為の様々なツールが有ります。<br/>そして、JVMの上で動く様々なJava用ライブラリを利用することも可能です。<br/>あなたがJava用ライブラリを使ったことがあるのであれば、そのライブラリはGroovyからも利用できる上に、Groovyのシンプル＆パワフルなシンタックスを利用することでよりお洒落に記述することができます。</p>
+            <p>また、Groovyでよく利用されるある程度規模の大きなフレームワークなどには以下のようなものが有ります。</p>
+            <ul>
+              <li>フルスタックなWEBフレームワーク「<a href="https://grails.org/">Grails</a>」</li>
+              <li>ノンブロッキングでシンプルなマイクロフレームワーク「<a href="https://ratpack.io/">Ratpack</a>」</li>
+              <li>平行/並列処理を簡単に実現できる「<a href="http://www.gpars.org/">GPars</a>」</li>
+              <li>BDDなユニットテストフレームワーク「<a href="https://github.com/spockframework/spock">Spock</a>」</li>
+              <li>ブラウザからの機能テストをシンプルに実装できる「<a href="http://www.gebish.org/">Geb</a>」</li>
+              <li>ビルドツール「<a href="http://gradle.org/">Gradle</a>」</li>
+            </ul>
+            <p><strong>GroovyはJavaのエコシステムに直接リーチするだけでなく、そのエコシステム自体の一員となり、さらにそのエコシステムを押し広げるものです。</strong><br/><a href="http://koji-k.github.io/ratpack-tutorial/">Ratpackの入門、チュトーリアルも公開しています！</a>コチラも順次内容を補填していきます。</p>
+            <h2 id="id-5f52ad0dbb814a0559eb8aa4b4a645c74bbedd8d"><span class="number">2.3.</span>気軽に実行</h2>
+            <p>さて、巨大なエコシステムとかライブラリとかっていう話を聞くと「何か難しそう。実行するの面倒くさそう」と思っちゃいますね。<br/>いえいえ。Groovyはそんなことありません！ Groovyには、最近のモダンな言語にはよくある <strong>REPL</strong> も付属しています。<br/>Groovyをインストールしたらコンソールで<code>groovysh</code>と入力するだけでREPLが起動します。<br/>REPLを利用することで手軽に、即座にコードを確認することが出来ます。 </p>
+            <pre><code class="terminal">[saba:~]$ groovysh
+Groovy Shell (2.3.11, JVM: 1.8.0_60)
+Type &#39;:help&#39; or &#39;:h&#39; for help.
+------------------------------
+groovy:000&gt; a = &quot;Hallo&quot;
+===&gt; Hallo
+groovy:000&gt; println a
+Hallo
+===&gt; null
+groovy:000&gt; 2 * 4
+===&gt; 8
+groovy:000&gt; (1..5).inject {a,b -&gt; a * b}
+===&gt; 120
+groovy:000&gt; 
+</code></pre>
+            <p>さて、この諸々のモダンな言語にも備わっている便利なREPLですが、Groovyに限らずScalaやClojureでも、REPLでちょっと長い関数などを書いて実行するとシンタックスエラーと言われてもう一回書く羽目になってイライラ。。。という経験は誰にだって有ります（よね？）<br/>そこでGroovyには <strong>GroovyConsole</strong> という、簡易的な統合開発環境まで備わっています。<br/>WindowsならGroovyのインストールディレクトリに、LinuxやMacはコンソールから <code>groovyConsole &amp;</code>と入力することで利用することが出来ます。<br/>あくまで簡易的な統合開発環境なので、コードの補完やデバッガなどは付属していません（が、クラスパスを追加したりなどの痒いところに手が届く機能搭載！）<br/><img src="images/groovyconsole1.png" alt="GroovyConsole" title="GroovyConsole"/><br/>しかし、この<code>GroovyConsole</code>の最大の特徴は、すでに起動したJVM上でコードが走るので、 <strong>プログラムの実行がJVM系言語とは思えないほど高速だということです。</strong><br/>さらに、同じ画面上にコードの実行結果が表示されるので、結果を確認しつつコードを修正して、即座に再実行することが出来るため、非常に効率よくコーディングできます。 </p>
+            <p>このように、GroovyにはREPL（groovysh）とGroovyConsoleという強力な開発サポートツールが付属しています。<br/>この2つを利用することで、Groovy自体の勉強はもちろん、ロジックの確認、検証コードの作成、さらには業務をサポートするためのツールとしても利用することが出来ます。<br/><strong>なによりサクサクコーディグ＆実行が出来るので、プログラミング自体がとても楽しくなります！</strong></p>
+            <h2 id="id-6f37a8477bcb751f15dedcbcc9ee8a9cc90ef061"><span class="number">2.4.</span>実験コードのお供に</h2>
+            <p>開発をしていて、ある機能が必要になり、あるアルゴリズム/ロジックをコードを書きながら試行錯誤したい、ということはよく有りますよね？<br/>Groovyは標準で様々な便利機能が用意されています。<br/>例えば、言語機能として<code>assert</code>（パワーアサート）が有ります。<br/>コレは、そのような実験コード（例えばどんなアルゴリズムにしようかを決める際に色々書くコード）に非常に便利です。 </p>
+            <p>実際にサンプルを見てみましょう。</p>
+            <pre><code class="groovy">class SomeClass {
+    def someMethod() {
+        &quot;Groovy&quot;
+    }
+}
+
+def someClass = new SomeClass()
+assert &quot;groovy&quot; == someClass.someMethod()
+</code></pre>
+            <p>最後の行がパワーアサートの部分です。<br/>この例だとsomeMethodの戻り値は先頭が大文字なのに、意図した結果は先頭小文字なので、当然エラーがになります。<br/>エラーなお内容は非常に分かりやすく表示されます。 </p>
+            <pre><code class="terminal">Assertion failed: 
+
+assert &quot;groovy&quot; == someClass.someMethod()
+                |  |         |
+                |  |         Groovy
+                |  SomeClass@3e633f10
+                false
+
+	at ConsoleScript6.run(ConsoleScript6:8)
+</code></pre>
+            <p>こうすることで、メソッドの中身の実装を変えた際に、毎回目で実行結果に誤りが無いか、挙動が変わっていないかの確認が必要が無くなります。<br/>さらに、GroovyConsoleやGroovyshと言ったGroovyに備わっているツールを使えば、態々IDEやテキストエディタを開く事無くコードを試すことが出来ます。<br/>（GroovyConsoleはGUIツール、groovyshはCUIツール。いわゆるREPL）</p>
+            <h2 id="id-ef4e0df42b47b23ce15bc3ccadd1d8d8e43f8385"><span class="number">2.5.</span>ビルドツール要らず</h2>
+            <p>さて、では少し「実験コード」の範囲を広げましょう。<br/>例えばあなたが参加しているJavaプロジェクトであるJavaライブラリを導入することになったとします。<br/>そのライブラリの使い方をチェックするために態々山のようなクラスファイルを作る必要も、その外部ライブラリをクラスパスにと通す必要も、既存のプロジェクトコードを汚す必要もありません。<br/>さらにGradleやMavenといったビルドツールを導入したり、そもそもその対象ライブラリをダウンロードしてくる必要さえ無いのです。<br/>Groovyは言語機能として、 <strong>Grab</strong> という機能が有ります。このGrabに必要なライブラリの情報（Mavenに記述する様な情報）を渡してあげるだけで、ダウンロードからクラスパスの設定まで全てGroovyが自動で行ってくれます。<br/>例えば、ココではJsoupというJavaのWEBスクレイピングによく利用されるライブラリを導入してみましょう。</p>
+            <pre><code class="groovy">@Grab(group=&#39;org.jsoup&#39;, module=&#39;jsoup&#39;, version=&#39;1.8.3&#39;)
+
+import org.jsoup.Jsoup
+import org.jsoup.nodes.Document
+import org.jsoup.nodes.Element
+import org.jsoup.select.Elements
+
+Document document = Jsoup.connect(&quot;http://koji-k.github.io/groovy-tutorial/index.html&quot;).get()
+document.select(&quot;a&quot;).collect {Element element -&gt;
+    &quot;[${element.text()}](${element.attr(&quot;href&quot;)})&quot;
+}.each {
+    println it
+}
+</code></pre>
+            <p>これだけです。必要なのは上記のGroovyコードだけです。後は全てGroovyが面倒を見てくれます。<br/>当然ある程度規模の大きなアプリケーションになってくるとGradleやMavenを利用したほうが良いですが、Groovyではこのように日々のちょっとした業務をサポートしてくれる強力な機能が非常に多く備わっています。 </p>
+            <p>（Grabの詳細は本チュートリアルの <a href="external-library/index.html">Groovyで外部ライブラリを利用する</a> を参照してください。）</p>
+            <h2 id="java"><span class="number">2.6.</span>Javaの友達</h2>
+            <p>すでに述べたとおり、Javaコードは基本的にそのままGroovyとして動作します。<br/>さらにGroovyの場合は1ファイルに1クラス、というルールがありません。つまり1ファイルにいくつもクラスを宣言することが出来ます。<br/>そしてクラスの宣言自体必要ありません。</p>
+            <pre><code class="groovy">class A {
+    def hoge() {
+        println &quot;A&quot;
+    }
+}
+
+class B {
+    def hoge() {
+        println &quot;B&quot;
+    }
+}
+
+def a = new A()
+def b = new B()
+a.hoge()
+b.hoge()
+</code></pre>
+            <p>このコードは1ファイルに詰め込んでもちゃんと動作します。<br/>このように、余計な事を考えずに必要なことに集中することができるのでこれからJavaを学習したい、というひともGroovyからJavaを効率よく勉強することが出来ます。<br/>そしてとても重要なことですが、JavaのAPIが利用できる知識があるのであれば、 <strong>あなたはすでにGroovyエンジニアです！</strong><br/>そこに少しだけ本チュートリアルの知識をプラスαするだけで、 <strong>最小の苦労で非常に多くのモダンな機能、そして知識を得ることが出来ます。</strong><br/><strong>Groovyはいつだって、あなたとJavaに寄り添う友達です。</strong></p>
+            <h2 id="id-319e80ab91fa4b24ead46ec990e7890d8a62c899"><span class="number">2.7.</span>もちろんプロダクトとしても</h2>
+            <p>Groovyは、2016年の時点で登場からすでに13年が経っています。<br/>Javaの知識をそのままGroovyで利用できるので、学習コストはほぼゼロです。<br/>スクリプト言語とは言え、実行時にはすでにclassファイルにコンパイルされているので、開発、デプロイ、運用というイテレーションもJavaの知識をそのまま流用できます。<br/>つまり、Groovyにはすでに実戦で利用できる十分な実績、ライブラリが備わっているということです！</p>
+            <h2 id="ok"><span class="number">2.8.</span>どこからでもOK</h2>
+            <p>JVMという実績のある環境の上で動作し、膨大なJavaのエコシステムを利用でき、シンプルで実用的な機能を抱負に揃えたGroovy。<br/>さらにコレクションを変換して、集約していき、可能な限り副作用を減らすという関数型プログラミングのエッセンスも含まれています。<br/>また、直ぐにプロダクトとして導入しなくても、ちょっとしたデータの作成用や、簡単なバッチファイルとしての利用などにも利用できます。<br/>JavaのコードがそのままGroovyとして動作するので、まずはJavaシンタックスで書いておいて、あとからGroovyのシンタックスに少しずつ変えていくということも可能です。<br/>Groovyは常に現実的な業務に寄り添ってくれます。あなたの必要だと思える場所、タイミングで、いつでも使いはじめることが出来る相棒です。 </p>
+            <p><strong>さぁ、Groovyを初めましょう！</strong></p>
+          </div>
+          <div class="content-nav content-nav-bottom">
+            <a class="prev-page" href="index.html">
+            <i class="fa fa-angle-left"></i>
+            <span class="number">1.</span>
+            index
+            </a>
+            <a class="next-page" href="startup/index.html">
+            <span class="number">3.</span>
+            Startup
+            <i class="fa fa-angle-right"></i>
+            </a>
+          </div>
+          <div class="footer">
+            <p class="credit text-muted">Powered by <a href="https://github.com/kobo/gaiden">Gaiden</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/highlight.js"></script>
+    <script src="js/application.js"></script>
+    <script src="js/my.js"></script>
+  </body>
+</html>

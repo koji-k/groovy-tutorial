@@ -9,3 +9,4 @@ title = "Apache Groovyチュートリアル"
 
 // The path of directory to be outputted a document
 //outputDirectoryPath = "build"
+outputDirectoryPath = "docs"

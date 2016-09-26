@@ -20,7 +20,7 @@ GroovyはJavaの良い点を踏襲しつつ、スクリプト言語らしく非�
 
 例えば、1から10の整数の入ったリストから偶数のみ抜き出して、それぞれを2倍して、全ての数をかけあわせる、という処理を実装してみます。
 
-```
+```groovy
 (1..10).findAll {
     it % 2 == 0
 }.collect {
@@ -39,7 +39,7 @@ Groovyではクロージャー（Closure）が簡単に利用できます。
 クロージャーを利用することで、Java8から導入されたStreamやLambdaと同じような事を、より簡潔に表現することが出来ます。  
 例えば、クロージャーを利用して数学のシグマ（Σ）を実装してみます。
 
-```
+```groovy
 def sigma = {Integer k, Integer to, Closure exp ->
     (k..to).collect {
         exp(it)
@@ -77,7 +77,7 @@ Groovyには、最近のモダンな言語にはよくある **REPL** も付属�
 Groovyをインストールしたらコンソールで`groovysh`と入力するだけでREPLが起動します。  
 REPLを利用することで手軽に、即座にコードを確認することが出来ます。  
 
-```
+```terminal
 [saba:~]$ groovysh
 Groovy Shell (2.3.11, JVM: 1.8.0_60)
 Type ':help' or ':h' for help.
@@ -114,7 +114,7 @@ Groovyは標準で様々な便利機能が用意されています。
 
 実際にサンプルを見てみましょう。
 
-```
+```groovy
 class SomeClass {
     def someMethod() {
         "Groovy"
@@ -129,7 +129,7 @@ assert "groovy" == someClass.someMethod()
 この例だとsomeMethodの戻り値は先頭が大文字なのに、意図した結果は先頭小文字なので、当然エラーがになります。  
 エラーなお内容は非常に分かりやすく表示されます。  
 
-```
+```terminal
 Assertion failed: 
 
 assert "groovy" == someClass.someMethod()
@@ -153,7 +153,7 @@ assert "groovy" == someClass.someMethod()
 Groovyは言語機能として、 **Grab** という機能が有ります。このGrabに必要なライブラリの情報（Mavenに記述する様な情報）を渡してあげるだけで、ダウンロードからクラスパスの設定まで全てGroovyが自動で行ってくれます。  
 例えば、ココではJsoupというJavaのWEBスクレイピングによく利用されるライブラリを導入してみましょう。
 
-```
+```groovy
 @Grab(group='org.jsoup', module='jsoup', version='1.8.3')
 
 import org.jsoup.Jsoup
@@ -179,7 +179,7 @@ document.select("a").collect {Element element ->
 さらにGroovyの場合は1ファイルに1クラス、というルールがありません。つまり1ファイルにいくつもクラスを宣言することが出来ます。  
 そしてクラスの宣言自体必要ありません。
 
-```
+```groovy
 class A {
     def hoge() {
         println "A"

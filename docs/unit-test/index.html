@@ -1,0 +1,719 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>12. ユニットテスト - Apache Groovyチュートリアル</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/highlight.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/my.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <i class="fa fa-bars sidebar-toggle"></i>
+        <span class="title"><a href="../index.html">Apache Groovyチュートリアル</a></span>
+      </div>
+      <div class="sidebar">
+        <ul>
+          <li class="numbered visible">
+            <a href="../index.html" data-alt-hash="apache-groovy-"><span class="number">1.</span>Apache Groovy チュートリアル</a>
+            <ul>
+              <li class="numbered visible"><a href="../index.html#id-42307f13d9d6d9fe7f15eb0536255b824fe0af1c"><span class="number">1.1.</span>さぁ始めよう！&hellip;の前に</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="../what-is-groovy.html" data-alt-hash="apache-groovy"><span class="number">2.</span>Apache Groovyとは</a>
+            <ul>
+              <li class="numbered visible"><a href="../what-is-groovy.html#id-fcad98b6bc96cf66e20f986f0973d2575fce430b"><span class="number">2.1.</span>シンプル&amp;パワフル</a></li>
+              <li class="numbered visible"><a href="../what-is-groovy.html#id-f9356a26c4c26110d0fb85dbe07c07c28751e391"><span class="number">2.2.</span>巨大なエコシステム</a></li>
+              <li class="numbered visible"><a href="../what-is-groovy.html#id-5f52ad0dbb814a0559eb8aa4b4a645c74bbedd8d"><span class="number">2.3.</span>気軽に実行</a></li>
+              <li class="numbered visible"><a href="../what-is-groovy.html#id-6f37a8477bcb751f15dedcbcc9ee8a9cc90ef061"><span class="number">2.4.</span>実験コードのお供に</a></li>
+              <li class="numbered visible"><a href="../what-is-groovy.html#id-ef4e0df42b47b23ce15bc3ccadd1d8d8e43f8385"><span class="number">2.5.</span>ビルドツール要らず</a></li>
+              <li class="numbered visible"><a href="../what-is-groovy.html#java"><span class="number">2.6.</span>Javaの友達</a></li>
+              <li class="numbered visible"><a href="../what-is-groovy.html#id-319e80ab91fa4b24ead46ec990e7890d8a62c899"><span class="number">2.7.</span>もちろんプロダクトとしても</a></li>
+              <li class="numbered visible"><a href="../what-is-groovy.html#ok"><span class="number">2.8.</span>どこからでもOK</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="../startup/index.html" data-alt-hash="startup"><span class="number">3.</span>Startup</a>
+            <ul>
+              <li class="numbered visible"><a href="../startup/install.html" data-alt-hash="install"><span class="number">3.1.</span>Install</a></li>
+              <li class="numbered visible"><a href="../startup/install.html#hello-world"><span class="number">3.2.</span>Hello World</a></li>
+              <li class="numbered visible">
+                <a href="../startup/execution.html" data-alt-hash="id-947e8b547a7ee2d2d16471408918f148e7008486"><span class="number">3.3.</span>色々な実行方法</a>
+                <ul>
+                  <li class="numbered visible"><a href="../startup/execution.html#groovyconsole"><span class="number">3.3.1.</span>GroovyConsole</a></li>
+                  <li class="numbered visible"><a href="../startup/execution.html#groovysh"><span class="number">3.3.2.</span>Groovysh</a></li>
+                  <li class="numbered visible"><a href="../startup/execution.html#id-da28f0cd33cb1f1e6ce383dde43065522845c2e8"><span class="number">3.3.3.</span>ファイルに保存してスクリプトとして実行</a></li>
+                  <li class="numbered visible">
+                    <a href="../startup/execution.html#id-fcbfd717080ef34d6aa5a6da494d789c4907d1a2"><span class="number">3.3.4.</span>ファイルに保存してコンパイル&amp;実行</a>
+                    <ul>
+                      <li class="numbered invisible"><a href="../startup/execution.html#class"><span class="number">3.3.4.1.</span>ファイル名と生成されるclassファイル名の関係</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="../variable/index.html" data-alt-hash="id-5221440a56644419d70a10bd0ccf693a2126dc64"><span class="number">4.</span>変数</a>
+            <ul>
+              <li class="numbered visible"><a href="../variable/index.html#def"><span class="number">4.1.</span>defキーワード</a></li>
+              <li class="numbered visible"><a href="../variable/index.html#id-a6077d27e5f63be9d00575f8249b0ab98c2688cd"><span class="number">4.2.</span>型の変数名を同時に宣言</a></li>
+              <li class="numbered visible"><a href="../variable/index.html#id-bdb4879c8865cab8f31f2e02bedfab64275778af"><span class="number">4.3.</span>いきなり変数名</a></li>
+              <li class="numbered visible"><a href="../variable/index.html#id-94a94a68c07cac95e9dad0fb1b2cc0ac0080a74d"><span class="number">4.4.</span>まとめ</a></li>
+              <li class="numbered visible"><a href="../variable/index.html#other-memo"><span class="number">4.5.</span>Other memo</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="../if/index.html" data-alt-hash="if"><span class="number">5.</span>if文</a>
+            <ul>
+              <li class="numbered visible"><a href="../if/index.html#id-678b445de32757354dbd7b4d6d27a2679cb663a4"><span class="number">5.1.</span>普通のif</a></li>
+              <li class="numbered visible"><a href="../if/index.html#assert"><span class="number">5.2.</span>assert</a></li>
+              <li class="numbered visible"><a href="../if/index.html#id-b2368db87fc524b107821a7f97dc24e3c3fb7a3c"><span class="number">5.3.</span>三項演算子を使う</a></li>
+              <li class="numbered visible"><a href="../if/index.html#groovy-truth"><span class="number">5.4.</span>Groovy Truth</a></li>
+              <li class="numbered visible"><a href="../if/index.html#id-7f0ecf6d4f8badbce300a7cea1560cdc3eb80466"><span class="number">5.5.</span>エルビス演算子を使う</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="../collection/list.html" data-alt-hash="id-b096d14061757613f9bb4fc3fdebeed1df3d7feb"><span class="number">6.</span>リスト</a>
+            <ul>
+              <li class="numbered visible"><a href="../collection/list.html#collect"><span class="number">6.1.</span>collect</a></li>
+              <li class="numbered visible"><a href="../collection/list.html#inject"><span class="number">6.2.</span>inject</a></li>
+              <li class="numbered visible"><a href="../collection/list.html#find"><span class="number">6.3.</span>find</a></li>
+              <li class="numbered visible"><a href="../collection/list.html#findall"><span class="number">6.4.</span>findAll</a></li>
+              <li class="numbered visible"><a href="../collection/list.html#id-a3b0399fa150d0a6ed3d5fdb94debdbc965b43be"><span class="number">6.5.</span>まとめ</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="../closure/index.html" data-alt-hash="id-bc9ded214e97abd0647bbea508cb878324996e3e"><span class="number">7.</span>クロージャ</a>
+            <ul>
+              <li class="numbered visible"><a href="../closure/index.html#id-46071e2f627a54763ae382cb6ffc2b0b1e589013"><span class="number">7.1.</span>クロージャを使ってみる</a></li>
+              <li class="numbered visible"><a href="../closure/index.html#id-a6cf382c283896094fb20f51b389e9deec62dd3f"><span class="number">7.2.</span>さらに詳しく</a></li>
+              <li class="numbered visible"><a href="../closure/index.html#thisownerdelegate"><span class="number">7.3.</span>特殊変数this、owner、delegate</a></li>
+              <li class="numbered visible"><a href="../closure/index.html#id-6578dcdcd86d65fc13e0e91b122bc41b2ba1ba08"><span class="number">7.4.</span>まとめ</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="../collection/map.html" data-alt-hash="id-5408c1debd592f8b0779d2c9a302fbff89fb39ba"><span class="number">8.</span>マップ</a>
+            <ul>
+              <li class="numbered visible"><a href="../collection/map.html#id-44e8571a56f022b3396fee07d6450bfd950e1a67"><span class="number">8.1.</span>繰り返し</a></li>
+              <li class="numbered visible"><a href="../collection/map.html#id-f8648999b740988e6ed27a5561760fe061ecb760"><span class="number">8.2.</span>リストとマップを組みあせる</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="../class/index.html" data-alt-hash="id-8b27332ee07f76ea4db44d6a7bdcdcf813427e3a"><span class="number">9.</span>クラス</a>
+            <ul>
+              <li class="numbered visible"><a href="../class/index.html#2"><span class="number">9.1.</span>クラスは2つ以上定義しても良い</a></li>
+              <li class="numbered visible"><a href="../class/index.html#id-400faaa494727732c94af024c637e0d2129b72f9"><span class="number">9.2.</span>セッターとゲッター</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible"><a href="../class/trait.html" data-alt-hash="trait"><span class="number">10.</span>Trait（トレイト）</a></li>
+          <li class="numbered visible">
+            <a href="../external-library/index.html" data-alt-hash="groovy"><span class="number">11.</span>Groovyで外部ライブラリを利用する</a>
+            <ul>
+              <li class="numbered visible"><a href="../external-library/index.html#id-48131f790a0fdc19674de80e966b50d2d2954fa2"><span class="number">11.1.</span>実際に試してみよう</a></li>
+              <li class="numbered visible"><a href="../external-library/index.html#id-d3fd06b21472dc0e54bce2592d61eaa19369b573"><span class="number">11.2.</span>複数のライブラリを扱う</a></li>
+              <li class="numbered visible"><a href="../external-library/index.html#id-28df4375b1a38168d0fe528efd2d82fb65d313c0"><span class="number">11.3.</span>ちょっと補足</a></li>
+              <li class="numbered visible"><a href="../external-library/index.html#id-1ff68e378d712588bb7314663b7ec5f58e4ba62a"><span class="number">11.4.</span>まとめ</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="index.html" data-alt-hash="id-24ac0411c687979683b211ecda6744d511f0ac85"><span class="number">12.</span>ユニットテスト</a>
+            <ul>
+              <li class="numbered visible"><a href="index.html#spock"><span class="number">12.1.</span>初めてのSpock</a></li>
+              <li class="numbered visible">
+                <a href="index.html#id-be6ccbd026a73b061ec8e027551cad6733d3deb4"><span class="number">12.2.</span>フィーチャーメソッドとフィーチャーブロック</a>
+                <ul>
+                  <li class="numbered visible"><a href="index.html#whenthensetup"><span class="number">12.2.1.</span>whenとthen（そしてsetup）</a></li>
+                  <li class="numbered visible"><a href="index.html#expect"><span class="number">12.2.2.</span>expect</a></li>
+                  <li class="numbered visible"><a href="index.html#cleanup"><span class="number">12.2.3.</span>cleanup</a></li>
+                  <li class="numbered visible">
+                    <a href="index.html#where"><span class="number">12.2.4.</span>where</a>
+                    <ul>
+                      <li class="numbered invisible"><a href="index.html#unroll"><span class="number">12.2.4.1.</span>@Unrollアノテーション</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="numbered visible"><a href="index.html#id-bdd1a5a8c07a267571c3bd781ab9082669c5959f"><span class="number">12.3.</span>フィクスチャーメソッド</a></li>
+              <li class="numbered visible"><a href="index.html#id-b3c1ea2a3b540798f7cd793487a346fffeec9c09"><span class="number">12.4.</span>各フィーチャーメソッドで共通して利用する変数</a></li>
+              <li class="numbered visible"><a href="index.html#id-efba724c0eb52b004593236e37d0a25a1544ad6b"><span class="number">12.5.</span>実践</a></li>
+              <li class="numbered visible"><a href="index.html#id-0a441a00637070d401d9e5a2653510c5967d9a05"><span class="number">12.6.</span>まとめ</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible"><a href="../regular-expression/index.html" data-alt-hash="regular-expression"><span class="number">13.</span>Regular Expression</a></li>
+          <li class="numbered visible"><a href="../meta/index.html" data-alt-hash="meta-programming"><span class="number">14.</span>Meta programming</a></li>
+          <li class="numbered visible">
+            <a href="../static-groovy/index.html" data-alt-hash="groovy"><span class="number">15.</span>静的Groovy</a>
+            <ul>
+              <li class="numbered visible"><a href="../static-groovy/index.html#id-b940591a92fde629fb71008c7b7e053237d7b8b4"><span class="number">15.1.</span>メソッド</a></li>
+              <li class="numbered visible">
+                <a href="../static-groovy/index.html#id-83dac9bdf0c71085ffa7a638a3bee37744fe1645"><span class="number">15.2.</span>ローカル変数</a>
+                <ul>
+                  <li class="numbered visible"><a href="../static-groovy/index.html#compilestatictypechecked"><span class="number">15.2.1.</span>CompileStaticとTypeChecked</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="numbered visible"><a href="../static-groovy/index.html#id-5af6083ed6fdbe3e7b8bee85529e65aa3468da09"><span class="number">16.</span>まとめ</a></li>
+          <li class="numbered visible">
+            <a href="../practice/index.html" data-alt-hash="id-0f8f1522a9609f45ebe45c4c425ad7a726b1bb7f"><span class="number">17.</span>実践/サンプル集</a>
+            <ul>
+              <li class="numbered visible"><a href="../practice/samples-link.html" data-alt-hash="id-0d3bb1d122715fe5433159eb6ea50caa02c25184"><span class="number">17.1.</span>サンプルリンク集</a></li>
+              <li class="numbered visible"><a href="../practice/cli-tool.html" data-alt-hash="cli"><span class="number">17.2.</span>CLIツールの実装</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <div class="content-handle"></div>
+        <div class="content-container">
+          <div class="content-nav content-nav-top">
+            <a class="prev-page" href="../external-library/index.html">
+            <i class="fa fa-angle-left"></i>
+            <span class="number">11.</span>
+            Groovyで外部ライブラリを利用する
+            </a>
+            <a class="next-page" href="../regular-expression/index.html">
+            <span class="number">13.</span>
+            Regular Expression
+            <i class="fa fa-angle-right"></i>
+            </a>
+          </div>
+          <div class="page-toc">
+            <ul>
+              <li class="numbered visible">
+                <a href="#id-24ac0411c687979683b211ecda6744d511f0ac85"><span class="number">12.</span>ユニットテスト</a>
+                <ul>
+                  <li class="numbered visible"><a href="#spock"><span class="number">12.1.</span>初めてのSpock</a></li>
+                  <li class="numbered visible">
+                    <a href="#id-be6ccbd026a73b061ec8e027551cad6733d3deb4"><span class="number">12.2.</span>フィーチャーメソッドとフィーチャーブロック</a>
+                    <ul>
+                      <li class="numbered visible"><a href="#whenthensetup"><span class="number">12.2.1.</span>whenとthen（そしてsetup）</a></li>
+                      <li class="numbered visible"><a href="#expect"><span class="number">12.2.2.</span>expect</a></li>
+                      <li class="numbered visible"><a href="#cleanup"><span class="number">12.2.3.</span>cleanup</a></li>
+                      <li class="numbered visible">
+                        <a href="#where"><span class="number">12.2.4.</span>where</a>
+                        <ul>
+                          <li class="numbered visible"><a href="#unroll"><span class="number">12.2.4.1.</span>@Unrollアノテーション</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="numbered visible"><a href="#id-bdd1a5a8c07a267571c3bd781ab9082669c5959f"><span class="number">12.3.</span>フィクスチャーメソッド</a></li>
+                  <li class="numbered visible"><a href="#id-b3c1ea2a3b540798f7cd793487a346fffeec9c09"><span class="number">12.4.</span>各フィーチャーメソッドで共通して利用する変数</a></li>
+                  <li class="numbered visible"><a href="#id-efba724c0eb52b004593236e37d0a25a1544ad6b"><span class="number">12.5.</span>実践</a></li>
+                  <li class="numbered visible"><a href="#id-0a441a00637070d401d9e5a2653510c5967d9a05"><span class="number">12.6.</span>まとめ</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="main-content">
+            <h1 id="id-24ac0411c687979683b211ecda6744d511f0ac85"><span class="number">12.</span>ユニットテスト</h1>
+            <p>モダンなソフトウェア開発にはユニットテストは書かせません。<br/>テストの無いコードはレガシコードと呼ばれ、忌諱される存在です。<br/>Groovyでコードが正しいかどうかを確認するお手軽な方法として<code>assert</code>をすでに紹介しました。<br/>しかし、コレだけだとさすがに不十分です。<br/>ユニットテストを素早く楽に開発、実行するために様々なテスティングツールがリリースされています。<br/>Javaの世界では<a href="http://junit.org/">JUnit</a>がとても有名で、当然Groovyからも利用できます。<br/>しかし、Groovyの世界では、<a href="https://github.com/spockframework/spock">Spock</a>というユニットテスト用ツールがデファクトスタンダートとなっています。 </p>
+            <p>今回はこのSpockを見て行きましょう。<br/>なお、Spock自体の詳細な仕様は公式ドキュメントを参照してください。</p>
+            <h2 id="spock"><span class="number">12.1.</span>初めてのSpock</h2>
+            <p>Spockはとてもシンプルでわかりやすいテストツールです。また、ライブラリとして配布されています。<br/>そう、Groovyの<code>@Grab</code>を使えば、Spockも簡単に導入することが出来ます。<br/>と言っても本来は、ビルドツールなどから、全てのテストを一気に実行することが一般的だと言うことを頭の片隅にとどめておいてください。<br/>まずはSpockってどんな感じに使うの？ということを知るのが一番大切です。<br/>GroovyとSpockの素晴らしい力を使って早速サクサクテストしていきましょう。</p>
+            <pre><code class="groovy">@Grab(group=&#39;org.spockframework&#39;, module=&#39;spock-core&#39;, version=&#39;1.0-groovy-2.4&#39;)
+import spock.lang.*
+
+class MyFirstSpock extends Specification {
+
+    // テストメソッド（フィーチャーメソッド）
+    def &quot;こんにちわSpock!&quot;() {
+        expect:
+        1 &gt; 0
+    }
+}
+</code></pre>
+            <p>このコードを実行すると、</p>
+            <pre><code class="terminal">JUnit 4 Runner, Tests: 1, Failures: 0, Time: 13
+</code></pre>
+            <p>と表示されます。テストが1つ合って、エラーが0件、となっていますね。<br/>では、<code>1 &gt; 0</code>というところを<code>1 == 0</code>に修正して再度実行してみましょう。</p>
+            <pre><code class="terminal">JUnit 4 Runner, Tests: 1, Failures: 1, Time: 25
+Test Failure: こんにちわSpock!(MyFirstSpock)
+Condition not satisfied:
+
+1 == 0
+  |
+  false
+
+	at MyFirstSpock.こんにちわSpock!(ConsoleScript10:8)
+</code></pre>
+            <p>上記のようなメッセージが表示されます。<br/>テストが1件合って、エラーが1件となっていますね。さらにどんなエラー内容だったかまで綺麗に出力してくれています。 </p>
+            <p>今回、<code>&quot;こんにちわSpock!&quot;()</code>というテストメソッドをコーディングして、そのテストを実行しました。<br/>なお、このテストメソッドのことを <strong>フィーチャーメソッド</strong> と呼びます。 </p>
+            <p>では、ついでに <strong>フィーチャーメソッド</strong> をもうひとつ追加して以下のようにしてみます。 </p>
+            <pre><code class="groovy">@Grab(group=&#39;org.spockframework&#39;, module=&#39;spock-core&#39;, version=&#39;1.0-groovy-2.4&#39;)
+import spock.lang.*
+
+class MyFirstSpock extends Specification {
+
+    def &quot;こんにちわSpock!&quot;() {
+        expect:
+        1 == 1
+    }
+    
+    def &quot;さようならSpock!&quot;() {
+        expect:
+        1 == 1
+    }
+}
+</code></pre>
+            <p>実行結果は、</p>
+            <pre><code class="terminal">JUnit 4 Runner, Tests: 2, Failures: 0, Time: 25
+</code></pre>
+            <p>となります。<br/>テストが2件あり、エラーが0件ですね。 フィーチャーメソッドの個数が、テストの個数になっていることが解ると思います。<br/>また、Spockの機能を利用してフィーチャーメソッドを書いていくテスト用クラスは、<code>spock.lang.Specification</code>を継承します。</p>
+            <p>コレがSpockの基本です。 </p>
+            <h2 id="id-be6ccbd026a73b061ec8e027551cad6733d3deb4"><span class="number">12.2.</span>フィーチャーメソッドとフィーチャーブロック</h2>
+            <p>さて、フィーチャーメソッドがテストを実行する単位だと述べました。<br/>では、そのテストの中で使える特種な宣言、 <strong>フィーチャーブロック</strong> を見て行きましょう。</p>
+            <h3 id="whenthensetup"><span class="number">12.2.1.</span>whenとthen（そしてsetup）</h3>
+            <p>最も基本的なパターンです。<br/>まずは以下のコードを見てみてください。</p>
+            <pre><code class="groovy">@Grab(group=&#39;org.spockframework&#39;, module=&#39;spock-core&#39;, version=&#39;1.0-groovy-2.4&#39;)
+import spock.lang.*
+
+class MyFirstSpock extends Specification {
+
+    def &quot;whenとthenを使ってテスト&quot;(){
+        setup:
+        List list = (1..10).toList()
+        
+        when:
+        list.add(100)
+        
+        then:
+        list.size == 11
+        list.last() == 100
+    }
+}
+</code></pre>
+            <p><code>setup:</code>、<code>when:</code>、<code>then:</code>という3つのキーワードがありますね。<br/>この3つが <strong>フィーチャーブロックと呼ばれるものです。</strong> </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>ブロック</th>
+                  <th>内容</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>setup</td>
+                  <td>前提条件を記述します。</td>
+                </tr>
+                <tr>
+                  <td>when</td>
+                  <td>テスト対象となる動作を記述します。</td>
+                </tr>
+                <tr>
+                  <td>then</td>
+                  <td>whenの実行結果として、期待される条件を記述します</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>ちょっと日本語が難しいですね。。。<br/><code>setup:</code>でテストの準備をして、<code>when:</code>の中の処理が実行された場合、<code>then:</code>の中の状態になるよね、ということになります。<br/><code>when:</code>と<code>then:</code>は常に同時に記述されます。<br/>また、今回の場合は、<code>setup:</code>フィーチャーブロック自体省略して<code>when:</code>フィーチャーブロックの中に処理を移しても動作します。</p>
+            <pre><code class="groovy">    def &quot;whenとthenを使ってテスト&quot;(){
+        when:
+        List list = (1..10).toList()
+        list.add(100)
+        
+        then:
+        list.size == 11
+        list.last() == 100
+    }
+</code></pre>
+            <h3 id="expect"><span class="number">12.2.2.</span>expect</h3>
+            <p>さて、続いて<code>expect</code>フィーチャーブロックです。一番初めのサンプルコードに出ていましたね。<br/>大雑把に言ってしまうと、<code>when</code>と<code>then</code>を合体させたようなものです。<br/>なので、基本的に実現できることは同じです。<br/>以下に、1から10の整数の合計を求める場合のテストを記述しました。 </p>
+            <pre><code class="groovy">@Grab(group=&#39;org.spockframework&#39;, module=&#39;spock-core&#39;, version=&#39;1.0-groovy-2.4&#39;)
+import spock.lang.*
+
+class MyFirstSpock extends Specification {
+
+    def &quot;expectを使ってテスト&quot;() {
+        expect:
+        55 == (1..10).sum()
+    }
+    
+    def &quot;expectをwhenとthenで書いてみる&quot;() {
+        when:
+        def sum = (1..10).sum()
+        
+        then:
+        55 == sum
+    }
+}
+</code></pre>
+            <p><code>expect</code>を使ったほうと、<code>when</code>と<code>then</code>を使った方とで全く同じ結果になります。（つまりテストはパスしています。）<br/>使い分けとしては、<code>expect</code>の方は副作用のない関数型的なメソッドなどのテストに、<code>when</code>と<code>then</code>はオブジェクトを操作してその中身を確認すると言った副作用を伴う動作のテストを行う際に使うと言った感じになります。（恐らく）</p>
+            <h3 id="cleanup"><span class="number">12.2.3.</span>cleanup</h3>
+            <p>フィーチャーメソッドの掃除役です。<br/>書ける場所はフィーチャーメソッドの一番最後（後述するwhereブロックが有る場合はその直前）です。<br/>テストの為に<code>setup</code>でファイルを作成したりした場合、この<code>cleanup</code>ブロックで削除します。<br/>ただそれだけなのですが、1点重要なポイントが有ります。<br/>それは、例外が発生しようがしまいが、必ず実行されるという点です。<br/>以下のコードを見てみましょう。</p>
+            <pre><code class="groovy">@Grab(group=&#39;org.spockframework&#39;, module=&#39;spock-core&#39;, version=&#39;1.0-groovy-2.4&#39;)
+import spock.lang.*
+
+class MyFirstSpock extends Specification {
+
+    def &quot;cleanupのテスト&quot;() {
+        setup:
+        String message = &quot;do clean!&quot;
+    
+        expect:
+        hogehoge
+        
+        cleanup:
+        println &quot;${message}&quot;
+    }
+}
+</code></pre>
+            <p>実行結果は、</p>
+            <pre><code class="terminal">do clean!
+JUnit 4 Runner, Tests: 1, Failures: 1, Time: 11
+Test Failure: cleanupのテスト(MyFirstSpock)
+groovy.lang.MissingPropertyException: No such property: hogehoge for class: MyFirstSpock
+	at MyFirstSpock.cleanupのテスト(ConsoleScript75:8)
+</code></pre>
+            <p>hogehogeという記述が有りますが、そんな変数もGroovyのキーワードもないので、当然例外になります。<br/>しかし、<code>cleanup</code>フィーチャーブロックで記述している<code>println &quot;do clean!&quot;</code>は実行されているのが解ると思います。<br/>もし<code>setup</code>の中でnullが格納された変数が用意され、それがこの<code>cleanup</code>ブロックで使われたら。。。？<br/>この点を留意する必要が有ります。</p>
+            <h3 id="where"><span class="number">12.2.4.</span>where</h3>
+            <p>さて、Spockの素敵な機能である<code>where</code>フィーチャーブロックです。<br/>記述できる場所は、フィーチャーメソッドの最後です。<br/>これはテストのデータを準備するために利用できます。<br/>一体どういうことでしょうか？実際の使用方法を見てしまえば一目瞭然です。</p>
+            <pre><code class="groovy">@Grab(group=&#39;org.spockframework&#39;, module=&#39;spock-core&#39;, version=&#39;1.0-groovy-2.4&#39;)
+import spock.lang.*
+
+class MyFirstSpock extends Specification {
+
+    def &quot;whereのテスト&quot;() {  
+        expect:
+        left + right == result
+        
+        where:
+        left|right||result
+        1|2||3
+        4|5||9
+        9|10||19
+    }
+}
+</code></pre>
+            <p>実行結果は、</p>
+            <pre><code class="terminal">JUnit 4 Runner, Tests: 1, Failures: 0, Time: 9
+</code></pre>
+            <p>です。 テストはエラーなしで無事終了しました。<br/><code>where</code>に指定されているまるでMarkdownのテーブル表記のようなものを見てみてください。<br/>実は、今回のテストで利用されたデータはここから取得されています。<br/>テストで利用されたデータというと<code>expect</code>ブロックの<code>left</code>、<code>right</code>、<code>result</code>の３つですね。<br/><code>where</code>ブロックの1行目は <strong>変数名</strong> になります。それぞれ<code>|</code>区切りで必要な変数を宣言していきます。<br/>そしてそれ以降の行に指定した値で、テストが繰り返し実行されます。<br/>つまり今回の場合、</p>
+            <table>
+              <thead>
+                <tr>
+                  <th> </th>
+                  <th>left</th>
+                  <th>right</th>
+                  <th>result</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1回目のテスト</td>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>2回目のテスト</td>
+                  <td>4</td>
+                  <td>5</td>
+                  <td>9</td>
+                </tr>
+                <tr>
+                  <td>3回目のテスト</td>
+                  <td>9</td>
+                  <td>10</td>
+                  <td>19</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>という、合計3回のテストが実行されています。<br/>なお、最後のresultの前にだけ<code>||</code>と、パイプが二つ付いていますね。<br/>これはテストの結果、この値になりますよ、ということを明示的に示すために慣例的に利用されている手法です。<br/>そのため、別に他の行同様に<code>|</code>でも構いませんが、慣例に習って<code>||</code>とした方がベターです。</p>
+            <p><code>where</code>ブロックを使えば、同一のテスト対象コードを複数の値でテストするコードがスッキリ書くことができます。</p>
+            <h4 id="unroll"><span class="number">12.2.4.1.</span>@Unrollアノテーション</h4>
+            <p>さて、whereにはちょっと特別なアノテーションが用意されています。それが<code>@Unroll</code>アノテーションです。<br/>単純に<code>where</code>ブロックを使っているフィーチャーメソッドの先頭に宣言するだけです。<br/>実際に使ってみましょう。 </p>
+            <pre><code class="groovy">@Grab(group=&#39;org.spockframework&#39;, module=&#39;spock-core&#39;, version=&#39;1.0-groovy-2.4&#39;)
+import spock.lang.*
+
+class MyFirstSpock extends Specification {
+
+    @Unroll
+    def &quot;#left と#right を足すと #result になる&quot;() {  
+        expect:
+        left + right == result
+        
+        where:
+        left|right|result
+        1|2|3
+        4|5|9
+        9|10|19
+    }
+}
+</code></pre>
+            <p><code>@Unroll</code>が追加された以外に、メソッド名に<code>#</code>がついた変な記号がありますね。とりあえず気にしないでください。<br/>実行結果は、</p>
+            <pre><code class="terminal">JUnit 4 Runner, Tests: 3, Failures: 0, Time: 49
+</code></pre>
+            <p>実行結果は全く同じです。が、テストの数が3つに増えていますね！<br/>これには一体どんなメリットがあるのでしょうか？<br/>それを確認するために、<code>where</code>ブロックにテストが失敗するようなデータを追加してみましょう。</p>
+            <pre><code class="groovy">@Grab(group=&#39;org.spockframework&#39;, module=&#39;spock-core&#39;, version=&#39;1.0-groovy-2.4&#39;)
+import spock.lang.*
+
+class MyFirstSpock extends Specification {
+
+    @Unroll
+    def &quot;#left と#right を足すと #result になる&quot;() {  
+        expect:
+        left + right == result
+        
+        where:
+        left|right|result
+        1|2|3
+        4|5|9
+        9|10|19
+        1|1|100
+    }
+}
+</code></pre>
+            <p><code>where</code>ブロックに明らかにテストが失敗するデータを追加しました。<br/>実行結果は、</p>
+            <pre><code class="terminal">JUnit 4 Runner, Tests: 4, Failures: 1, Time: 52
+Test Failure: 1 と1 を足すと 100 になる(MyFirstSpock)
+Condition not satisfied:
+
+left + right == result
+|    | |     |  |
+1    2 1     |  100
+             false
+
+	at MyFirstSpock.#left と#right を足すと #result になる(ConsoleScript8:9)
+</code></pre>
+            <p>となります。<br/>よくよく実行結果を見てみると、<code>Test Failure: 1 と1 を足すと 100 になる(MyFirstSpock)</code>と表示されていますね！<br/>ここは、テストが失敗したフィーチャーメソッド名が表示されています。<br/><code>@Unroll</code>アノテーションを指定した場合、そのフィーチャーメソッドは<code>where</code>ブロックの行数分、それぞれ独立したテストのように繰り返し実行されます。（そのため、テストの回数が３回になっていました。）<br/>そして、フィーチャーメソッド名には、<code>where</code>ブロックで宣言した変数名が利用できるのです。それぞれ<code>#</code>で宣言している部分がそれです。<br/>そのため今回テストが失敗した<code>1|1|100</code>の部分がメソッド名に利用され、<code>Test Failure: 1 と1 を足すと 100 になる(MyFirstSpock)</code>と表示されたわけです。 </p>
+            <p><code>@Unroll</code>を使うことによって、Spockのテストレポートを生成するツールなどを利用する際に、テストに失敗した箇所の内容がさらにハッキリわかるようになるメリットがあります。<br/>また、レポート生成ツールによっては、実行されたフィーチャーメソッド名を出力してくれますので、テストコードを見なくてもレポートを見ればどういったデータを使ってテストされたかどうかがわかります。</p>
+            <h2 id="id-bdd1a5a8c07a267571c3bd781ab9082669c5959f"><span class="number">12.3.</span>フィクスチャーメソッド</h2>
+            <p>さて、今までは直接テストに関わるフィーチャーメソッドとフィクスチャーブロックを見てきました。<br/>ここでは、テストの実行前後に利用できる特殊なメソッド、 <strong>フィクスチャーメソッド</strong> を見てみましょう。 </p>
+            <pre><code class="groovy">@Grab(group=&#39;org.spockframework&#39;, module=&#39;spock-core&#39;, version=&#39;1.0-groovy-2.4&#39;)
+import spock.lang.*
+
+class MyFirstSpock extends Specification {
+    
+    def setup() {
+        println &quot;全てのフィーチャーメソッド実行前に実行されます。&quot;
+    }
+    
+    def cleanup() {
+        println &quot;全てのフィーチャーメソッド実行後に実行されます。&quot;
+    }
+    
+    def setupSpec() {
+        println &quot;全体のテストの実行前に1度だけ実行されます。&quot;
+    }
+    
+    def cleanupSpec() {
+        println &quot;全体のテスト実行後に1度だけ実行されます。&quot;
+    }
+    
+    def &quot;test 1&quot;() {
+        expect:
+        println &quot;test 1&quot;
+        1 == 1
+    }
+
+    def &quot;test 2&quot;() {  
+        expect:
+        println &quot;test2/${a}&quot;
+        a == b
+        
+        where:
+        a|b
+        1|1
+        2|2
+    }
+    
+    @Unroll
+    def &quot;test 3&quot;() {  
+        expect:
+        println &quot;test3/${a}&quot;
+        a == b
+        
+        where:
+        a|b
+        1|1
+        2|2
+    }
+}
+</code></pre>
+            <p>実行結果は、</p>
+            <pre><code class="terminal">全体のテストの実行前に1度だけ実行されます。
+全てのフィーチャーメソッド実行前に実行されます。
+test 1
+全てのフィーチャーメソッド実行後に実行されます。
+全てのフィーチャーメソッド実行前に実行されます。
+test2/1
+全てのフィーチャーメソッド実行後に実行されます。
+全てのフィーチャーメソッド実行前に実行されます。
+test2/2
+全てのフィーチャーメソッド実行後に実行されます。
+全てのフィーチャーメソッド実行前に実行されます。
+test3/1
+全てのフィーチャーメソッド実行後に実行されます。
+全てのフィーチャーメソッド実行前に実行されます。
+test3/2
+全てのフィーチャーメソッド実行後に実行されます。
+全体のテスト実行後に1度だけ実行されます。
+JUnit 4 Runner, Tests: 4, Failures: 0, Time: 30
+</code></pre>
+            <p>となります。</p>
+            <p>まとめると、</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>メソッド名</th>
+                  <th>意味</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>setup</td>
+                  <td>全てのフィーチャーメソッド実行前に実行されます。</td>
+                </tr>
+                <tr>
+                  <td>cleanup</td>
+                  <td>全てのフィーチャーメソッド実行後に実行されます。</td>
+                </tr>
+                <tr>
+                  <td>setupSpec</td>
+                  <td>全体のテストの実行前に1度だけ実行されます。</td>
+                </tr>
+                <tr>
+                  <td>cleanupSpec</td>
+                  <td>全体のテスト実行後に1度だけ実行されます。</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>となります。</p>
+            <h2 id="id-b3c1ea2a3b540798f7cd793487a346fffeec9c09"><span class="number">12.4.</span>各フィーチャーメソッドで共通して利用する変数</h2>
+            <p>ここでワンポイントメモです。<br/>毎回フィーチャーメソッドで利用したい共通の変数がある場合、当然フィールドとして宣言する必要があります。<br/>上記の<code>setup</code>や<code>setupSpec</code>フィクスチャーメソッドでその変数を初期化することもできますが、単純な変数なのであれば、テストクラスのフィールドとして宣言すると同時に初期化すれば同様の効果があります。<br/>つまり、フィールド変数の宣言のタイミングで初期化するもよし、宣言だけして<code>setup</code>や<code>setupSpec</code>の中で初期化するもよしです。<br/>なお、フィールドに宣言した値は、 <strong>フィーチャーメソッドの実行の度に再度実行されます。</strong></p>
+            <pre><code class="groovy">@Grab(group=&#39;org.spockframework&#39;, module=&#39;spock-core&#39;, version=&#39;1.0-groovy-2.4&#39;)
+import spock.lang.*
+
+class MyFirstSpock extends Specification {
+
+    Date date = new Date()
+
+    def &quot;test&quot;() {  
+        expect:
+        sleep(500)
+        println date.getTime()
+        a == b
+        
+        where:
+        a|b
+        1|1
+        2|2
+        3|3
+    }
+}
+</code></pre>
+            <p>実行結果は、</p>
+            <pre><code class="terminal">1453245037474
+1453245037980
+1453245038481
+</code></pre>
+            <p>となります。このように、<code>Date date = new Date()</code>がテストごとに実行されて、<code>date</code>の中身が毎回変わっていることがわかると思います。<br/>可能であれば宣言と同時に初期化、初期化のために複雑な計算や処理が必要な場合は<code>setup</code>や<code>setupSpec</code>の中で初期化すればよいでしょう。 </p>
+            <p>しかし、当然今回のようにDateの値をテストに使うような場合、全てのフィーチャーメソッドで同じ値で利用したい場合もあるでしょう。<br/>その場合は単純にフィールド変数の左に<code>@Shared</code>をつけるだけでOKです。</p>
+            <pre><code class="groovy">@Grab(group=&#39;org.spockframework&#39;, module=&#39;spock-core&#39;, version=&#39;1.0-groovy-2.4&#39;)
+import spock.lang.*
+
+class MyFirstSpock extends Specification {
+
+    @Shared Date date = new Date()
+
+    def &quot;test&quot;() {  
+        expect:
+        sleep(500)
+        println date.getTime()
+        a == b
+        
+        where:
+        a|b
+        1|1
+        2|2
+        3|3
+    }
+</code></pre>
+            <p>実行結果は以下のようになります。 </p>
+            <pre><code class="terminal">1453245425610
+1453245425610
+1453245425610
+</code></pre>
+            <p>Dateの中身が全て同じになっていることがわかりますね。</p>
+            <h2 id="id-efba724c0eb52b004593236e37d0a25a1544ad6b"><span class="number">12.5.</span>実践</h2>
+            <p>では、実際にテスト対象のクラスを作成して、テストしてみましょう。<br/>今回は、Personというクラスを用意します。Personはageプロパティを持ちます。<br/>そして、<code>isAdult()</code>メソッドで、ageが20以上の場合はtrue、19以下の場合はfalseを返します。<br/>この<code>isAdult()</code>をテストしてみましょう。</p>
+            <pre><code class="groovy">@Grab(group=&#39;org.spockframework&#39;, module=&#39;spock-core&#39;, version=&#39;1.0-groovy-2.4&#39;)
+import spock.lang.*
+
+class MyFirstSpock extends Specification {
+
+    @Unroll
+    def &quot;PersonクラスのisAdultメソッドをテストするよ&quot;() {
+    
+        setup:
+        Person p = new Person(age:age)
+        
+        expect:
+        p.isAdult() == result
+        
+        where:
+        age || result
+        19 || false
+        20 || true
+        21 || true
+    }
+}
+
+class Person {
+    Integer age = 0
+    
+    Boolean isAdult() {
+        age &gt;= 20
+    }
+}
+</code></pre>
+            <p>実行結果： </p>
+            <pre><code class="terminal">JUnit 4 Runner, Tests: 3, Failures: 0, Time: 29
+Result: org.junit.runner.Result@6c0eb436
+</code></pre>
+            <p>特に難しい点はありませんね。 </p>
+            <p>1点注意。GroovyConsoleでSpockを色々試して見る際に、上記の<code>Personクラス</code>のように同時にテスト用クラスも宣言できますが、テスト用クラスをテストの前に宣言すると、GroovyConsoleが何を実行していいのかわからなくなって、エラーになってしまいます。 </p>
+            <pre><code class="terminal"># GroovyConsoleにこんなエラーが出ます
+groovy.lang.GroovyRuntimeException: This script or class could not be run.
+It should either:
+- have a main method,
+- be a JUnit test or extend GroovyTestCase,
+- implement the Runnable interface,
+- or be compatible with a registered script runner. Known runners:
+  * groovy-all-2.4.1.jar
+</code></pre>
+            <p>なので、テスト用クラスは、テストクラスのあとに宣言するようにしてください。（あくまでSpockの動作を勉強する際の話です。）</p>
+            <h2 id="id-0a441a00637070d401d9e5a2653510c5967d9a05"><span class="number">12.6.</span>まとめ</h2>
+            <p>Spockを使うと簡単にテストが実行できることが分かったと思います。<br/>また、<code>where</code>を使うことでデータ駆動テストが簡単に実現できます。<br/>今回はSpockの使い方を学ぶということを念頭に置いたのでGroovyConsoleで実行しました。<br/>実際のプロダクトでは、テストを記述するファイルには本当にテストだけを記述して、Gradleなどのビルドツールから一気にテストを実行することになります。<br/>また、Groovy向けのWEBフレームワークであるGrailsは、標準でSpockを搭載していて、さらにWEB向けのテストがしやすいように専用の機能が追加で提供されています。</p>
+          </div>
+          <div class="content-nav content-nav-bottom">
+            <a class="prev-page" href="../external-library/index.html">
+            <i class="fa fa-angle-left"></i>
+            <span class="number">11.</span>
+            Groovyで外部ライブラリを利用する
+            </a>
+            <a class="next-page" href="../regular-expression/index.html">
+            <span class="number">13.</span>
+            Regular Expression
+            <i class="fa fa-angle-right"></i>
+            </a>
+          </div>
+          <div class="footer">
+            <p class="credit text-muted">Powered by <a href="https://github.com/kobo/gaiden">Gaiden</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/highlight.js"></script>
+    <script src="../js/application.js"></script>
+    <script src="../js/my.js"></script>
+  </body>
+</html>
