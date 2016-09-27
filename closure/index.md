@@ -165,6 +165,59 @@ returnされているのは`{...}`に該当するクロージャ部分だけな�
 なので、`clj()`や`clj2()`を実行すると毎回異なる値が返されているわけですね。  
 この **生まれ故郷を忘れない** 関数がクロージャと呼ばれるものです。
 
+## 関数合成
+Groovyのクロージャでは、簡単に関数合成が行えます。  
+例えば、データベースなどから数字を取得して、数値に変換して、2倍する。という処理を書いてみましょう。  
+
+```groovy
+Closure toInt = {String v ->
+    v.toInteger()
+}
+Closure twice = {Integer v ->
+    v * 2
+}
+
+// サンプル用に分かりやすく
+Closure getDataFromDatabase = {
+    "5"
+}
+assert 10 == twice(toInt(getDataFromDatabase()))
+```
+
+クロージャ自体は全く難しくありません。  
+ただ、クロージャを呼び出している`twice(toInt(getDataFromDatabase()))`の部分がビックリするほど読み辛いですね。  
+では、ココで関数合成を行って呼び出しをシンプルにしてみましょう！
+
+```groovy
+Closure calc1 = getDataFromDatabase >> toInt >> twice
+Closure calc2 = twice << toInt << getDataFromDatabase
+assert 10 == calc1()
+assert 10 == calc2()
+```
+
+これだけです！  
+Groovyでは、クロージャ同士を`>>`もしくは`<<`で順番に結合した新しいクロージャを生成できます。それぞれのクロージャの実行結果が次のクロージャにそのまま渡されます。  
+これがGroovyの関数合成です。  
+
+なお、関数合成時には引数を渡すことは出来ませんが、合成した関数を実行する際に引数を渡すことが出来ます。  
+
+```groovy
+// 抜粋
+Closure getDataFromDatabase = {String a ->
+    "5" + a
+}
+Closure calc1 = getDataFromDatabase >> toInt >> twice
+
+assert 102 == calc1("1")
+```
+
+また、関数合成の結果は新しい関数（クロージャ）が返されるわけなので、合成結果を変数に格納せずとも以下のように実行することも出来ます。  
+
+```groovy
+assert 102 == (getDataFromDatabase >> toInt >> twice).call("1")
+assert 102 == (getDataFromDatabase >> toInt >> twice)("1")
+```
+
 ## 特殊変数this、owner、delegate
 さて、クロージャには`this`、`owner`、`delegate`という暗黙的に利用できる特殊な変数が存在ます。  
 詳細は[[Groovy]クロージャのthis、owner、delegateについて](http://qiita.com/saba1024/items/b57c412961e1a2779881)を参照してください。

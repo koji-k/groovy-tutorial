@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Nullセーフ - Apache Groovyチュートリアル</title>
+    <title>9. Nullセーフ - Apache Groovyチュートリアル</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/font-awesome.min.css">
@@ -102,8 +102,9 @@
             <ul>
               <li class="numbered visible"><a href="../closure/index.html#id-46071e2f627a54763ae382cb6ffc2b0b1e589013"><span class="number">7.1.</span>クロージャを使ってみる</a></li>
               <li class="numbered visible"><a href="../closure/index.html#id-a6cf382c283896094fb20f51b389e9deec62dd3f"><span class="number">7.2.</span>さらに詳しく</a></li>
-              <li class="numbered visible"><a href="../closure/index.html#thisownerdelegate"><span class="number">7.3.</span>特殊変数this、owner、delegate</a></li>
-              <li class="numbered visible"><a href="../closure/index.html#id-6578dcdcd86d65fc13e0e91b122bc41b2ba1ba08"><span class="number">7.4.</span>まとめ</a></li>
+              <li class="numbered visible"><a href="../closure/index.html#id-72c1711cd57bf25317237dd75f8c6d35545942dd"><span class="number">7.3.</span>関数合成</a></li>
+              <li class="numbered visible"><a href="../closure/index.html#thisownerdelegate"><span class="number">7.4.</span>特殊変数this、owner、delegate</a></li>
+              <li class="numbered visible"><a href="../closure/index.html#id-6578dcdcd86d65fc13e0e91b122bc41b2ba1ba08"><span class="number">7.5.</span>まとめ</a></li>
             </ul>
           </li>
           <li class="numbered visible">
@@ -114,66 +115,75 @@
             </ul>
           </li>
           <li class="numbered visible">
-            <a href="../class/index.html" data-alt-hash="id-8b27332ee07f76ea4db44d6a7bdcdcf813427e3a"><span class="number">9.</span>クラス</a>
+            <a href="index.html" data-alt-hash="null"><span class="number">9.</span>Nullセーフ</a>
             <ul>
-              <li class="numbered visible"><a href="../class/index.html#2"><span class="number">9.1.</span>クラスは2つ以上定義しても良い</a></li>
-              <li class="numbered visible"><a href="../class/index.html#id-400faaa494727732c94af024c637e0d2129b72f9"><span class="number">9.2.</span>セッターとゲッター</a></li>
-            </ul>
-          </li>
-          <li class="numbered visible"><a href="../class/trait.html" data-alt-hash="trait"><span class="number">10.</span>Trait（トレイト）</a></li>
-          <li class="numbered visible">
-            <a href="../external-library/index.html" data-alt-hash="groovy"><span class="number">11.</span>Groovyで外部ライブラリを利用する</a>
-            <ul>
-              <li class="numbered visible"><a href="../external-library/index.html#id-48131f790a0fdc19674de80e966b50d2d2954fa2"><span class="number">11.1.</span>実際に試してみよう</a></li>
-              <li class="numbered visible"><a href="../external-library/index.html#id-d3fd06b21472dc0e54bce2592d61eaa19369b573"><span class="number">11.2.</span>複数のライブラリを扱う</a></li>
-              <li class="numbered visible"><a href="../external-library/index.html#id-28df4375b1a38168d0fe528efd2d82fb65d313c0"><span class="number">11.3.</span>ちょっと補足</a></li>
-              <li class="numbered visible"><a href="../external-library/index.html#id-1ff68e378d712588bb7314663b7ec5f58e4ba62a"><span class="number">11.4.</span>まとめ</a></li>
+              <li class="numbered visible"><a href="index.html#java8optional"><span class="number">9.1.</span>Java8のOptional</a></li>
+              <li class="numbered visible"><a href="index.html#groovy"><span class="number">9.2.</span>Groovyのセーフナビゲーション</a></li>
+              <li class="numbered visible"><a href="index.html#id-462a855457497e0f699b75d35950c57e31a0545b"><span class="number">9.3.</span>サンプルコード</a></li>
+              <li class="numbered visible"><a href="index.html#id-18aee802319ad5c16cd55c381c87b42226a4b149"><span class="number">9.4.</span>その他の方法</a></li>
             </ul>
           </li>
           <li class="numbered visible">
-            <a href="../unit-test/index.html" data-alt-hash="id-24ac0411c687979683b211ecda6744d511f0ac85"><span class="number">12.</span>ユニットテスト</a>
+            <a href="../class/index.html" data-alt-hash="id-8b27332ee07f76ea4db44d6a7bdcdcf813427e3a"><span class="number">10.</span>クラス</a>
             <ul>
-              <li class="numbered visible"><a href="../unit-test/index.html#spock"><span class="number">12.1.</span>初めてのSpock</a></li>
+              <li class="numbered visible"><a href="../class/index.html#2"><span class="number">10.1.</span>クラスは2つ以上定義しても良い</a></li>
+              <li class="numbered visible"><a href="../class/index.html#id-400faaa494727732c94af024c637e0d2129b72f9"><span class="number">10.2.</span>セッターとゲッター</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible"><a href="../class/trait.html" data-alt-hash="trait"><span class="number">11.</span>Trait（トレイト）</a></li>
+          <li class="numbered visible">
+            <a href="../external-library/index.html" data-alt-hash="groovy"><span class="number">12.</span>Groovyで外部ライブラリを利用する</a>
+            <ul>
+              <li class="numbered visible"><a href="../external-library/index.html#id-48131f790a0fdc19674de80e966b50d2d2954fa2"><span class="number">12.1.</span>実際に試してみよう</a></li>
+              <li class="numbered visible"><a href="../external-library/index.html#id-d3fd06b21472dc0e54bce2592d61eaa19369b573"><span class="number">12.2.</span>複数のライブラリを扱う</a></li>
+              <li class="numbered visible"><a href="../external-library/index.html#id-28df4375b1a38168d0fe528efd2d82fb65d313c0"><span class="number">12.3.</span>ちょっと補足</a></li>
+              <li class="numbered visible"><a href="../external-library/index.html#id-1ff68e378d712588bb7314663b7ec5f58e4ba62a"><span class="number">12.4.</span>まとめ</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="../unit-test/index.html" data-alt-hash="id-24ac0411c687979683b211ecda6744d511f0ac85"><span class="number">13.</span>ユニットテスト</a>
+            <ul>
+              <li class="numbered visible"><a href="../unit-test/index.html#spock"><span class="number">13.1.</span>初めてのSpock</a></li>
               <li class="numbered visible">
-                <a href="../unit-test/index.html#id-be6ccbd026a73b061ec8e027551cad6733d3deb4"><span class="number">12.2.</span>フィーチャーメソッドとフィーチャーブロック</a>
+                <a href="../unit-test/index.html#id-be6ccbd026a73b061ec8e027551cad6733d3deb4"><span class="number">13.2.</span>フィーチャーメソッドとフィーチャーブロック</a>
                 <ul>
-                  <li class="numbered visible"><a href="../unit-test/index.html#whenthensetup"><span class="number">12.2.1.</span>whenとthen（そしてsetup）</a></li>
-                  <li class="numbered visible"><a href="../unit-test/index.html#expect"><span class="number">12.2.2.</span>expect</a></li>
-                  <li class="numbered visible"><a href="../unit-test/index.html#cleanup"><span class="number">12.2.3.</span>cleanup</a></li>
+                  <li class="numbered visible"><a href="../unit-test/index.html#whenthensetup"><span class="number">13.2.1.</span>whenとthen（そしてsetup）</a></li>
+                  <li class="numbered visible"><a href="../unit-test/index.html#expect"><span class="number">13.2.2.</span>expect</a></li>
+                  <li class="numbered visible"><a href="../unit-test/index.html#cleanup"><span class="number">13.2.3.</span>cleanup</a></li>
                   <li class="numbered visible">
-                    <a href="../unit-test/index.html#where"><span class="number">12.2.4.</span>where</a>
+                    <a href="../unit-test/index.html#where"><span class="number">13.2.4.</span>where</a>
                     <ul>
-                      <li class="numbered invisible"><a href="../unit-test/index.html#unroll"><span class="number">12.2.4.1.</span>@Unrollアノテーション</a></li>
+                      <li class="numbered invisible"><a href="../unit-test/index.html#unroll"><span class="number">13.2.4.1.</span>@Unrollアノテーション</a></li>
                     </ul>
                   </li>
                 </ul>
               </li>
-              <li class="numbered visible"><a href="../unit-test/index.html#id-bdd1a5a8c07a267571c3bd781ab9082669c5959f"><span class="number">12.3.</span>フィクスチャーメソッド</a></li>
-              <li class="numbered visible"><a href="../unit-test/index.html#id-b3c1ea2a3b540798f7cd793487a346fffeec9c09"><span class="number">12.4.</span>各フィーチャーメソッドで共通して利用する変数</a></li>
-              <li class="numbered visible"><a href="../unit-test/index.html#id-efba724c0eb52b004593236e37d0a25a1544ad6b"><span class="number">12.5.</span>実践</a></li>
-              <li class="numbered visible"><a href="../unit-test/index.html#id-0a441a00637070d401d9e5a2653510c5967d9a05"><span class="number">12.6.</span>まとめ</a></li>
+              <li class="numbered visible"><a href="../unit-test/index.html#id-bdd1a5a8c07a267571c3bd781ab9082669c5959f"><span class="number">13.3.</span>フィクスチャーメソッド</a></li>
+              <li class="numbered visible"><a href="../unit-test/index.html#id-b3c1ea2a3b540798f7cd793487a346fffeec9c09"><span class="number">13.4.</span>各フィーチャーメソッドで共通して利用する変数</a></li>
+              <li class="numbered visible"><a href="../unit-test/index.html#id-efba724c0eb52b004593236e37d0a25a1544ad6b"><span class="number">13.5.</span>実践</a></li>
+              <li class="numbered visible"><a href="../unit-test/index.html#id-0a441a00637070d401d9e5a2653510c5967d9a05"><span class="number">13.6.</span>まとめ</a></li>
             </ul>
           </li>
-          <li class="numbered visible"><a href="../regular-expression/index.html" data-alt-hash="regular-expression"><span class="number">13.</span>Regular Expression</a></li>
-          <li class="numbered visible"><a href="../meta/index.html" data-alt-hash="meta-programming"><span class="number">14.</span>Meta programming</a></li>
+          <li class="numbered visible"><a href="../regular-expression/index.html" data-alt-hash="regular-expression"><span class="number">14.</span>Regular Expression</a></li>
+          <li class="numbered visible"><a href="../meta/index.html" data-alt-hash="meta-programming"><span class="number">15.</span>Meta programming</a></li>
           <li class="numbered visible">
-            <a href="../static-groovy/index.html" data-alt-hash="groovy"><span class="number">15.</span>静的Groovy</a>
+            <a href="../static-groovy/index.html" data-alt-hash="groovy"><span class="number">16.</span>静的Groovy</a>
             <ul>
-              <li class="numbered visible"><a href="../static-groovy/index.html#id-b940591a92fde629fb71008c7b7e053237d7b8b4"><span class="number">15.1.</span>メソッド</a></li>
+              <li class="numbered visible"><a href="../static-groovy/index.html#id-b940591a92fde629fb71008c7b7e053237d7b8b4"><span class="number">16.1.</span>メソッド</a></li>
               <li class="numbered visible">
-                <a href="../static-groovy/index.html#id-83dac9bdf0c71085ffa7a638a3bee37744fe1645"><span class="number">15.2.</span>ローカル変数</a>
+                <a href="../static-groovy/index.html#id-83dac9bdf0c71085ffa7a638a3bee37744fe1645"><span class="number">16.2.</span>ローカル変数</a>
                 <ul>
-                  <li class="numbered visible"><a href="../static-groovy/index.html#compilestatictypechecked"><span class="number">15.2.1.</span>CompileStaticとTypeChecked</a></li>
+                  <li class="numbered visible"><a href="../static-groovy/index.html#compilestatictypechecked"><span class="number">16.2.1.</span>CompileStaticとTypeChecked</a></li>
                 </ul>
               </li>
             </ul>
           </li>
-          <li class="numbered visible"><a href="../static-groovy/index.html#id-5af6083ed6fdbe3e7b8bee85529e65aa3468da09"><span class="number">16.</span>まとめ</a></li>
+          <li class="numbered visible"><a href="../static-groovy/index.html#id-5af6083ed6fdbe3e7b8bee85529e65aa3468da09"><span class="number">17.</span>まとめ</a></li>
           <li class="numbered visible">
-            <a href="../practice/index.html" data-alt-hash="id-0f8f1522a9609f45ebe45c4c425ad7a726b1bb7f"><span class="number">17.</span>実践/サンプル集</a>
+            <a href="../practice/index.html" data-alt-hash="id-0f8f1522a9609f45ebe45c4c425ad7a726b1bb7f"><span class="number">18.</span>実践/サンプル集</a>
             <ul>
-              <li class="numbered visible"><a href="../practice/samples-link.html" data-alt-hash="id-0d3bb1d122715fe5433159eb6ea50caa02c25184"><span class="number">17.1.</span>サンプルリンク集</a></li>
-              <li class="numbered visible"><a href="../practice/cli-tool.html" data-alt-hash="cli"><span class="number">17.2.</span>CLIツールの実装</a></li>
+              <li class="numbered visible"><a href="../practice/samples-link.html" data-alt-hash="id-0d3bb1d122715fe5433159eb6ea50caa02c25184"><span class="number">18.1.</span>サンプルリンク集</a></li>
+              <li class="numbered visible"><a href="../practice/cli-tool.html" data-alt-hash="cli"><span class="number">18.2.</span>CLIツールの実装</a></li>
             </ul>
           </li>
         </ul>
@@ -182,16 +192,144 @@
         <div class="content-handle"></div>
         <div class="content-container">
           <div class="content-nav content-nav-top">
+            <a class="prev-page" href="../collection/map.html">
+            <i class="fa fa-angle-left"></i>
+            <span class="number">8.</span>
+            マップ
+            </a>
+            <a class="next-page" href="../class/index.html">
+            <span class="number">10.</span>
+            クラス
+            <i class="fa fa-angle-right"></i>
+            </a>
           </div>
           <div class="page-toc">
             <ul>
-              <li class="unnumbered visible"><a href="#null">Nullセーフ</a></li>
+              <li class="numbered visible">
+                <a href="#null"><span class="number">9.</span>Nullセーフ</a>
+                <ul>
+                  <li class="numbered visible"><a href="#java8optional"><span class="number">9.1.</span>Java8のOptional</a></li>
+                  <li class="numbered visible"><a href="#groovy"><span class="number">9.2.</span>Groovyのセーフナビゲーション</a></li>
+                  <li class="numbered visible"><a href="#id-462a855457497e0f699b75d35950c57e31a0545b"><span class="number">9.3.</span>サンプルコード</a></li>
+                  <li class="numbered visible"><a href="#id-18aee802319ad5c16cd55c381c87b42226a4b149"><span class="number">9.4.</span>その他の方法</a></li>
+                </ul>
+              </li>
             </ul>
           </div>
           <div class="main-content">
-            <h1 id="null">Nullセーフ</h1>
+            <h1 id="null"><span class="number">9.</span>Nullセーフ</h1>
+            <p>さて、悪名高い<code>NullPointerException</code>をご存知でしょうか？<br/>Javaでプログラミングしたことがある人は必ず見たことのある例外です。<br/>変数に何も格納されていないのにアクセスすると発生します。 </p>
+            <pre><code class="groovy">// Stringの値をIntegerにして2倍する
+String npe = null
+npe.toInteger() * 2
+</code></pre>
+            <pre><code class="terminal">Exception thrown
+
+java.lang.NullPointerException: Cannot invoke method toInteger() on null object
+	at ConsoleScript1.run(ConsoleScript1:2)
+</code></pre>
+            <p>旧来の対処方法としては、変数に値が入っているかどうかを処理の前にif文でチェックしていました。 </p>
+            <pre><code class="groovy">// Stringの値をIntegerにして2倍する(nullの場合は0を返す）
+String npe = null
+if (npe != null) {
+    return npe.toInteger() * 2
+} else {
+    return 0
+}
+</code></pre>
+            <h2 id="java8optional"><span class="number">9.1.</span>Java8のOptional</h2>
+            <p>Java系言語を使う上で避けては通れないこの<code>NullPointerException</code>ですが、Java8からは<code>Optional</code>という仕組みが用意されました。<br/>これは、 <strong>nullかも知れない値を包む</strong> ものです。<br/>例えば上記でエラーになった、Stringの値をIntegerにして2倍する、という機能をOptionalを使って以下のように記述できます。</p>
+            <pre><code class="groovy">String npe = null
+Optional&lt;String&gt; nptOpt = Optional.ofNullable(npe)
+assert 0 == nptOpt.map {it.toInteger() * 2}.orElse(0)
+</code></pre>
+            <p>コードからif文が消えましたね！<br/>GroovyはJavaなので、このようにJavaのOptionalを利用して安全にコードを書けます。 </p>
+            <p>上記の<code>map</code>メソッドは、Optionalで包まれたデータを操作して返す、というメソッドです。<br/>mapとは別に<code>filter</code>というメソッドも有り、コチラは指定した条件に合致する場合はそのままOptionalで包まれた値を返し、一致しない場合は<code>Optional.empty()</code>を返す、というメソッドです。</p>
+            <pre><code class="groovy">assert Optional.empty() == Optional.ofNullable(null).filter{it % 2 == 0}
+assert Optional.empty() == Optional.ofNullable(1).filter{it % 2 == 0}
+assert Optional.empty() != Optional.ofNullable(2).filter{it % 2 == 0}
+assert Optional.ofNullable(2) == Optional.ofNullable(2).filter{it % 2 == 0}
+</code></pre>
+            <p>なお、Optional.empty()は当然nullでありません。</p>
+            <h2 id="groovy"><span class="number">9.2.</span>Groovyのセーフナビゲーション</h2>
+            <p>Java8のOptionalの登場以前から、より簡潔なNullセーフな手段をGroovyは提供しています。<br/>それがセーフナビゲーションと呼ばれる<code>?.</code>という記法で利用する機能です。<br/>以下のコードを見てみてください。 </p>
+            <pre><code class="groovy">String npe = null
+assert null == npe?.toInteger()?.class?.name
+assert null == null?.toInteger()?.class?.name
+assert &quot;java.lang.Integer&quot; == &quot;1&quot;?.toInteger()?.class?.name
+</code></pre>
+            <p>メソッドやプロパティへのアクセスが<code>.</code>の代わりに<code>?.</code>を利用しただけでです。<br/>この<code>?.</code>を使うとGroovyはレシーバがnullの場合、レシーバが実行しようとしているメソッド or クロージャは実行せずに単純にnullを返します。<br/>その返されたnullをチェーンして、再度別のメソッドが呼ばれる際にも<code>?.</code>を利用すれば同様にnullが返されて&hellip;という処理が最後まで続き、最終的には当然nullが返されます。<br/>また、<a href="/groovy-tutorial/if/index.html">If文</a>で述べた<code>エルビス演算子</code>と併用する事も当然可能です。</p>
+            <pre><code class="groovy">def a = &quot;1&quot;?.toInteger()?.class?.name ?: &#39;this is null&#39;
+assert a == &#39;java.lang.Integer&#39;
+
+def b = null?.toInteger()?.class?.name ?: &#39;this is null&#39;
+assert b == &#39;this is null&#39;
+</code></pre>
+            <p>どちらが優れているかどうかではなくて、場合によってどちらを利用するかを切り分けるのがいいと思います。<br/>個人的には簡潔なGroovyのセーフナビゲーションの方が好きですが、<code>Optional.filter</code>に該当する機能が無いので、もし<code>Optional.filter</code>を利用しないのであれば三項演算子を利用する必要が有ります。<br/>そういった細かな違いもあるので、まずは色々試してみることをおすすめします。 </p>
+            <h2 id="id-462a855457497e0f699b75d35950c57e31a0545b"><span class="number">9.3.</span>サンプルコード</h2>
+            <p>さて、それではココで今回の総まとめとして、<br/><strong>nullを含む、String型のリストの各値をIntegerに変換して、整数かつ偶数の値を抽出して2倍して合計する</strong><br/>という処理を、Groovyのコレクションの機能を使いつつ、Java8のOptionalとGroovyのセーフナビゲーションで実装してみます。</p>
+            <pre><code class="groovy">List list = [&quot;-5&quot;, &quot;-4&quot;, null, &quot;-3&quot;, &quot;-2&quot;, null, &quot;-1&quot;, &quot;0&quot;, null, &quot;1&quot;, &quot;2&quot;, &quot;3&quot;, null, &quot;4&quot;, &quot;5&quot;, null]
+
+// Java8のOptional版
+def optionalVersion = {-&gt;
+    list.collect {
+        Optional.ofNullable(it)
+    }.collect {
+        it.map{it.toInteger()}
+    }.collect {
+        it.filter{it % 2 == 0 &amp;&amp; it &gt; 0}
+    }.collect {
+        it.map{it * 2}
+    }.collect {
+        it.orElse(0)
+    }.sum()
+}
+assert 12 == optionalVersion()
+
+// Groovyのセーフナビゲーション版（エルビス演算子も利用）
+def safeNaviVersion = {-&gt;
+    list.collect {
+        it?.toInteger()?:0
+    }.findAll {
+        it % 2 == 0 &amp;&amp; it &gt; 0
+    }.collect {
+        it * 2
+    }.sum()
+}
+assert 12 == safeNaviVersion()
+</code></pre>
+            <p>どちらも結果は同じです。 </p>
+            <h2 id="id-18aee802319ad5c16cd55c381c87b42226a4b149"><span class="number">9.4.</span>その他の方法</h2>
+            <p>JavaのOptionalは、中身が1つあるか何もないリストみたいなものなので、Groovyのリストを便利に扱う機能を利用することで代用することも出来ます。 </p>
+            <pre><code class="groovy">def list = []
+assert &quot;empty&quot; == list ? list.head() : &#39;empty&#39;
+
+list = [&quot;yeay&quot;]
+assert &quot;yeay&quot; == list ? list.head() : &#39;empty&#39;
+
+// GroovyでもメタプログラミングでListに機能を追加すればよりスマートに表現できる！
+// ListクラスにorElseメソッドを追加
+List.metaClass.orElse = {def alternativeValue -&gt;
+    delegate ? delegate.head() : alternativeValue
+}
+
+assert &quot;yeay&quot; == list.orElse(99)
+list = []
+assert 99 == list.orElse(99)
+assert &#39;java.lang.Integer&#39; == list.orElse(99).class.name
+</code></pre>
           </div>
           <div class="content-nav content-nav-bottom">
+            <a class="prev-page" href="../collection/map.html">
+            <i class="fa fa-angle-left"></i>
+            <span class="number">8.</span>
+            マップ
+            </a>
+            <a class="next-page" href="../class/index.html">
+            <span class="number">10.</span>
+            クラス
+            <i class="fa fa-angle-right"></i>
+            </a>
           </div>
           <div class="footer">
             <p class="credit text-muted">Powered by <a href="https://github.com/kobo/gaiden">Gaiden</a></p>

@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>14. Meta programming - Apache Groovyチュートリアル</title>
+    <title>15. Meta programming - Apache Groovyチュートリアル</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/font-awesome.min.css">
@@ -102,8 +102,9 @@
             <ul>
               <li class="numbered visible"><a href="../closure/index.html#id-46071e2f627a54763ae382cb6ffc2b0b1e589013"><span class="number">7.1.</span>クロージャを使ってみる</a></li>
               <li class="numbered visible"><a href="../closure/index.html#id-a6cf382c283896094fb20f51b389e9deec62dd3f"><span class="number">7.2.</span>さらに詳しく</a></li>
-              <li class="numbered visible"><a href="../closure/index.html#thisownerdelegate"><span class="number">7.3.</span>特殊変数this、owner、delegate</a></li>
-              <li class="numbered visible"><a href="../closure/index.html#id-6578dcdcd86d65fc13e0e91b122bc41b2ba1ba08"><span class="number">7.4.</span>まとめ</a></li>
+              <li class="numbered visible"><a href="../closure/index.html#id-72c1711cd57bf25317237dd75f8c6d35545942dd"><span class="number">7.3.</span>関数合成</a></li>
+              <li class="numbered visible"><a href="../closure/index.html#thisownerdelegate"><span class="number">7.4.</span>特殊変数this、owner、delegate</a></li>
+              <li class="numbered visible"><a href="../closure/index.html#id-6578dcdcd86d65fc13e0e91b122bc41b2ba1ba08"><span class="number">7.5.</span>まとめ</a></li>
             </ul>
           </li>
           <li class="numbered visible">
@@ -114,66 +115,75 @@
             </ul>
           </li>
           <li class="numbered visible">
-            <a href="../class/index.html" data-alt-hash="id-8b27332ee07f76ea4db44d6a7bdcdcf813427e3a"><span class="number">9.</span>クラス</a>
+            <a href="../null-safe/index.html" data-alt-hash="null"><span class="number">9.</span>Nullセーフ</a>
             <ul>
-              <li class="numbered visible"><a href="../class/index.html#2"><span class="number">9.1.</span>クラスは2つ以上定義しても良い</a></li>
-              <li class="numbered visible"><a href="../class/index.html#id-400faaa494727732c94af024c637e0d2129b72f9"><span class="number">9.2.</span>セッターとゲッター</a></li>
-            </ul>
-          </li>
-          <li class="numbered visible"><a href="../class/trait.html" data-alt-hash="trait"><span class="number">10.</span>Trait（トレイト）</a></li>
-          <li class="numbered visible">
-            <a href="../external-library/index.html" data-alt-hash="groovy"><span class="number">11.</span>Groovyで外部ライブラリを利用する</a>
-            <ul>
-              <li class="numbered visible"><a href="../external-library/index.html#id-48131f790a0fdc19674de80e966b50d2d2954fa2"><span class="number">11.1.</span>実際に試してみよう</a></li>
-              <li class="numbered visible"><a href="../external-library/index.html#id-d3fd06b21472dc0e54bce2592d61eaa19369b573"><span class="number">11.2.</span>複数のライブラリを扱う</a></li>
-              <li class="numbered visible"><a href="../external-library/index.html#id-28df4375b1a38168d0fe528efd2d82fb65d313c0"><span class="number">11.3.</span>ちょっと補足</a></li>
-              <li class="numbered visible"><a href="../external-library/index.html#id-1ff68e378d712588bb7314663b7ec5f58e4ba62a"><span class="number">11.4.</span>まとめ</a></li>
+              <li class="numbered visible"><a href="../null-safe/index.html#java8optional"><span class="number">9.1.</span>Java8のOptional</a></li>
+              <li class="numbered visible"><a href="../null-safe/index.html#groovy"><span class="number">9.2.</span>Groovyのセーフナビゲーション</a></li>
+              <li class="numbered visible"><a href="../null-safe/index.html#id-462a855457497e0f699b75d35950c57e31a0545b"><span class="number">9.3.</span>サンプルコード</a></li>
+              <li class="numbered visible"><a href="../null-safe/index.html#id-18aee802319ad5c16cd55c381c87b42226a4b149"><span class="number">9.4.</span>その他の方法</a></li>
             </ul>
           </li>
           <li class="numbered visible">
-            <a href="../unit-test/index.html" data-alt-hash="id-24ac0411c687979683b211ecda6744d511f0ac85"><span class="number">12.</span>ユニットテスト</a>
+            <a href="../class/index.html" data-alt-hash="id-8b27332ee07f76ea4db44d6a7bdcdcf813427e3a"><span class="number">10.</span>クラス</a>
             <ul>
-              <li class="numbered visible"><a href="../unit-test/index.html#spock"><span class="number">12.1.</span>初めてのSpock</a></li>
+              <li class="numbered visible"><a href="../class/index.html#2"><span class="number">10.1.</span>クラスは2つ以上定義しても良い</a></li>
+              <li class="numbered visible"><a href="../class/index.html#id-400faaa494727732c94af024c637e0d2129b72f9"><span class="number">10.2.</span>セッターとゲッター</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible"><a href="../class/trait.html" data-alt-hash="trait"><span class="number">11.</span>Trait（トレイト）</a></li>
+          <li class="numbered visible">
+            <a href="../external-library/index.html" data-alt-hash="groovy"><span class="number">12.</span>Groovyで外部ライブラリを利用する</a>
+            <ul>
+              <li class="numbered visible"><a href="../external-library/index.html#id-48131f790a0fdc19674de80e966b50d2d2954fa2"><span class="number">12.1.</span>実際に試してみよう</a></li>
+              <li class="numbered visible"><a href="../external-library/index.html#id-d3fd06b21472dc0e54bce2592d61eaa19369b573"><span class="number">12.2.</span>複数のライブラリを扱う</a></li>
+              <li class="numbered visible"><a href="../external-library/index.html#id-28df4375b1a38168d0fe528efd2d82fb65d313c0"><span class="number">12.3.</span>ちょっと補足</a></li>
+              <li class="numbered visible"><a href="../external-library/index.html#id-1ff68e378d712588bb7314663b7ec5f58e4ba62a"><span class="number">12.4.</span>まとめ</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="../unit-test/index.html" data-alt-hash="id-24ac0411c687979683b211ecda6744d511f0ac85"><span class="number">13.</span>ユニットテスト</a>
+            <ul>
+              <li class="numbered visible"><a href="../unit-test/index.html#spock"><span class="number">13.1.</span>初めてのSpock</a></li>
               <li class="numbered visible">
-                <a href="../unit-test/index.html#id-be6ccbd026a73b061ec8e027551cad6733d3deb4"><span class="number">12.2.</span>フィーチャーメソッドとフィーチャーブロック</a>
+                <a href="../unit-test/index.html#id-be6ccbd026a73b061ec8e027551cad6733d3deb4"><span class="number">13.2.</span>フィーチャーメソッドとフィーチャーブロック</a>
                 <ul>
-                  <li class="numbered visible"><a href="../unit-test/index.html#whenthensetup"><span class="number">12.2.1.</span>whenとthen（そしてsetup）</a></li>
-                  <li class="numbered visible"><a href="../unit-test/index.html#expect"><span class="number">12.2.2.</span>expect</a></li>
-                  <li class="numbered visible"><a href="../unit-test/index.html#cleanup"><span class="number">12.2.3.</span>cleanup</a></li>
+                  <li class="numbered visible"><a href="../unit-test/index.html#whenthensetup"><span class="number">13.2.1.</span>whenとthen（そしてsetup）</a></li>
+                  <li class="numbered visible"><a href="../unit-test/index.html#expect"><span class="number">13.2.2.</span>expect</a></li>
+                  <li class="numbered visible"><a href="../unit-test/index.html#cleanup"><span class="number">13.2.3.</span>cleanup</a></li>
                   <li class="numbered visible">
-                    <a href="../unit-test/index.html#where"><span class="number">12.2.4.</span>where</a>
+                    <a href="../unit-test/index.html#where"><span class="number">13.2.4.</span>where</a>
                     <ul>
-                      <li class="numbered invisible"><a href="../unit-test/index.html#unroll"><span class="number">12.2.4.1.</span>@Unrollアノテーション</a></li>
+                      <li class="numbered invisible"><a href="../unit-test/index.html#unroll"><span class="number">13.2.4.1.</span>@Unrollアノテーション</a></li>
                     </ul>
                   </li>
                 </ul>
               </li>
-              <li class="numbered visible"><a href="../unit-test/index.html#id-bdd1a5a8c07a267571c3bd781ab9082669c5959f"><span class="number">12.3.</span>フィクスチャーメソッド</a></li>
-              <li class="numbered visible"><a href="../unit-test/index.html#id-b3c1ea2a3b540798f7cd793487a346fffeec9c09"><span class="number">12.4.</span>各フィーチャーメソッドで共通して利用する変数</a></li>
-              <li class="numbered visible"><a href="../unit-test/index.html#id-efba724c0eb52b004593236e37d0a25a1544ad6b"><span class="number">12.5.</span>実践</a></li>
-              <li class="numbered visible"><a href="../unit-test/index.html#id-0a441a00637070d401d9e5a2653510c5967d9a05"><span class="number">12.6.</span>まとめ</a></li>
+              <li class="numbered visible"><a href="../unit-test/index.html#id-bdd1a5a8c07a267571c3bd781ab9082669c5959f"><span class="number">13.3.</span>フィクスチャーメソッド</a></li>
+              <li class="numbered visible"><a href="../unit-test/index.html#id-b3c1ea2a3b540798f7cd793487a346fffeec9c09"><span class="number">13.4.</span>各フィーチャーメソッドで共通して利用する変数</a></li>
+              <li class="numbered visible"><a href="../unit-test/index.html#id-efba724c0eb52b004593236e37d0a25a1544ad6b"><span class="number">13.5.</span>実践</a></li>
+              <li class="numbered visible"><a href="../unit-test/index.html#id-0a441a00637070d401d9e5a2653510c5967d9a05"><span class="number">13.6.</span>まとめ</a></li>
             </ul>
           </li>
-          <li class="numbered visible"><a href="../regular-expression/index.html" data-alt-hash="regular-expression"><span class="number">13.</span>Regular Expression</a></li>
-          <li class="numbered visible"><a href="index.html" data-alt-hash="meta-programming"><span class="number">14.</span>Meta programming</a></li>
+          <li class="numbered visible"><a href="../regular-expression/index.html" data-alt-hash="regular-expression"><span class="number">14.</span>Regular Expression</a></li>
+          <li class="numbered visible"><a href="index.html" data-alt-hash="meta-programming"><span class="number">15.</span>Meta programming</a></li>
           <li class="numbered visible">
-            <a href="../static-groovy/index.html" data-alt-hash="groovy"><span class="number">15.</span>静的Groovy</a>
+            <a href="../static-groovy/index.html" data-alt-hash="groovy"><span class="number">16.</span>静的Groovy</a>
             <ul>
-              <li class="numbered visible"><a href="../static-groovy/index.html#id-b940591a92fde629fb71008c7b7e053237d7b8b4"><span class="number">15.1.</span>メソッド</a></li>
+              <li class="numbered visible"><a href="../static-groovy/index.html#id-b940591a92fde629fb71008c7b7e053237d7b8b4"><span class="number">16.1.</span>メソッド</a></li>
               <li class="numbered visible">
-                <a href="../static-groovy/index.html#id-83dac9bdf0c71085ffa7a638a3bee37744fe1645"><span class="number">15.2.</span>ローカル変数</a>
+                <a href="../static-groovy/index.html#id-83dac9bdf0c71085ffa7a638a3bee37744fe1645"><span class="number">16.2.</span>ローカル変数</a>
                 <ul>
-                  <li class="numbered visible"><a href="../static-groovy/index.html#compilestatictypechecked"><span class="number">15.2.1.</span>CompileStaticとTypeChecked</a></li>
+                  <li class="numbered visible"><a href="../static-groovy/index.html#compilestatictypechecked"><span class="number">16.2.1.</span>CompileStaticとTypeChecked</a></li>
                 </ul>
               </li>
             </ul>
           </li>
-          <li class="numbered visible"><a href="../static-groovy/index.html#id-5af6083ed6fdbe3e7b8bee85529e65aa3468da09"><span class="number">16.</span>まとめ</a></li>
+          <li class="numbered visible"><a href="../static-groovy/index.html#id-5af6083ed6fdbe3e7b8bee85529e65aa3468da09"><span class="number">17.</span>まとめ</a></li>
           <li class="numbered visible">
-            <a href="../practice/index.html" data-alt-hash="id-0f8f1522a9609f45ebe45c4c425ad7a726b1bb7f"><span class="number">17.</span>実践/サンプル集</a>
+            <a href="../practice/index.html" data-alt-hash="id-0f8f1522a9609f45ebe45c4c425ad7a726b1bb7f"><span class="number">18.</span>実践/サンプル集</a>
             <ul>
-              <li class="numbered visible"><a href="../practice/samples-link.html" data-alt-hash="id-0d3bb1d122715fe5433159eb6ea50caa02c25184"><span class="number">17.1.</span>サンプルリンク集</a></li>
-              <li class="numbered visible"><a href="../practice/cli-tool.html" data-alt-hash="cli"><span class="number">17.2.</span>CLIツールの実装</a></li>
+              <li class="numbered visible"><a href="../practice/samples-link.html" data-alt-hash="id-0d3bb1d122715fe5433159eb6ea50caa02c25184"><span class="number">18.1.</span>サンプルリンク集</a></li>
+              <li class="numbered visible"><a href="../practice/cli-tool.html" data-alt-hash="cli"><span class="number">18.2.</span>CLIツールの実装</a></li>
             </ul>
           </li>
         </ul>
@@ -184,32 +194,32 @@
           <div class="content-nav content-nav-top">
             <a class="prev-page" href="../regular-expression/index.html">
             <i class="fa fa-angle-left"></i>
-            <span class="number">13.</span>
+            <span class="number">14.</span>
             Regular Expression
             </a>
             <a class="next-page" href="../static-groovy/index.html">
-            <span class="number">15.</span>
+            <span class="number">16.</span>
             静的Groovy
             <i class="fa fa-angle-right"></i>
             </a>
           </div>
           <div class="page-toc">
             <ul>
-              <li class="numbered visible"><a href="#meta-programming"><span class="number">14.</span>Meta programming</a></li>
+              <li class="numbered visible"><a href="#meta-programming"><span class="number">15.</span>Meta programming</a></li>
             </ul>
           </div>
           <div class="main-content">
-            <h1 id="meta-programming"><span class="number">14.</span>Meta programming</h1>
+            <h1 id="meta-programming"><span class="number">15.</span>Meta programming</h1>
             <p><a href="http://qiita.com/saba1024/items/531c620e1462a4a3b344">http://qiita.com/saba1024/items/531c620e1462a4a3b344</a></p>
           </div>
           <div class="content-nav content-nav-bottom">
             <a class="prev-page" href="../regular-expression/index.html">
             <i class="fa fa-angle-left"></i>
-            <span class="number">13.</span>
+            <span class="number">14.</span>
             Regular Expression
             </a>
             <a class="next-page" href="../static-groovy/index.html">
-            <span class="number">15.</span>
+            <span class="number">16.</span>
             静的Groovy
             <i class="fa fa-angle-right"></i>
             </a>

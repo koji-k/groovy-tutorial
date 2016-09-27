@@ -102,8 +102,9 @@
             <ul>
               <li class="numbered visible"><a href="index.html#id-46071e2f627a54763ae382cb6ffc2b0b1e589013"><span class="number">7.1.</span>クロージャを使ってみる</a></li>
               <li class="numbered visible"><a href="index.html#id-a6cf382c283896094fb20f51b389e9deec62dd3f"><span class="number">7.2.</span>さらに詳しく</a></li>
-              <li class="numbered visible"><a href="index.html#thisownerdelegate"><span class="number">7.3.</span>特殊変数this、owner、delegate</a></li>
-              <li class="numbered visible"><a href="index.html#id-6578dcdcd86d65fc13e0e91b122bc41b2ba1ba08"><span class="number">7.4.</span>まとめ</a></li>
+              <li class="numbered visible"><a href="index.html#id-72c1711cd57bf25317237dd75f8c6d35545942dd"><span class="number">7.3.</span>関数合成</a></li>
+              <li class="numbered visible"><a href="index.html#thisownerdelegate"><span class="number">7.4.</span>特殊変数this、owner、delegate</a></li>
+              <li class="numbered visible"><a href="index.html#id-6578dcdcd86d65fc13e0e91b122bc41b2ba1ba08"><span class="number">7.5.</span>まとめ</a></li>
             </ul>
           </li>
           <li class="numbered visible">
@@ -114,66 +115,75 @@
             </ul>
           </li>
           <li class="numbered visible">
-            <a href="../class/index.html" data-alt-hash="id-8b27332ee07f76ea4db44d6a7bdcdcf813427e3a"><span class="number">9.</span>クラス</a>
+            <a href="../null-safe/index.html" data-alt-hash="null"><span class="number">9.</span>Nullセーフ</a>
             <ul>
-              <li class="numbered visible"><a href="../class/index.html#2"><span class="number">9.1.</span>クラスは2つ以上定義しても良い</a></li>
-              <li class="numbered visible"><a href="../class/index.html#id-400faaa494727732c94af024c637e0d2129b72f9"><span class="number">9.2.</span>セッターとゲッター</a></li>
-            </ul>
-          </li>
-          <li class="numbered visible"><a href="../class/trait.html" data-alt-hash="trait"><span class="number">10.</span>Trait（トレイト）</a></li>
-          <li class="numbered visible">
-            <a href="../external-library/index.html" data-alt-hash="groovy"><span class="number">11.</span>Groovyで外部ライブラリを利用する</a>
-            <ul>
-              <li class="numbered visible"><a href="../external-library/index.html#id-48131f790a0fdc19674de80e966b50d2d2954fa2"><span class="number">11.1.</span>実際に試してみよう</a></li>
-              <li class="numbered visible"><a href="../external-library/index.html#id-d3fd06b21472dc0e54bce2592d61eaa19369b573"><span class="number">11.2.</span>複数のライブラリを扱う</a></li>
-              <li class="numbered visible"><a href="../external-library/index.html#id-28df4375b1a38168d0fe528efd2d82fb65d313c0"><span class="number">11.3.</span>ちょっと補足</a></li>
-              <li class="numbered visible"><a href="../external-library/index.html#id-1ff68e378d712588bb7314663b7ec5f58e4ba62a"><span class="number">11.4.</span>まとめ</a></li>
+              <li class="numbered visible"><a href="../null-safe/index.html#java8optional"><span class="number">9.1.</span>Java8のOptional</a></li>
+              <li class="numbered visible"><a href="../null-safe/index.html#groovy"><span class="number">9.2.</span>Groovyのセーフナビゲーション</a></li>
+              <li class="numbered visible"><a href="../null-safe/index.html#id-462a855457497e0f699b75d35950c57e31a0545b"><span class="number">9.3.</span>サンプルコード</a></li>
+              <li class="numbered visible"><a href="../null-safe/index.html#id-18aee802319ad5c16cd55c381c87b42226a4b149"><span class="number">9.4.</span>その他の方法</a></li>
             </ul>
           </li>
           <li class="numbered visible">
-            <a href="../unit-test/index.html" data-alt-hash="id-24ac0411c687979683b211ecda6744d511f0ac85"><span class="number">12.</span>ユニットテスト</a>
+            <a href="../class/index.html" data-alt-hash="id-8b27332ee07f76ea4db44d6a7bdcdcf813427e3a"><span class="number">10.</span>クラス</a>
             <ul>
-              <li class="numbered visible"><a href="../unit-test/index.html#spock"><span class="number">12.1.</span>初めてのSpock</a></li>
+              <li class="numbered visible"><a href="../class/index.html#2"><span class="number">10.1.</span>クラスは2つ以上定義しても良い</a></li>
+              <li class="numbered visible"><a href="../class/index.html#id-400faaa494727732c94af024c637e0d2129b72f9"><span class="number">10.2.</span>セッターとゲッター</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible"><a href="../class/trait.html" data-alt-hash="trait"><span class="number">11.</span>Trait（トレイト）</a></li>
+          <li class="numbered visible">
+            <a href="../external-library/index.html" data-alt-hash="groovy"><span class="number">12.</span>Groovyで外部ライブラリを利用する</a>
+            <ul>
+              <li class="numbered visible"><a href="../external-library/index.html#id-48131f790a0fdc19674de80e966b50d2d2954fa2"><span class="number">12.1.</span>実際に試してみよう</a></li>
+              <li class="numbered visible"><a href="../external-library/index.html#id-d3fd06b21472dc0e54bce2592d61eaa19369b573"><span class="number">12.2.</span>複数のライブラリを扱う</a></li>
+              <li class="numbered visible"><a href="../external-library/index.html#id-28df4375b1a38168d0fe528efd2d82fb65d313c0"><span class="number">12.3.</span>ちょっと補足</a></li>
+              <li class="numbered visible"><a href="../external-library/index.html#id-1ff68e378d712588bb7314663b7ec5f58e4ba62a"><span class="number">12.4.</span>まとめ</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="../unit-test/index.html" data-alt-hash="id-24ac0411c687979683b211ecda6744d511f0ac85"><span class="number">13.</span>ユニットテスト</a>
+            <ul>
+              <li class="numbered visible"><a href="../unit-test/index.html#spock"><span class="number">13.1.</span>初めてのSpock</a></li>
               <li class="numbered visible">
-                <a href="../unit-test/index.html#id-be6ccbd026a73b061ec8e027551cad6733d3deb4"><span class="number">12.2.</span>フィーチャーメソッドとフィーチャーブロック</a>
+                <a href="../unit-test/index.html#id-be6ccbd026a73b061ec8e027551cad6733d3deb4"><span class="number">13.2.</span>フィーチャーメソッドとフィーチャーブロック</a>
                 <ul>
-                  <li class="numbered visible"><a href="../unit-test/index.html#whenthensetup"><span class="number">12.2.1.</span>whenとthen（そしてsetup）</a></li>
-                  <li class="numbered visible"><a href="../unit-test/index.html#expect"><span class="number">12.2.2.</span>expect</a></li>
-                  <li class="numbered visible"><a href="../unit-test/index.html#cleanup"><span class="number">12.2.3.</span>cleanup</a></li>
+                  <li class="numbered visible"><a href="../unit-test/index.html#whenthensetup"><span class="number">13.2.1.</span>whenとthen（そしてsetup）</a></li>
+                  <li class="numbered visible"><a href="../unit-test/index.html#expect"><span class="number">13.2.2.</span>expect</a></li>
+                  <li class="numbered visible"><a href="../unit-test/index.html#cleanup"><span class="number">13.2.3.</span>cleanup</a></li>
                   <li class="numbered visible">
-                    <a href="../unit-test/index.html#where"><span class="number">12.2.4.</span>where</a>
+                    <a href="../unit-test/index.html#where"><span class="number">13.2.4.</span>where</a>
                     <ul>
-                      <li class="numbered invisible"><a href="../unit-test/index.html#unroll"><span class="number">12.2.4.1.</span>@Unrollアノテーション</a></li>
+                      <li class="numbered invisible"><a href="../unit-test/index.html#unroll"><span class="number">13.2.4.1.</span>@Unrollアノテーション</a></li>
                     </ul>
                   </li>
                 </ul>
               </li>
-              <li class="numbered visible"><a href="../unit-test/index.html#id-bdd1a5a8c07a267571c3bd781ab9082669c5959f"><span class="number">12.3.</span>フィクスチャーメソッド</a></li>
-              <li class="numbered visible"><a href="../unit-test/index.html#id-b3c1ea2a3b540798f7cd793487a346fffeec9c09"><span class="number">12.4.</span>各フィーチャーメソッドで共通して利用する変数</a></li>
-              <li class="numbered visible"><a href="../unit-test/index.html#id-efba724c0eb52b004593236e37d0a25a1544ad6b"><span class="number">12.5.</span>実践</a></li>
-              <li class="numbered visible"><a href="../unit-test/index.html#id-0a441a00637070d401d9e5a2653510c5967d9a05"><span class="number">12.6.</span>まとめ</a></li>
+              <li class="numbered visible"><a href="../unit-test/index.html#id-bdd1a5a8c07a267571c3bd781ab9082669c5959f"><span class="number">13.3.</span>フィクスチャーメソッド</a></li>
+              <li class="numbered visible"><a href="../unit-test/index.html#id-b3c1ea2a3b540798f7cd793487a346fffeec9c09"><span class="number">13.4.</span>各フィーチャーメソッドで共通して利用する変数</a></li>
+              <li class="numbered visible"><a href="../unit-test/index.html#id-efba724c0eb52b004593236e37d0a25a1544ad6b"><span class="number">13.5.</span>実践</a></li>
+              <li class="numbered visible"><a href="../unit-test/index.html#id-0a441a00637070d401d9e5a2653510c5967d9a05"><span class="number">13.6.</span>まとめ</a></li>
             </ul>
           </li>
-          <li class="numbered visible"><a href="../regular-expression/index.html" data-alt-hash="regular-expression"><span class="number">13.</span>Regular Expression</a></li>
-          <li class="numbered visible"><a href="../meta/index.html" data-alt-hash="meta-programming"><span class="number">14.</span>Meta programming</a></li>
+          <li class="numbered visible"><a href="../regular-expression/index.html" data-alt-hash="regular-expression"><span class="number">14.</span>Regular Expression</a></li>
+          <li class="numbered visible"><a href="../meta/index.html" data-alt-hash="meta-programming"><span class="number">15.</span>Meta programming</a></li>
           <li class="numbered visible">
-            <a href="../static-groovy/index.html" data-alt-hash="groovy"><span class="number">15.</span>静的Groovy</a>
+            <a href="../static-groovy/index.html" data-alt-hash="groovy"><span class="number">16.</span>静的Groovy</a>
             <ul>
-              <li class="numbered visible"><a href="../static-groovy/index.html#id-b940591a92fde629fb71008c7b7e053237d7b8b4"><span class="number">15.1.</span>メソッド</a></li>
+              <li class="numbered visible"><a href="../static-groovy/index.html#id-b940591a92fde629fb71008c7b7e053237d7b8b4"><span class="number">16.1.</span>メソッド</a></li>
               <li class="numbered visible">
-                <a href="../static-groovy/index.html#id-83dac9bdf0c71085ffa7a638a3bee37744fe1645"><span class="number">15.2.</span>ローカル変数</a>
+                <a href="../static-groovy/index.html#id-83dac9bdf0c71085ffa7a638a3bee37744fe1645"><span class="number">16.2.</span>ローカル変数</a>
                 <ul>
-                  <li class="numbered visible"><a href="../static-groovy/index.html#compilestatictypechecked"><span class="number">15.2.1.</span>CompileStaticとTypeChecked</a></li>
+                  <li class="numbered visible"><a href="../static-groovy/index.html#compilestatictypechecked"><span class="number">16.2.1.</span>CompileStaticとTypeChecked</a></li>
                 </ul>
               </li>
             </ul>
           </li>
-          <li class="numbered visible"><a href="../static-groovy/index.html#id-5af6083ed6fdbe3e7b8bee85529e65aa3468da09"><span class="number">16.</span>まとめ</a></li>
+          <li class="numbered visible"><a href="../static-groovy/index.html#id-5af6083ed6fdbe3e7b8bee85529e65aa3468da09"><span class="number">17.</span>まとめ</a></li>
           <li class="numbered visible">
-            <a href="../practice/index.html" data-alt-hash="id-0f8f1522a9609f45ebe45c4c425ad7a726b1bb7f"><span class="number">17.</span>実践/サンプル集</a>
+            <a href="../practice/index.html" data-alt-hash="id-0f8f1522a9609f45ebe45c4c425ad7a726b1bb7f"><span class="number">18.</span>実践/サンプル集</a>
             <ul>
-              <li class="numbered visible"><a href="../practice/samples-link.html" data-alt-hash="id-0d3bb1d122715fe5433159eb6ea50caa02c25184"><span class="number">17.1.</span>サンプルリンク集</a></li>
-              <li class="numbered visible"><a href="../practice/cli-tool.html" data-alt-hash="cli"><span class="number">17.2.</span>CLIツールの実装</a></li>
+              <li class="numbered visible"><a href="../practice/samples-link.html" data-alt-hash="id-0d3bb1d122715fe5433159eb6ea50caa02c25184"><span class="number">18.1.</span>サンプルリンク集</a></li>
+              <li class="numbered visible"><a href="../practice/cli-tool.html" data-alt-hash="cli"><span class="number">18.2.</span>CLIツールの実装</a></li>
             </ul>
           </li>
         </ul>
@@ -200,8 +210,9 @@
                 <ul>
                   <li class="numbered visible"><a href="#id-46071e2f627a54763ae382cb6ffc2b0b1e589013"><span class="number">7.1.</span>クロージャを使ってみる</a></li>
                   <li class="numbered visible"><a href="#id-a6cf382c283896094fb20f51b389e9deec62dd3f"><span class="number">7.2.</span>さらに詳しく</a></li>
-                  <li class="numbered visible"><a href="#thisownerdelegate"><span class="number">7.3.</span>特殊変数this、owner、delegate</a></li>
-                  <li class="numbered visible"><a href="#id-6578dcdcd86d65fc13e0e91b122bc41b2ba1ba08"><span class="number">7.4.</span>まとめ</a></li>
+                  <li class="numbered visible"><a href="#id-72c1711cd57bf25317237dd75f8c6d35545942dd"><span class="number">7.3.</span>関数合成</a></li>
+                  <li class="numbered visible"><a href="#thisownerdelegate"><span class="number">7.4.</span>特殊変数this、owner、delegate</a></li>
+                  <li class="numbered visible"><a href="#id-6578dcdcd86d65fc13e0e91b122bc41b2ba1ba08"><span class="number">7.5.</span>まとめ</a></li>
                 </ul>
               </li>
             </ul>
@@ -307,9 +318,44 @@ assert 4 == clj() // cljに格納されているdefaultCountとclj2に格納さ�
 }
 </code></pre>
             <p>ここで注目するのが、returnされる <strong>クロージャの中で、クロージャの外側に宣言されている<code>defaultCount</code>という変数が使われているという点です。</strong><br/>実はいきなり答えなのですが、ここがクロージャがクロージャの条件を満たす部分です。<br/>このクロージャはreturnされて別の変数（上記の例だと<code>clj</code>と<code>clj2</code>）に格納されても、 <strong>決して自分の生まれ故郷から見えていた景色（変数 <code>defaultCount</code>）の存在を忘れません。</strong><br/>returnされているのは<code>{...}</code>に該当するクロージャ部分だけなのに、です。<br/>上記の例のように<code>clj()</code>や<code>clj2()</code>を実行すると、その都度クロージャの生まれ故郷である<code>getClosure</code>の中にある<code>defaultCount</code>を利用しているのです。<br/>なので、<code>clj()</code>や<code>clj2()</code>を実行すると毎回異なる値が返されているわけですね。<br/>この <strong>生まれ故郷を忘れない</strong> 関数がクロージャと呼ばれるものです。</p>
-            <h2 id="thisownerdelegate"><span class="number">7.3.</span>特殊変数this、owner、delegate</h2>
+            <h2 id="id-72c1711cd57bf25317237dd75f8c6d35545942dd"><span class="number">7.3.</span>関数合成</h2>
+            <p>Groovyのクロージャでは、簡単に関数合成が行えます。<br/>例えば、データベースなどから数字を取得して、数値に変換して、2倍する。という処理を書いてみましょう。 </p>
+            <pre><code class="groovy">Closure toInt = {String v -&gt;
+    v.toInteger()
+}
+Closure twice = {Integer v -&gt;
+    v * 2
+}
+
+// サンプル用に分かりやすく
+Closure getDataFromDatabase = {
+    &quot;5&quot;
+}
+assert 10 == twice(toInt(getDataFromDatabase()))
+</code></pre>
+            <p>クロージャ自体は全く難しくありません。<br/>ただ、クロージャを呼び出している<code>twice(toInt(getDataFromDatabase()))</code>の部分がビックリするほど読み辛いですね。<br/>では、ココで関数合成を行って呼び出しをシンプルにしてみましょう！</p>
+            <pre><code class="groovy">Closure calc1 = getDataFromDatabase &gt;&gt; toInt &gt;&gt; twice
+Closure calc2 = twice &lt;&lt; toInt &lt;&lt; getDataFromDatabase
+assert 10 == calc1()
+assert 10 == calc2()
+</code></pre>
+            <p>これだけです！<br/>Groovyでは、クロージャ同士を<code>&gt;&gt;</code>もしくは<code>&lt;&lt;</code>で順番に結合した新しいクロージャを生成できます。それぞれのクロージャの実行結果が次のクロージャにそのまま渡されます。<br/>これがGroovyの関数合成です。 </p>
+            <p>なお、関数合成時には引数を渡すことは出来ませんが、合成した関数を実行する際に引数を渡すことが出来ます。 </p>
+            <pre><code class="groovy">// 抜粋
+Closure getDataFromDatabase = {String a -&gt;
+    &quot;5&quot; + a
+}
+Closure calc1 = getDataFromDatabase &gt;&gt; toInt &gt;&gt; twice
+
+assert 102 == calc1(&quot;1&quot;)
+</code></pre>
+            <p>また、関数合成の結果は新しい関数（クロージャ）が返されるわけなので、合成結果を変数に格納せずとも以下のように実行することも出来ます。 </p>
+            <pre><code class="groovy">assert 102 == (getDataFromDatabase &gt;&gt; toInt &gt;&gt; twice).call(&quot;1&quot;)
+assert 102 == (getDataFromDatabase &gt;&gt; toInt &gt;&gt; twice)(&quot;1&quot;)
+</code></pre>
+            <h2 id="thisownerdelegate"><span class="number">7.4.</span>特殊変数this、owner、delegate</h2>
             <p>さて、クロージャには<code>this</code>、<code>owner</code>、<code>delegate</code>という暗黙的に利用できる特殊な変数が存在ます。<br/>詳細は<a href="http://qiita.com/saba1024/items/b57c412961e1a2779881">[Groovy]クロージャのthis、owner、delegateについて</a>を参照してください。</p>
-            <h2 id="id-6578dcdcd86d65fc13e0e91b122bc41b2ba1ba08"><span class="number">7.4.</span>まとめ</h2>
+            <h2 id="id-6578dcdcd86d65fc13e0e91b122bc41b2ba1ba08"><span class="number">7.5.</span>まとめ</h2>
             <p>クロージャについては、あまり意識せずにとりあえずlistの<code>each</code>や<code>collect</code>などの各メソッドに渡すもの、という感覚でドンドン使っていけば感覚がつかめてくると思います。 </p>
           </div>
           <div class="content-nav content-nav-bottom">
