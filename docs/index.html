@@ -182,8 +182,9 @@
           <li class="numbered visible">
             <a href="practice/index.html" data-alt-hash="id-0f8f1522a9609f45ebe45c4c425ad7a726b1bb7f"><span class="number">18.</span>実践/サンプル集</a>
             <ul>
-              <li class="numbered visible"><a href="practice/samples-link.html" data-alt-hash="id-0d3bb1d122715fe5433159eb6ea50caa02c25184"><span class="number">18.1.</span>サンプルリンク集</a></li>
-              <li class="numbered visible"><a href="practice/cli-tool.html" data-alt-hash="cli"><span class="number">18.2.</span>CLIツールの実装</a></li>
+              <li class="numbered visible"><a href="practice/index.html#102"><span class="number">18.1.</span>10進数を2進数に変換する</a></li>
+              <li class="numbered visible"><a href="practice/samples-link.html" data-alt-hash="id-0d3bb1d122715fe5433159eb6ea50caa02c25184"><span class="number">18.2.</span>サンプルリンク集</a></li>
+              <li class="numbered visible"><a href="practice/cli-tool.html" data-alt-hash="cli"><span class="number">18.3.</span>CLIツールの実装</a></li>
             </ul>
           </li>
         </ul>
@@ -218,7 +219,8 @@
             <p>また、以下のチュートリアルも作成、公開中です。<br/><a href="http://koji-k.github.io/grails-tutorial/">Groovy用のフルスタックフレームワークGrails</a><br/><a href="http://koji-k.github.io/ratpack-tutorial/">Groovy用のノンブロッキングなフレームワークRatpack</a><br/><a href="https://koji-k.github.io/spring-boot-groovy-tutorial//">SpringBootとGroovyで超高速WEBアプリケーション開発</a> </p>
             <h2 id="id-42307f13d9d6d9fe7f15eb0536255b824fe0af1c"><span class="number">1.1.</span>さぁ始めよう！&hellip;の前に</h2>
             <p>このチュートリアルは、左のメニューの上から順番に見ていっていただければ、一番シンプルにGroovyが理解できるように構成しています。<br/><a href="startup/install.html">Install</a>のページで、Groovyをインストールする方法を書いていますが、インストールしたくない、とりあえずパパっと試してみたいだけ、という方は、ブラウザからGroovyを実行できるサイトが有りますのでそちらを利用してみては如何でしょうか？<br/><a href="https://groovyconsole.appspot.com/">Groovy Web Console</a><br/>ただ、Groovyのインストールはとても簡単なので、インストールして本チュートリアルをご利用いただくのがお勧めです ;)</p>
-            <pre><code class="nohighlight">2016/09/27 Nullセーフを追加
+            <pre><code class="nohighlight">2016/10/14 実践/サンプル集を更新
+2016/09/27 Nullセーフを追加
            クロージャに関数合成に関する記述を追加
 2016/09/26 公開方法をgh-pagesブランチからmasterブランチのdocsに変更。
            コードの表示を少し綺麗に変更。
@@ -244,5 +246,13 @@
     <script src="js/highlight.js"></script>
     <script src="js/application.js"></script>
     <script src="js/my.js"></script>
+    <script>z
+      if (window.WebSocket) {
+        var socket = new WebSocket("ws://localhost:37917/");
+        socket.onmessage = function () {
+          location.reload();
+        };
+      }
+    </script>
   </body>
 </html>

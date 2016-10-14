@@ -182,8 +182,9 @@
           <li class="numbered visible">
             <a href="../practice/index.html" data-alt-hash="id-0f8f1522a9609f45ebe45c4c425ad7a726b1bb7f"><span class="number">18.</span>実践/サンプル集</a>
             <ul>
-              <li class="numbered visible"><a href="../practice/samples-link.html" data-alt-hash="id-0d3bb1d122715fe5433159eb6ea50caa02c25184"><span class="number">18.1.</span>サンプルリンク集</a></li>
-              <li class="numbered visible"><a href="../practice/cli-tool.html" data-alt-hash="cli"><span class="number">18.2.</span>CLIツールの実装</a></li>
+              <li class="numbered visible"><a href="../practice/index.html#102"><span class="number">18.1.</span>10進数を2進数に変換する</a></li>
+              <li class="numbered visible"><a href="../practice/samples-link.html" data-alt-hash="id-0d3bb1d122715fe5433159eb6ea50caa02c25184"><span class="number">18.2.</span>サンプルリンク集</a></li>
+              <li class="numbered visible"><a href="../practice/cli-tool.html" data-alt-hash="cli"><span class="number">18.3.</span>CLIツールの実装</a></li>
             </ul>
           </li>
         </ul>
@@ -341,5 +342,13 @@ assert &#39;java.lang.Integer&#39; == list.orElse(99).class.name
     <script src="../js/highlight.js"></script>
     <script src="../js/application.js"></script>
     <script src="../js/my.js"></script>
+    <script>z
+      if (window.WebSocket) {
+        var socket = new WebSocket("ws://localhost:37917/");
+        socket.onmessage = function () {
+          location.reload();
+        };
+      }
+    </script>
   </body>
 </html>
