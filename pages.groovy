@@ -18,6 +18,8 @@
 "meta/index.md"()
 "static-groovy/index.md"()
 "practice/index.md"(){
+    "practice/dataset-and-trait-orm.md"()
+    "practice/convert-decimal.md"()
     "practice/samples-link.md"()
     "practice/cli-tool.md"()
 }

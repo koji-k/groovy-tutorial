@@ -182,9 +182,22 @@
           <li class="numbered visible">
             <a href="index.html" data-alt-hash="id-0f8f1522a9609f45ebe45c4c425ad7a726b1bb7f"><span class="number">18.</span>実践/サンプル集</a>
             <ul>
-              <li class="numbered visible"><a href="index.html#102"><span class="number">18.1.</span>10進数を2進数に変換する</a></li>
-              <li class="numbered visible"><a href="samples-link.html" data-alt-hash="id-0d3bb1d122715fe5433159eb6ea50caa02c25184"><span class="number">18.2.</span>サンプルリンク集</a></li>
-              <li class="numbered visible"><a href="cli-tool.html" data-alt-hash="cli"><span class="number">18.3.</span>CLIツールの実装</a></li>
+              <li class="numbered visible">
+                <a href="dataset-and-trait-orm.html" data-alt-hash="datasettraitorm"><span class="number">18.1.</span>DataSetとTraitを使って簡単なORM</a>
+                <ul>
+                  <li class="numbered visible"><a href="dataset-and-trait-orm.html#id-76d4ffa3e7d72bf89f94b60af5f750d2d06dc1e8"><span class="number">18.1.1.</span>概要</a></li>
+                  <li class="numbered visible"><a href="dataset-and-trait-orm.html#dataset"><span class="number">18.1.2.</span>DataSetのメモ</a></li>
+                  <li class="numbered visible"><a href="dataset-and-trait-orm.html#id-7cb81475f86083b4ca6d8d3613d555118b576307"><span class="number">18.1.3.</span>本題</a></li>
+                  <li class="numbered visible"><a href="dataset-and-trait-orm.html#trait"><span class="number">18.1.4.</span>traitと値を保持するクラスの作成</a></li>
+                  <li class="numbered visible"><a href="dataset-and-trait-orm.html#id-72165400ede0a770ea8388c83d7b6583d826ac00"><span class="number">18.1.5.</span>実際に使ってみる</a></li>
+                  <li class="numbered visible"><a href="dataset-and-trait-orm.html#id-3579f9fc20f87289e5d0d884038577d96b81aa67"><span class="number">18.1.6.</span>まとめ</a></li>
+                </ul>
+              </li>
+              <li class="numbered visible"><a href="dataset-and-trait-orm.html#id-a1880f698b418cb966ee0aa6196f852a004c403d"><span class="number">18.2.</span>参考</a></li>
+              <li class="numbered visible"><a href="dataset-and-trait-orm.html#id-595f48397a467a332eb14dcea74660ae4fdd653a"><span class="number">18.3.</span>全体ソース</a></li>
+              <li class="numbered visible"><a href="convert-decimal.html" data-alt-hash="102"><span class="number">18.4.</span>10進数を2進数に変換する</a></li>
+              <li class="numbered visible"><a href="samples-link.html" data-alt-hash="id-0d3bb1d122715fe5433159eb6ea50caa02c25184"><span class="number">18.5.</span>サンプルリンク集</a></li>
+              <li class="numbered visible"><a href="cli-tool.html" data-alt-hash="cli"><span class="number">18.6.</span>CLIツールの実装</a></li>
             </ul>
           </li>
         </ul>
@@ -198,50 +211,20 @@
             <span class="number">16.</span>
             静的Groovy
             </a>
-            <a class="next-page" href="samples-link.html">
-            <span class="number">18.2.</span>
-            サンプルリンク集
+            <a class="next-page" href="dataset-and-trait-orm.html">
+            <span class="number">18.1.</span>
+            DataSetとTraitを使って簡単なORM
             <i class="fa fa-angle-right"></i>
             </a>
           </div>
           <div class="page-toc">
             <ul>
-              <li class="numbered visible">
-                <a href="#id-0f8f1522a9609f45ebe45c4c425ad7a726b1bb7f"><span class="number">18.</span>実践/サンプル集</a>
-                <ul>
-                  <li class="numbered visible"><a href="#102"><span class="number">18.1.</span>10進数を2進数に変換する</a></li>
-                </ul>
-              </li>
+              <li class="numbered visible"><a href="#id-0f8f1522a9609f45ebe45c4c425ad7a726b1bb7f"><span class="number">18.</span>実践/サンプル集</a></li>
             </ul>
           </div>
           <div class="main-content">
             <h1 id="id-0f8f1522a9609f45ebe45c4c425ad7a726b1bb7f"><span class="number">18.</span>実践/サンプル集</h1>
             <p>色々具体的なGroovyを利用したツールを作ってみよう！！</p>
-            <h2 id="102"><span class="number">18.1.</span>10進数を2進数に変換する</h2>
-            <p>普通にJavaの<code>Integer.toBinaryString()</code>を使えばいいけど、桁数をじったりしたい時や、論理演算した結果を2進数で得たい、という場合もある。 ということで以下のようにすればいい感じで2進数を得られます </p>
-            <pre><code class="groovy">// 渡された10進数を指定したdigitSize桁の２進数に変換して返す。
-// もしdigitSizeに満たない場合は0埋め。
-def toBinStr = { Integer b, Integer digitSize = 4 -&gt; 
-    def binString = Integer.toBinaryString(b)
-    def length = binString.length()
-    String padding = (digitSize - length) &gt; 0  ?  &quot;0&quot; * (digitSize - length) : &quot;&quot;
-    (padding + binString)[-1..-digitSize].reverse()
-}
-
-Byte l1 = 4 as Byte // つまり0x04
-Byte l2 = 6 as Byte // つまり0x06
-
-assert toBinStr( l1 ) == &#39;0100&#39;
-assert toBinStr( l2 ) == &#39;0110&#39;
-assert toBinStr( l1|l2 ) == &#39;0110&#39; // OR 論理和
-assert toBinStr( l1&amp;l2 ) == &#39;0100&#39; // AND 論理積
-assert toBinStr( l1^l2 ) == &#39;0010&#39;  // XOR 排他的論理和
-assert toBinStr( ~(l1|l2) ) == &#39;1001&#39;  // NOT OR 論理和の否定（否定なので先頭が1埋めに成る）
-assert toBinStr( ~(l1&amp;l2) ) == &#39;1011&#39;  // NOT AND 論理積の否定（否定なので先頭が1埋めに成る）
-assert toBinStr( ~(l1^l2) ) == &#39;1101&#39;  // NOT XOR 排他的論理和の否定（否定なので先頭が1埋めに成る）
-assert toBinStr( 25 as Byte ) == &#39;1001&#39; // デフォルトだと4桁目までしか表示しない
-assert toBinStr( 25 as Byte, 6 ) == &#39;011001&#39; // 桁を指定して表示
-</code></pre>
           </div>
           <div class="content-nav content-nav-bottom">
             <a class="prev-page" href="../static-groovy/index.html">
@@ -249,9 +232,9 @@ assert toBinStr( 25 as Byte, 6 ) == &#39;011001&#39; // 桁を指定して表示
             <span class="number">16.</span>
             静的Groovy
             </a>
-            <a class="next-page" href="samples-link.html">
-            <span class="number">18.2.</span>
-            サンプルリンク集
+            <a class="next-page" href="dataset-and-trait-orm.html">
+            <span class="number">18.1.</span>
+            DataSetとTraitを使って簡単なORM
             <i class="fa fa-angle-right"></i>
             </a>
           </div>
@@ -265,13 +248,5 @@ assert toBinStr( 25 as Byte, 6 ) == &#39;011001&#39; // 桁を指定して表示
     <script src="../js/highlight.js"></script>
     <script src="../js/application.js"></script>
     <script src="../js/my.js"></script>
-    <script>z
-      if (window.WebSocket) {
-        var socket = new WebSocket("ws://localhost:37917/");
-        socket.onmessage = function () {
-          location.reload();
-        };
-      }
-    </script>
   </body>
 </html>

@@ -1,0 +1,604 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>18.1. DataSetとTraitを使って簡単なORM - Apache Groovyチュートリアル</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/highlight.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/my.css">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-84847594-1', 'auto');
+      ga('send', 'pageview');
+      
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <i class="fa fa-bars sidebar-toggle"></i>
+        <span class="title"><a href="../index.html">Apache Groovyチュートリアル</a></span>
+      </div>
+      <div class="sidebar">
+        <ul>
+          <li class="numbered visible">
+            <a href="../index.html" data-alt-hash="apache-groovy-"><span class="number">1.</span>Apache Groovy チュートリアル</a>
+            <ul>
+              <li class="numbered visible"><a href="../index.html#id-42307f13d9d6d9fe7f15eb0536255b824fe0af1c"><span class="number">1.1.</span>さぁ始めよう！&hellip;の前に</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="../what-is-groovy.html" data-alt-hash="apache-groovy"><span class="number">2.</span>Apache Groovyとは</a>
+            <ul>
+              <li class="numbered visible"><a href="../what-is-groovy.html#id-fcad98b6bc96cf66e20f986f0973d2575fce430b"><span class="number">2.1.</span>シンプル&amp;パワフル</a></li>
+              <li class="numbered visible"><a href="../what-is-groovy.html#id-f9356a26c4c26110d0fb85dbe07c07c28751e391"><span class="number">2.2.</span>巨大なエコシステム</a></li>
+              <li class="numbered visible"><a href="../what-is-groovy.html#id-5f52ad0dbb814a0559eb8aa4b4a645c74bbedd8d"><span class="number">2.3.</span>気軽に実行</a></li>
+              <li class="numbered visible"><a href="../what-is-groovy.html#id-6f37a8477bcb751f15dedcbcc9ee8a9cc90ef061"><span class="number">2.4.</span>実験コードのお供に</a></li>
+              <li class="numbered visible"><a href="../what-is-groovy.html#id-ef4e0df42b47b23ce15bc3ccadd1d8d8e43f8385"><span class="number">2.5.</span>ビルドツール要らず</a></li>
+              <li class="numbered visible"><a href="../what-is-groovy.html#java"><span class="number">2.6.</span>Javaの友達</a></li>
+              <li class="numbered visible"><a href="../what-is-groovy.html#id-319e80ab91fa4b24ead46ec990e7890d8a62c899"><span class="number">2.7.</span>もちろんプロダクトとしても</a></li>
+              <li class="numbered visible"><a href="../what-is-groovy.html#ok"><span class="number">2.8.</span>どこからでもOK</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="../startup/index.html" data-alt-hash="startup"><span class="number">3.</span>Startup</a>
+            <ul>
+              <li class="numbered visible"><a href="../startup/install.html" data-alt-hash="install"><span class="number">3.1.</span>Install</a></li>
+              <li class="numbered visible"><a href="../startup/install.html#hello-world"><span class="number">3.2.</span>Hello World</a></li>
+              <li class="numbered visible">
+                <a href="../startup/execution.html" data-alt-hash="id-947e8b547a7ee2d2d16471408918f148e7008486"><span class="number">3.3.</span>色々な実行方法</a>
+                <ul>
+                  <li class="numbered visible"><a href="../startup/execution.html#groovyconsole"><span class="number">3.3.1.</span>GroovyConsole</a></li>
+                  <li class="numbered visible"><a href="../startup/execution.html#groovysh"><span class="number">3.3.2.</span>Groovysh</a></li>
+                  <li class="numbered visible"><a href="../startup/execution.html#id-da28f0cd33cb1f1e6ce383dde43065522845c2e8"><span class="number">3.3.3.</span>ファイルに保存してスクリプトとして実行</a></li>
+                  <li class="numbered visible">
+                    <a href="../startup/execution.html#id-fcbfd717080ef34d6aa5a6da494d789c4907d1a2"><span class="number">3.3.4.</span>ファイルに保存してコンパイル&amp;実行</a>
+                    <ul>
+                      <li class="numbered invisible"><a href="../startup/execution.html#class"><span class="number">3.3.4.1.</span>ファイル名と生成されるclassファイル名の関係</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="../variable/index.html" data-alt-hash="id-5221440a56644419d70a10bd0ccf693a2126dc64"><span class="number">4.</span>変数</a>
+            <ul>
+              <li class="numbered visible"><a href="../variable/index.html#def"><span class="number">4.1.</span>defキーワード</a></li>
+              <li class="numbered visible"><a href="../variable/index.html#id-a6077d27e5f63be9d00575f8249b0ab98c2688cd"><span class="number">4.2.</span>型の変数名を同時に宣言</a></li>
+              <li class="numbered visible"><a href="../variable/index.html#id-bdb4879c8865cab8f31f2e02bedfab64275778af"><span class="number">4.3.</span>いきなり変数名</a></li>
+              <li class="numbered visible"><a href="../variable/index.html#id-94a94a68c07cac95e9dad0fb1b2cc0ac0080a74d"><span class="number">4.4.</span>まとめ</a></li>
+              <li class="numbered visible"><a href="../variable/index.html#other-memo"><span class="number">4.5.</span>Other memo</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="../if/index.html" data-alt-hash="if"><span class="number">5.</span>if文</a>
+            <ul>
+              <li class="numbered visible"><a href="../if/index.html#id-678b445de32757354dbd7b4d6d27a2679cb663a4"><span class="number">5.1.</span>普通のif</a></li>
+              <li class="numbered visible"><a href="../if/index.html#assert"><span class="number">5.2.</span>assert</a></li>
+              <li class="numbered visible"><a href="../if/index.html#id-b2368db87fc524b107821a7f97dc24e3c3fb7a3c"><span class="number">5.3.</span>三項演算子を使う</a></li>
+              <li class="numbered visible"><a href="../if/index.html#groovy-truth"><span class="number">5.4.</span>Groovy Truth</a></li>
+              <li class="numbered visible"><a href="../if/index.html#id-7f0ecf6d4f8badbce300a7cea1560cdc3eb80466"><span class="number">5.5.</span>エルビス演算子を使う</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="../collection/list.html" data-alt-hash="id-b096d14061757613f9bb4fc3fdebeed1df3d7feb"><span class="number">6.</span>リスト</a>
+            <ul>
+              <li class="numbered visible"><a href="../collection/list.html#collect"><span class="number">6.1.</span>collect</a></li>
+              <li class="numbered visible"><a href="../collection/list.html#inject"><span class="number">6.2.</span>inject</a></li>
+              <li class="numbered visible"><a href="../collection/list.html#find"><span class="number">6.3.</span>find</a></li>
+              <li class="numbered visible"><a href="../collection/list.html#findall"><span class="number">6.4.</span>findAll</a></li>
+              <li class="numbered visible"><a href="../collection/list.html#id-a3b0399fa150d0a6ed3d5fdb94debdbc965b43be"><span class="number">6.5.</span>まとめ</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="../closure/index.html" data-alt-hash="id-bc9ded214e97abd0647bbea508cb878324996e3e"><span class="number">7.</span>クロージャ</a>
+            <ul>
+              <li class="numbered visible"><a href="../closure/index.html#id-46071e2f627a54763ae382cb6ffc2b0b1e589013"><span class="number">7.1.</span>クロージャを使ってみる</a></li>
+              <li class="numbered visible"><a href="../closure/index.html#id-a6cf382c283896094fb20f51b389e9deec62dd3f"><span class="number">7.2.</span>さらに詳しく</a></li>
+              <li class="numbered visible"><a href="../closure/index.html#id-72c1711cd57bf25317237dd75f8c6d35545942dd"><span class="number">7.3.</span>関数合成</a></li>
+              <li class="numbered visible"><a href="../closure/index.html#thisownerdelegate"><span class="number">7.4.</span>特殊変数this、owner、delegate</a></li>
+              <li class="numbered visible"><a href="../closure/index.html#id-6578dcdcd86d65fc13e0e91b122bc41b2ba1ba08"><span class="number">7.5.</span>まとめ</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="../collection/map.html" data-alt-hash="id-5408c1debd592f8b0779d2c9a302fbff89fb39ba"><span class="number">8.</span>マップ</a>
+            <ul>
+              <li class="numbered visible"><a href="../collection/map.html#id-44e8571a56f022b3396fee07d6450bfd950e1a67"><span class="number">8.1.</span>繰り返し</a></li>
+              <li class="numbered visible"><a href="../collection/map.html#id-f8648999b740988e6ed27a5561760fe061ecb760"><span class="number">8.2.</span>リストとマップを組みあせる</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="../null-safe/index.html" data-alt-hash="null"><span class="number">9.</span>Nullセーフ</a>
+            <ul>
+              <li class="numbered visible"><a href="../null-safe/index.html#java8optional"><span class="number">9.1.</span>Java8のOptional</a></li>
+              <li class="numbered visible"><a href="../null-safe/index.html#groovy"><span class="number">9.2.</span>Groovyのセーフナビゲーション</a></li>
+              <li class="numbered visible"><a href="../null-safe/index.html#id-462a855457497e0f699b75d35950c57e31a0545b"><span class="number">9.3.</span>サンプルコード</a></li>
+              <li class="numbered visible"><a href="../null-safe/index.html#id-18aee802319ad5c16cd55c381c87b42226a4b149"><span class="number">9.4.</span>その他の方法</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="../class/index.html" data-alt-hash="id-8b27332ee07f76ea4db44d6a7bdcdcf813427e3a"><span class="number">10.</span>クラス</a>
+            <ul>
+              <li class="numbered visible"><a href="../class/index.html#2"><span class="number">10.1.</span>クラスは2つ以上定義しても良い</a></li>
+              <li class="numbered visible"><a href="../class/index.html#id-400faaa494727732c94af024c637e0d2129b72f9"><span class="number">10.2.</span>セッターとゲッター</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible"><a href="../class/trait.html" data-alt-hash="trait"><span class="number">11.</span>Trait（トレイト）</a></li>
+          <li class="numbered visible">
+            <a href="../external-library/index.html" data-alt-hash="groovy"><span class="number">12.</span>Groovyで外部ライブラリを利用する</a>
+            <ul>
+              <li class="numbered visible"><a href="../external-library/index.html#id-48131f790a0fdc19674de80e966b50d2d2954fa2"><span class="number">12.1.</span>実際に試してみよう</a></li>
+              <li class="numbered visible"><a href="../external-library/index.html#id-d3fd06b21472dc0e54bce2592d61eaa19369b573"><span class="number">12.2.</span>複数のライブラリを扱う</a></li>
+              <li class="numbered visible"><a href="../external-library/index.html#id-28df4375b1a38168d0fe528efd2d82fb65d313c0"><span class="number">12.3.</span>ちょっと補足</a></li>
+              <li class="numbered visible"><a href="../external-library/index.html#id-1ff68e378d712588bb7314663b7ec5f58e4ba62a"><span class="number">12.4.</span>まとめ</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible">
+            <a href="../unit-test/index.html" data-alt-hash="id-24ac0411c687979683b211ecda6744d511f0ac85"><span class="number">13.</span>ユニットテスト</a>
+            <ul>
+              <li class="numbered visible"><a href="../unit-test/index.html#spock"><span class="number">13.1.</span>初めてのSpock</a></li>
+              <li class="numbered visible">
+                <a href="../unit-test/index.html#id-be6ccbd026a73b061ec8e027551cad6733d3deb4"><span class="number">13.2.</span>フィーチャーメソッドとフィーチャーブロック</a>
+                <ul>
+                  <li class="numbered visible"><a href="../unit-test/index.html#whenthensetup"><span class="number">13.2.1.</span>whenとthen（そしてsetup）</a></li>
+                  <li class="numbered visible"><a href="../unit-test/index.html#expect"><span class="number">13.2.2.</span>expect</a></li>
+                  <li class="numbered visible"><a href="../unit-test/index.html#cleanup"><span class="number">13.2.3.</span>cleanup</a></li>
+                  <li class="numbered visible">
+                    <a href="../unit-test/index.html#where"><span class="number">13.2.4.</span>where</a>
+                    <ul>
+                      <li class="numbered invisible"><a href="../unit-test/index.html#unroll"><span class="number">13.2.4.1.</span>@Unrollアノテーション</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="numbered visible"><a href="../unit-test/index.html#id-bdd1a5a8c07a267571c3bd781ab9082669c5959f"><span class="number">13.3.</span>フィクスチャーメソッド</a></li>
+              <li class="numbered visible"><a href="../unit-test/index.html#id-b3c1ea2a3b540798f7cd793487a346fffeec9c09"><span class="number">13.4.</span>各フィーチャーメソッドで共通して利用する変数</a></li>
+              <li class="numbered visible"><a href="../unit-test/index.html#id-efba724c0eb52b004593236e37d0a25a1544ad6b"><span class="number">13.5.</span>実践</a></li>
+              <li class="numbered visible"><a href="../unit-test/index.html#id-0a441a00637070d401d9e5a2653510c5967d9a05"><span class="number">13.6.</span>まとめ</a></li>
+            </ul>
+          </li>
+          <li class="numbered visible"><a href="../regular-expression/index.html" data-alt-hash="regular-expression"><span class="number">14.</span>Regular Expression</a></li>
+          <li class="numbered visible"><a href="../meta/index.html" data-alt-hash="meta-programming"><span class="number">15.</span>Meta programming</a></li>
+          <li class="numbered visible">
+            <a href="../static-groovy/index.html" data-alt-hash="groovy"><span class="number">16.</span>静的Groovy</a>
+            <ul>
+              <li class="numbered visible"><a href="../static-groovy/index.html#id-b940591a92fde629fb71008c7b7e053237d7b8b4"><span class="number">16.1.</span>メソッド</a></li>
+              <li class="numbered visible">
+                <a href="../static-groovy/index.html#id-83dac9bdf0c71085ffa7a638a3bee37744fe1645"><span class="number">16.2.</span>ローカル変数</a>
+                <ul>
+                  <li class="numbered visible"><a href="../static-groovy/index.html#compilestatictypechecked"><span class="number">16.2.1.</span>CompileStaticとTypeChecked</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="numbered visible"><a href="../static-groovy/index.html#id-5af6083ed6fdbe3e7b8bee85529e65aa3468da09"><span class="number">17.</span>まとめ</a></li>
+          <li class="numbered visible">
+            <a href="index.html" data-alt-hash="id-0f8f1522a9609f45ebe45c4c425ad7a726b1bb7f"><span class="number">18.</span>実践/サンプル集</a>
+            <ul>
+              <li class="numbered visible">
+                <a href="dataset-and-trait-orm.html" data-alt-hash="datasettraitorm"><span class="number">18.1.</span>DataSetとTraitを使って簡単なORM</a>
+                <ul>
+                  <li class="numbered visible"><a href="dataset-and-trait-orm.html#id-76d4ffa3e7d72bf89f94b60af5f750d2d06dc1e8"><span class="number">18.1.1.</span>概要</a></li>
+                  <li class="numbered visible"><a href="dataset-and-trait-orm.html#dataset"><span class="number">18.1.2.</span>DataSetのメモ</a></li>
+                  <li class="numbered visible"><a href="dataset-and-trait-orm.html#id-7cb81475f86083b4ca6d8d3613d555118b576307"><span class="number">18.1.3.</span>本題</a></li>
+                  <li class="numbered visible"><a href="dataset-and-trait-orm.html#trait"><span class="number">18.1.4.</span>traitと値を保持するクラスの作成</a></li>
+                  <li class="numbered visible"><a href="dataset-and-trait-orm.html#id-72165400ede0a770ea8388c83d7b6583d826ac00"><span class="number">18.1.5.</span>実際に使ってみる</a></li>
+                  <li class="numbered visible"><a href="dataset-and-trait-orm.html#id-3579f9fc20f87289e5d0d884038577d96b81aa67"><span class="number">18.1.6.</span>まとめ</a></li>
+                </ul>
+              </li>
+              <li class="numbered visible"><a href="dataset-and-trait-orm.html#id-a1880f698b418cb966ee0aa6196f852a004c403d"><span class="number">18.2.</span>参考</a></li>
+              <li class="numbered visible"><a href="dataset-and-trait-orm.html#id-595f48397a467a332eb14dcea74660ae4fdd653a"><span class="number">18.3.</span>全体ソース</a></li>
+              <li class="numbered visible"><a href="convert-decimal.html" data-alt-hash="102"><span class="number">18.4.</span>10進数を2進数に変換する</a></li>
+              <li class="numbered visible"><a href="samples-link.html" data-alt-hash="id-0d3bb1d122715fe5433159eb6ea50caa02c25184"><span class="number">18.5.</span>サンプルリンク集</a></li>
+              <li class="numbered visible"><a href="cli-tool.html" data-alt-hash="cli"><span class="number">18.6.</span>CLIツールの実装</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <div class="content-handle"></div>
+        <div class="content-container">
+          <div class="content-nav content-nav-top">
+            <a class="prev-page" href="index.html">
+            <i class="fa fa-angle-left"></i>
+            <span class="number">18.</span>
+            実践/サンプル集
+            </a>
+            <a class="next-page" href="convert-decimal.html">
+            <span class="number">18.4.</span>
+            10進数を2進数に変換する
+            <i class="fa fa-angle-right"></i>
+            </a>
+          </div>
+          <div class="page-toc">
+            <ul>
+              <li class="numbered visible">
+                <a href="#datasettraitorm"><span class="number">18.1.</span>DataSetとTraitを使って簡単なORM</a>
+                <ul>
+                  <li class="numbered visible"><a href="#id-76d4ffa3e7d72bf89f94b60af5f750d2d06dc1e8"><span class="number">18.1.1.</span>概要</a></li>
+                  <li class="numbered visible"><a href="#dataset"><span class="number">18.1.2.</span>DataSetのメモ</a></li>
+                  <li class="numbered visible"><a href="#id-7cb81475f86083b4ca6d8d3613d555118b576307"><span class="number">18.1.3.</span>本題</a></li>
+                  <li class="numbered visible"><a href="#trait"><span class="number">18.1.4.</span>traitと値を保持するクラスの作成</a></li>
+                  <li class="numbered visible"><a href="#id-72165400ede0a770ea8388c83d7b6583d826ac00"><span class="number">18.1.5.</span>実際に使ってみる</a></li>
+                  <li class="numbered visible"><a href="#id-3579f9fc20f87289e5d0d884038577d96b81aa67"><span class="number">18.1.6.</span>まとめ</a></li>
+                </ul>
+              </li>
+              <li class="numbered visible"><a href="#id-a1880f698b418cb966ee0aa6196f852a004c403d"><span class="number">18.2.</span>参考</a></li>
+              <li class="numbered visible"><a href="#id-595f48397a467a332eb14dcea74660ae4fdd653a"><span class="number">18.3.</span>全体ソース</a></li>
+            </ul>
+          </div>
+          <div class="main-content">
+            <h2 id="datasettraitorm"><span class="number">18.1.</span>DataSetとTraitを使って簡単なORM</h2>
+            <p><strong>これはG* Advent Calendar 2015の1日目の記事です。</strong></p>
+            <h3 id="id-76d4ffa3e7d72bf89f94b60af5f750d2d06dc1e8"><span class="number">18.1.1.</span>概要</h3>
+            <p>データベースのテーブルと、プログラム上の値クラスのインスタンスをそれぞれ簡単にマッピングできる便利機能をTraitを利用して作成しました。<br/>お手軽さをさらに感じるために、DB自体のデータ操作はGroovyのDataSetクラスを利用して行います。<br/>ちょっと長くなるので、一番最後に全体ソースを置いておきますので、それを見て頂いてもいいともいます。<br/>実際にsample.groovyというような名前で保存すればgroovyコマンドで実行できます。 </p>
+            <h3 id="dataset"><span class="number">18.1.2.</span>DataSetのメモ</h3>
+            <p>さて、Groovyにはデータベースアクセスを非常に簡単に行えるよう<code>groovy.sql.DataSet</code>というものがあります。<br/>この<code>DataSet</code>を使うと、テーブル名を指定するだけで自動的にSQLを生成してくれます。<br/>以下のような感じで利用できます。 </p>
+            <pre><code class="groovy">def sql = Sql.newInstance(&quot;jdbc:h2:mem:&quot;, &quot;org.h2.Driver&quot;)
+
+// 勝手にSQL文を作ってくれる
+DataSet dataSet = sql.dataSet(&#39;test&#39;)
+assert dataSet.sql == &#39;select * from test&#39;
+
+// 条件指定もなんのその（自動的にpreparedStatement）
+DataSet dataSet2 = dataSet.findAll{it.age &gt; 18}
+assert dataSet2.sql == &#39;select * from test where age &gt; ?&#39;
+assert dataSet2.parameters == [18]
+
+// dataSetのメソッドは自分を返すのでチェイン出来る。
+assert sql.dataSet(&#39;test&#39;).findAll({it.age &gt; 18}).sql == &#39;select * from test where age &gt; ?&#39;
+</code></pre>
+            <p>この時点では実際のデータベースなどは参照しておらず、<code>Sql#dataSet()</code>に渡している文字列をテーブル名、クロージャに指定するプロパティ名をカラム名として、SQL文を生成しています。 </p>
+            <p>実際に簡単なデータの登録とデータの取得のサンプルを見てみましょう。 </p>
+            <pre><code class="groovy">@GrabConfig(systemClassLoader = true)
+@Grab(group=&#39;com.h2database&#39;, module=&#39;h2&#39;, version=&#39;1.4.190&#39;)
+import groovy.sql.*
+
+// テスト用のDBを作成
+def sql = Sql.newInstance(&quot;jdbc:h2:mem:&quot;, &quot;org.h2.Driver&quot;)
+sql.execute(&quot;&quot;&quot;
+CREATE TABLE test(
+    id BIGINT,
+    name VARCHAR(255),
+    age INT,
+    married BOOLEAN,
+    dummy_id BIGINT
+)&quot;&quot;&quot;)
+
+DataSet dataSet = sql.dataSet(&#39;test&#39;)
+
+// addを使えば、引数に渡した情報で自動的にテーブルにINSERTしてくれる！
+dataSet.add(id:1, name:&#39;a&#39;, age:31, married:true)
+
+// dataSetの中身は何にも変わっていないので、firstRowと使ってSQLを実行。
+// 返ってくるのはaGroovyRowResultなのでMapとして振る舞える！
+assert dataSet.firstRow()[&#39;id&#39;] == 1 
+assert dataSet.firstRow()[&#39;name&#39;] == &#39;a&#39; 
+assert dataSet.firstRow()[&#39;age&#39;] == 31
+assert dataSet.firstRow()[&#39;married&#39;] == true
+assert dataSet.firstRow()[&#39;dummy_id&#39;] == null
+assert dataSet.firstRow() instanceof GroovyRowResult
+assert dataSet.firstRow() instanceof Map 
+</code></pre>
+            <p>ORMを使うほどではないけど、SQLを書くのも面倒くさい。。。という場合に非常に重宝しそうな感じがしますね！<br/>なお、上記のコードを<code>test.groovy</code>というファイルに保存して、<code>groovy test.groovy</code>として実行すれば、自動的にH2というインメモリで動かせるデータベースライブラリのダウンロードと設定ができるので、態々テスト用にDBをセットアップする必要はありません！ </p>
+            <p>１点注意点として、DataSetを利用する場合は、GroovyConsoleだと </p>
+            <pre><code class="console">groovy.lang.GroovyRuntimeException: DataSet unable to evaluate expression. AST not available for closure: ConsoleScript135$_run_closure2. Is the source code on the classpath?
+	at ConsoleScript135.run(ConsoleScript135:106)
+</code></pre>
+            <p>というようなエラーが出て駄目っぽいので普通にGroovyファイルを作成して、<code>groovy</code>で実行する。</p>
+            <h3 id="id-7cb81475f86083b4ca6d8d3613d555118b576307"><span class="number">18.1.3.</span>本題</h3>
+            <p>さて、DataSetの実行結果をMapとして扱えることは分かりました。<br/>ただやはりMapでデータをやり取りするのはちょっと気持ちが悪いですね。<br/>IDEでの補完も効かないのでタイプミスも発生しそうだしクラスにマッピングされていないのでメソッドなども利用できません。<br/>そこでやっと本題！Groovy2.3から利用できるようになったtraitを利用して、テーブルと一致する値クラスと、このDataSetを上手いこと組み合わせる機能を作成します！ </p>
+            <p>前提条件として、テーブルは以下の構成のものを利用します。 </p>
+            <pre><code class="sql">CREATE TABLE test(
+    id BIGINT,
+    name VARCHAR(255),
+    age INT,
+    married BOOLEAN,
+    birthday TIMESTAMP default now(),
+    dummy_id BIGINT
+)
+</code></pre>
+            <p>そして、いわゆるORMであればこのテーブルのレコードの値がマッピングされるクラスは以下のようになります。</p>
+            <pre><code class="groovy">class Test {
+    Long id
+    String name
+    Integer age
+    Boolean married
+    Date birthday
+    Long dummyId
+}
+</code></pre>
+            <p>このTestのような値を保持するクラスにDataSetと上手いこと連携できるようにtraitで魔法をかけていきます。</p>
+            <h3 id="trait"><span class="number">18.1.4.</span>traitと値を保持するクラスの作成</h3>
+            <p>ということで早速コードです。</p>
+            <pre><code class="groovy">trait DataSetCombiner {
+
+    private static List ignoreClassTypes = [java.lang.Class]
+
+    private static Closure availableProperties = { MetaProperty mp -&gt; 
+        !( mp.type in ignoreClassTypes)
+    }
+
+    private static Closure toSnakeCase = { String name -&gt;
+        name.replaceAll(/([A-Z])/, /_$1/).toLowerCase()
+    }
+
+    /**
+     * 渡されたMapのデータを使って、このDataSetCombinerをimplementsしているクラスのインスタンスを生成して返す
+     * @param dataSet 生成する値クラスのインスタンスのプロパティにセットしたい値をもつMap
+     * @param dateFormat Mapの中身にStringとして保持されているjava.sql.Timestamp、java.util.DateをDateに作りなおすためのフォーマット
+     * @return dataSetで指定した値で初期化した値クラスのインスタンス
+     */
+    static generate(Map dataSet, String dateFormat = &#39;yyyy/MM/dd HH:mm:ss&#39;) {
+
+        // 値クラスの全てのプロパティを取得
+        List&lt;MetaProperty&gt; properties = this.metaClass.getProperties()
+        def clazz = this.metaClass.invokeConstructor()
+
+        // Mapから、各プロパティ名に合致する値を取り出して、値クラスのインスタンスにセット
+        properties.findAll(availableProperties).each {MetaProperty mp -&gt;
+            String propertyName = mp.name
+            String keyNameOnMap = toSnakeCase.call(mp.name)
+            switch(mp.type) {
+                case String:
+                    clazz[propertyName] = dataSet[keyNameOnMap]
+                    break
+                case Number: // Integer and Long are inherit Number
+                    clazz[propertyName] = dataSet[keyNameOnMap] as Long
+                    break
+                case Boolean:
+                    clazz[propertyName] = dataSet[keyNameOnMap] as Boolean
+                    break
+                case Date:
+                    clazz[propertyName] = Date.parse(dateFormat, dataSet[keyNameOnMap] as String)
+                    break
+                default:
+                    clazz[propertyName] = null // どうしよう？
+            }
+        }
+        clazz
+    }
+
+    /**
+     * 値クラスのもつプロパティ名と値を、それぞれKeyとValueにしてMapに詰めて返す。
+     * その際にKey名はプロパティをスネークケースに変換したもの。
+     */
+    def convertToMap() {
+        this.metaClass.properties.findAll(availableProperties).collect {MetaProperty mp -&gt;
+            String keyNameOnMap = toSnakeCase.call(mp.name)
+            [(keyNameOnMap): this[mp.name]]
+        }.collectEntries{it}
+    }
+}
+
+/**
+ * 値を保持するクラスの宣言。用意したtraitをimplementsで指定するだけでOK
+ */
+class Test implements DataSetCombiner {
+    Long id
+    String name
+    Integer age
+    Boolean married
+    Date birthday
+
+    Long dummyId
+}
+</code></pre>
+            <p>これだけです！ </p>
+            <p>traitによって公開されているメソッドは、<br/>クラスメソッドの<code>generate</code>と、インスタンスメソッドの<code>convertToMap</code>の2つだけです。 </p>
+            <p><code>generate</code>メソッドには、値クラスに突っ込みたい値を保持したMapを渡してあげると、ちゃんと対応するプロパティに応じた方に変換して値をセットするようにしています。<br/>この際に、Mapの値をベースにプロパティ名を探すと存在しないプロパティにアクサス出来てしまうので、それを回避するために存在するプロパティをeachで回して、各プロパティに対応するMapの値を取得するようにしています。 </p>
+            <p><code>convertToMap</code>の方は単純にインスタンスが持っているプロパティをMapに詰めて返すだけです。<br/>その際に、プロパティー名をスネークケースに変換して返すことによって、データベースのカラム名と一致するようにしてあげています。 </p>
+            <h3 id="id-72165400ede0a770ea8388c83d7b6583d826ac00"><span class="number">18.1.5.</span>実際に使ってみる</h3>
+            <p>上記のコードを見るだけだとよくわからんので実際に利用するコードを見てみましょう。 </p>
+            <p>まず、DataSet関係なしに、インスタンスの生成が少し楽になっています。</p>
+            <pre><code class="groovy">// 全ての値がStringなMapを渡せば、自動的にクラスのプロパティに定義されている型を元に自動的に変換。（手動）
+// groovy.transform.Immutableでアノテートされたクラスでも同じようなことができるけど、型は正しいものを渡さなければならない。
+Test test = Test.generate([id:&#39;1&#39;, name:&#39;koji&#39;, age: &#39;31&#39;, married:&#39;true&#39;, birthday:&#39;2016/12/01 00:00:00&#39;, dummy_id:&#39;123&#39;])
+assert test instanceof Test
+assert test.id.class == java.lang.Long
+assert test.name.class == java.lang.String
+assert test.age.class == java.lang.Integer
+assert test.married.class == java.lang.Boolean
+assert test.birthday.class == java.util.Date
+assert test.dummyId.class == java.lang.Long
+
+assert test.id == 1
+assert test.name == &#39;koji&#39;
+assert test.age == 31
+assert test.married == true 
+assert test.birthday == Date.parse(&#39;yyyy/MM/dd&#39;, &#39;2016/12/01&#39;)
+assert test.dummyId == 123
+</code></pre>
+            <p>ただこれだけだとそれほど旨味がないですね。 </p>
+            <p>そこで実際にDataSetと絡めて使ってみます！ </p>
+            <pre><code class="groovy">def dataSet = sql.dataSet(&#39;test&#39;)
+// Mapを渡してデータベースにINSERT
+dataSet.add(id:1, name:&#39;a&#39;, age:10, married:true, dummy_id:100)
+dataSet.add(id:2, name:&#39;b&#39;, age:20, married:false, dummy_id: 200 )
+
+// 自作オブジェクトからDBへデータを保存！
+dataSet.add(test.convertToMap())
+
+println &quot;All records:&quot;
+dataSet.rows().each{println it}
+</code></pre>
+            <p>実行すると結果は </p>
+            <pre><code class="groovy">All records:
+[ID:1, NAME:a, AGE:10, MARRIED:true, BIRTHDAY:2016-11-30 15:13:03.551, DUMMY_ID:100]
+[ID:2, NAME:b, AGE:20, MARRIED:false, BIRTHDAY:2016-11-30 15:13:03.553, DUMMY_ID:200]
+[ID:1, NAME:koji, AGE:31, MARRIED:true, BIRTHDAY:2016-12-01 00:00:00.0, DUMMY_ID:123]
+</code></pre>
+            <p>できました！ <strong>SQLを書かずに値クラスをデータベースに保存できました！</strong><br/>ここでtraitに記述した<code>convertToMap</code>が生きてきています。 </p>
+            <p>さらに今度は、データベースから取得したレコードを値クラスに突っ込んでそのインスタンスを取得してみます。 </p>
+            <pre><code class="groovy">def dataSet2 = dataSet.findAll{it.name == &#39;a&#39;}
+Test test2 = Test.generate(dataSet2.firstRow(), &#39;yyyy-MM-dd HH:mm:ss.SSS&#39;) // DataSetの結果をそのまま使ってインスタンスを生成できる!
+assert test2.name == &#39;a&#39;
+assert test2.age == 10
+assert test2.married == true
+assert test2.birthday != null
+assert test2.dummyId == 100
+</code></pre>
+            <p>できました！データベースから値を取得して、traitで作成した<code>generate</code>メソッドにその <strong>結果を渡すだけでちゃんと値がセットされたインスタンスが生成されています！</strong> </p>
+            <h3 id="id-3579f9fc20f87289e5d0d884038577d96b81aa67"><span class="number">18.1.6.</span>まとめ</h3>
+            <p>当然他にも色々想定していない型とか渡されたらどうするの？など問題はありますが、DataSetとtraitを組み合わせることで、ある程度スッキリデータベース周りを記述できるのかな？と思います。 </p>
+            <h2 id="id-a1880f698b418cb966ee0aa6196f852a004c403d"><span class="number">18.2.</span>参考</h2>
+            <p><a href="http://docs.groovy-lang.org/next/html/documentation/core-traits.html">Traits</a><br/><a href="http://docs.groovy-lang.org/latest/html/api/groovy/sql/DataSet.html">Class DataSet</a><br/><a href="http://www.slideshare.net/paulk_asert/groovy-databases">groovy databases</a><br/><a href="http://npnl.hatenablog.jp/entry/20090505/1241504105">Groovyでデータベース操作（GroovySQL）</a> </p>
+            <h2 id="id-595f48397a467a332eb14dcea74660ae4fdd653a"><span class="number">18.3.</span>全体ソース</h2>
+            <pre><code class="groovy">@GrabConfig(systemClassLoader = true)
+@Grab(group=&#39;com.h2database&#39;, module=&#39;h2&#39;, version=&#39;1.4.190&#39;)
+import groovy.sql.*
+
+// テスト用のDBを作成
+def sql = Sql.newInstance(&quot;jdbc:h2:mem:&quot;, &quot;org.h2.Driver&quot;)
+sql.execute(&quot;&quot;&quot;
+CREATE TABLE test(
+    id BIGINT,
+    name VARCHAR(255),
+    age INT,
+    married BOOLEAN,
+    birthday TIMESTAMP default now(),
+    dummy_id BIGINT
+)&quot;&quot;&quot;)
+
+trait DataSetCombiner {
+
+    private static List ignoreClassTypes = [java.lang.Class]
+
+    private static Closure availableProperties = { MetaProperty mp -&gt; !( mp.type in ignoreClassTypes) }
+
+    private static Closure toSnakeCase = { String name -&gt;
+        name.replaceAll(/([A-Z])/, /_$1/).toLowerCase()
+    }
+
+    /**
+     * 渡されたMapのデータを使って、このDataSetCombinerをimplementsしているクラスのインスタンスを生成して返す
+     * @param dataSet 生成する値クラスのインスタンスのプロパティにセットしたい値をもつMap
+     * @param dateFormat Mapの中身にStringとして保持されているjava.sql.Timestamp、java.util.DateをDateに作りなおすためのフォーマット
+     * @return dataSetで指定した値で初期化した値クラスのインスタンス
+     */
+    static generate(Map dataSet, String dateFormat = &#39;yyyy/MM/dd HH:mm:ss&#39;) {
+
+        // 値クラスの全てのプロパティを取得
+        List&lt;MetaProperty&gt; properties = this.metaClass.getProperties()
+        def clazz = this.metaClass.invokeConstructor()
+
+        // Mapから、各プロパティ名に合致する値を取り出して、値クラスのインスタンスにセット
+        properties.findAll(availableProperties).each {MetaProperty mp -&gt;
+            String propertyName = mp.name
+            String keyNameOnMap = toSnakeCase.call(mp.name)
+            switch(mp.type) {
+                case String:
+                    clazz[propertyName] = dataSet[keyNameOnMap]
+                    break
+                case Number: // Integer and Long are inherit Number
+                    clazz[propertyName] = dataSet[keyNameOnMap] as Long
+                    break
+                case Boolean:
+                    clazz[propertyName] = dataSet[keyNameOnMap] as Boolean
+                    break
+                case Date:
+                    clazz[propertyName] = Date.parse(dateFormat, dataSet[keyNameOnMap] as String)
+                    break
+                default:
+                    clazz[propertyName] = null // どうしよう？
+            }
+        }
+        clazz
+    }
+
+    /**
+     * 値クラスのもつプロパティ名と値を、それぞれKeyとValueにしてMapに詰めて返す。
+     * その際にKey名はプロパティをスネークケースに変換したもの。
+     */
+    def convertToMap() {
+        this.metaClass.properties.findAll(availableProperties).collect {MetaProperty mp -&gt;
+            String keyNameOnMap = toSnakeCase.call(mp.name)
+            [(keyNameOnMap): this[mp.name]]
+        }.collectEntries{it}
+    }
+}
+
+/**
+ * 値を保持するクラスの宣言。用意したtraitをimplementsで指定するだけでOK
+ */
+class Test implements DataSetCombiner {
+    Long id
+    String name
+    Integer age
+    Boolean married
+    Date birthday
+
+    Long dummyId
+}
+
+
+// 全ての値がStringなMapを渡せば、自動的にクラスのプロパティに定義されている型を元に自動的に変換。（手動）
+// groovy.transform.Immutableでアノテートされたクラスでも同じようなことができるけど、型は正しいものを渡さなければならない。
+Test test = Test.generate([id:&#39;1&#39;, name:&#39;koji&#39;, age: &#39;31&#39;, married:&#39;true&#39;, birthday:&#39;2016/12/01 00:00:00&#39;, dummy_id:&#39;123&#39;])
+assert test instanceof Test
+assert test.id.class == java.lang.Long
+assert test.name.class == java.lang.String
+assert test.age.class == java.lang.Integer
+assert test.married.class == java.lang.Boolean
+assert test.birthday.class == java.util.Date
+assert test.dummyId.class == java.lang.Long
+
+assert test.id == 1
+assert test.name == &#39;koji&#39;
+assert test.age == 31
+assert test.married == true
+assert test.birthday == Date.parse(&#39;yyyy/MM/dd&#39;, &#39;2016/12/01&#39;)
+assert test.dummyId == 123
+
+
+def dataSet = sql.dataSet(&#39;test&#39;)
+// Mapを渡してデータベースにINSERT
+dataSet.add(id:1, name:&#39;a&#39;, age:10, married:true, dummy_id:100)
+dataSet.add(id:2, name:&#39;b&#39;, age:20, married:false, dummy_id: 200 )
+
+// 自作オブジェクトからDBへデータを保存！
+dataSet.add(test.convertToMap())
+
+println &quot;All records:&quot;
+dataSet.rows().each{println it}
+
+def dataSet2 = dataSet.findAll{it.name == &#39;a&#39;}
+Test test2 = Test.generate(dataSet2.firstRow(), &#39;yyyy-MM-dd HH:mm:ss.SSS&#39;) // DataSetの結果をそのまま使ってインスタンスを生成できる!
+assert test2.name == &#39;a&#39;
+assert test2.age == 10
+assert test2.married == true
+assert test2.birthday != null
+assert test2.dummyId == 100
+</code></pre>
+          </div>
+          <div class="content-nav content-nav-bottom">
+            <a class="prev-page" href="index.html">
+            <i class="fa fa-angle-left"></i>
+            <span class="number">18.</span>
+            実践/サンプル集
+            </a>
+            <a class="next-page" href="convert-decimal.html">
+            <span class="number">18.4.</span>
+            10進数を2進数に変換する
+            <i class="fa fa-angle-right"></i>
+            </a>
+          </div>
+          <div class="footer">
+            <p class="credit text-muted">Powered by <a href="https://github.com/kobo/gaiden">Gaiden</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/highlight.js"></script>
+    <script src="../js/application.js"></script>
+    <script src="../js/my.js"></script>
+  </body>
+</html>
