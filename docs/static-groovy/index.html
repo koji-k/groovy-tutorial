@@ -359,5 +359,13 @@ test.groovy: 47: [Static type checking] - Cannot find matching method int#toLowe
     <script src="../js/highlight.js"></script>
     <script src="../js/application.js"></script>
     <script src="../js/my.js"></script>
+    <script>z
+      if (window.WebSocket) {
+        var socket = new WebSocket("ws://localhost:49712/");
+        socket.onmessage = function () {
+          location.reload();
+        };
+      }
+    </script>
   </body>
 </html>

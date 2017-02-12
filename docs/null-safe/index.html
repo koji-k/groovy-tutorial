@@ -355,5 +355,13 @@ assert &#39;java.lang.Integer&#39; == list.orElse(99).class.name
     <script src="../js/highlight.js"></script>
     <script src="../js/application.js"></script>
     <script src="../js/my.js"></script>
+    <script>z
+      if (window.WebSocket) {
+        var socket = new WebSocket("ws://localhost:49712/");
+        socket.onmessage = function () {
+          location.reload();
+        };
+      }
+    </script>
   </body>
 </html>
