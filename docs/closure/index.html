@@ -299,7 +299,7 @@ assert 10 == doubled(5) // お手軽な関数としても利用できる
 </code></pre>
             <p>という使い方も当然出来ます。<br/>クロージャは何もリスト専用ではなく、様々な場面で活躍します。</p>
             <h2 id="id-a6cf382c283896094fb20f51b389e9deec62dd3f"><span class="number">7.2.</span>さらに詳しく</h2>
-            <p>さて、今までの例だと実はクロージャではなくてタダの無名関数です。<br/>ではクロージャとは何なのか？ということなのですが、コレは少し難しい概念です。<br/>クロージャの正確な定義などはググって貰えれば出てきますが、ココではクロージャを <strong>生まれ故居（クロージャ自身が定義された場所）を忘れない無名関数</strong> と定義します。<br/>生まれ故居を忘れないとはどういうことでしょう？<br/>論より証拠。まずはサンプルコードを見てみましょう。 </p>
+            <p>さて、今までの例だと実はクロージャではなくてタダの無名関数です。<br/>ではクロージャとは何なのか？ということなのですが、コレは少し難しい概念です。<br/>クロージャの正確な定義などはググって貰えれば出てきますが、ココではクロージャを <strong>生まれ故郷（クロージャ自身が定義された場所）を忘れない無名関数</strong> と定義します。<br/>生まれ故郷を忘れないとはどういうことでしょう？<br/>論より証拠。まずはサンプルコードを見てみましょう。 </p>
             <pre><code class="groovy">class Test {
     static getClosure() {
         Integer defaultCount = 0
@@ -394,5 +394,13 @@ assert 102 == (getDataFromDatabase &gt;&gt; toInt &gt;&gt; twice)(&quot;1&quot;)
     <script src="../js/highlight.js"></script>
     <script src="../js/application.js"></script>
     <script src="../js/my.js"></script>
+    <script>z
+      if (window.WebSocket) {
+        var socket = new WebSocket("ws://localhost:49712/");
+        socket.onmessage = function () {
+          location.reload();
+        };
+      }
+    </script>
   </body>
 </html>
