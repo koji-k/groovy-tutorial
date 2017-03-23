@@ -42,7 +42,7 @@ Groovy     : 2.3.6
 ```
 
 ## リポジトリのクローン
-適当なディレクトリで、git clone git@github.com:koji-k/groovy-tutorial.git`を実行して下さい。  
+適当なディレクトリで、`git clone git@github.com:koji-k/groovy-tutorial.git`を実行して下さい。  
 すると、`groovy-tutorial`というディレクトリ名で、リポジトリがクローンされます。
 
 ```terminal
