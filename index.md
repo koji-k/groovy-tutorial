@@ -10,14 +10,15 @@ println "Hello Apache Groovy"
 いいえ、ApacheGroovyはあなたの知っているGroovyです。  
 Groovyは2015年11月より、 **Apacheソフトウェアファウンデーションのトップレベルプロジェクト** となりました！
 
-このサイトはマークダウン形式のドキュメントを簡単に作成できるドキュメンテーションツール[Gaiden](https://github.com/kobo/gaiden)を利用して作成しています。  
-[Github](https://github.com/kobo/gaiden)  
-[Document](http://kobo.github.io/gaiden/)  
-このGaiden自体もGroovyによって作成されたツールです。
-
 このチュートリアルは[@saba1024](https://twitter.com/saba1024)が個人的に作成しているものです。  
 問題等ございましたら優しくお知らせください。。。
 なお、本チュートリアルはGroovy2.4.5で確認しています。  
+このチュートリアル自体の[Githubリポジトリはこちらです。](https://github.com/koji-k/groovy-tutorial)
+
+このサイトはマークダウン形式のドキュメントを簡単に作成できるドキュメンテーションツール[Gaiden](https://github.com/kobo/gaiden)を利用して作成しています。  
+[GaidenのGithub](https://github.com/kobo/gaiden)  
+[GaidenのDocument](http://kobo.github.io/gaiden/)  
+このGaiden自体もGroovyによって作成されたツールです。
 
 また、以下のチュートリアルも作成、公開中です。  
 [Groovy用のフルスタックフレームワークGrails](http://koji-k.github.io/grails-tutorial/)  
