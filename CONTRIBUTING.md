@@ -41,3 +41,8 @@ assert "2017/03/29" == date.format("YYYY/MM/dd")
 
 サンプルコードにそのまま載せられないような情報がある場合は、その旨別途説明を記載するようにしてください。（例：サンプルを実行するためにはhoge.txtを/tmpに配置してください、等々）
 
+## 文章（Markdown）のビルド
+`gaiden build`、もしくは`gaiden watch`で行えます。  
+最終的なcommitの前には、必ず`gaiden build`を一度実行するようにしてください。  
+`gaiden watch`でもHTMLは生成されますが、確認用のWebsocketコードが挿入されてしまいます。  
+動作自体に問題はありませんが、不要なHTMLファイルまでcommitされることになりますので、commit前には`gaiden build`で綺麗なHTMLを生成するようにしてください。
