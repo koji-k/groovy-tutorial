@@ -9,7 +9,7 @@
 
 1. このリポジトリをフォークします。
 1. `master` ブランチからトピックブランチを作成します。: `git checkout -b my-new-branch master`
-1. 作成したトプックブランチで作業します。
+1. 作成したトピックブランチで作業します。
 1. 変更をコミットします: `git commit -am "Hogeについて追記。"`
 1. フォークした自分のリポジトリに pushします。: `git push origin my-new-branch`
 1. プルリクエストを `koji-k/groovy-tutorial` の `master` ブランチに送ります。
@@ -34,7 +34,7 @@ assert "2017/03/29" == date.format("YYYY/MM/dd")
 
 OKの例：以下のコードであれば、読者はGroovyConsoleなどでそのまま問題なく動作させることができます。
 
-```
+```groovy
 def date = new Date()
 assert "2017/03/29" == date.format("YYYY/MM/dd")
 ```
