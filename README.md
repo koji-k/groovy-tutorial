@@ -8,6 +8,15 @@ Groovy製のドキュメンテーションツール[Gaiden](https://github.com/k
   
 ## 準備
 そのためには、Gaiden1.1以降が必要となります。  
+Gaideを利用する方法は以下の2パターンがあります。
+
+### gaidenwの利用
+
+Gaidenをインストールしなくても、このリポジトリをcloneした後にリポジトリ内で`./gaidenw build`を実行するればビルド可能です。  
+自動的にGaiden1.1がダウンロードされ、gaidenwからそのGaidenが利用されるようになります。  
+なお、GaidenはGroovyを利用しますので、事前にGroovyをインストールしておいてください。
+
+### gaidenをインストールして利用
 SDKMANなどのツールを利用して、Gaidenが動作する環境を用意して下さい。  
 SDKMAMの場合は、
 
@@ -58,7 +67,7 @@ groovy-tutorial
 ```
 これで、Markdownファイルを修正することが出来ます。
 もしMarkdownファイルを新規作成した場合は、そのファイル名を`pages.groovy`に追記して下さい。  
-`gaiden build`を実行すると、Markdownが全てHTMLにコンバートされて、`docs/`ディレクトリ配下に出力されます。  
+`gaiden build`(gaidenをインストールしていないのであれば`gaidenw build`)を実行すると、Markdownが全てHTMLにコンバートされて、`docs/`ディレクトリ配下に出力されます。  
 docs配下にあるHTMLファイルをブラウザで開くことで、最終的な結果を確認することが出来ます。
 
 *注意：docsディレクトリにはHTMLが保存されますので、docsディレクトリにはMarkdownを保存しないようにして下さい。*
