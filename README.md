@@ -8,11 +8,11 @@ Groovy製のドキュメンテーションツール[Gaiden](https://github.com/k
   
 ## 準備
 そのためには、Gaiden1.1以降が必要となります。  
-Gaideを利用する方法は以下の2パターンがあります。
+Gaidenを利用する方法は以下の2パターンがあります。
 
 ### gaidenwの利用
 
-Gaidenをインストールしなくても、このリポジトリをcloneした後にリポジトリ内で`./gaidenw build`を実行するればビルド可能です。  
+Gaidenをインストールしなくても、このリポジトリをcloneした後にリポジトリ内で`./gaidenw build`を実行すればMarkdownをHTMLへビルド可能です。  
 自動的にGaiden1.1がダウンロードされ、gaidenwからそのGaidenが利用されるようになります。  
 なお、GaidenはGroovyを利用しますので、事前にGroovyをインストールしておいてください。
 
