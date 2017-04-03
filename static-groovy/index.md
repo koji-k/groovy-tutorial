@@ -132,7 +132,7 @@ test.groovy: 47: [Static type checking] - Cannot find matching method int#toLowe
 ```
 
 
-# まとめ
+## まとめ
 Groovyでも型推論がちゃんと働くことが分かりました。  
 しかし、静的Groovy（CompileStatic）を利用することで、速度の改善が図れる部分も有りますが、同時にGroovyらしさを失う事にもなります。  
 Groovyの動的型付け言語のメリットを活かしたメタプログラミング等の利用が制限されてしまうためです。  
