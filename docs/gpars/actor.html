@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>8. マップ - Apache Groovyチュートリアル</title>
+    <title>17.1. Actor - Apache Groovyチュートリアル</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/font-awesome.min.css">
@@ -88,13 +88,13 @@
             </ul>
           </li>
           <li class="numbered visible">
-            <a href="list.html" data-alt-hash="id-b096d14061757613f9bb4fc3fdebeed1df3d7feb"><span class="number">6.</span>リスト</a>
+            <a href="../collection/list.html" data-alt-hash="id-b096d14061757613f9bb4fc3fdebeed1df3d7feb"><span class="number">6.</span>リスト</a>
             <ul>
-              <li class="numbered visible"><a href="list.html#collect"><span class="number">6.1.</span>collect</a></li>
-              <li class="numbered visible"><a href="list.html#inject"><span class="number">6.2.</span>inject</a></li>
-              <li class="numbered visible"><a href="list.html#find"><span class="number">6.3.</span>find</a></li>
-              <li class="numbered visible"><a href="list.html#findall"><span class="number">6.4.</span>findAll</a></li>
-              <li class="numbered visible"><a href="list.html#id-a3b0399fa150d0a6ed3d5fdb94debdbc965b43be"><span class="number">6.5.</span>まとめ</a></li>
+              <li class="numbered visible"><a href="../collection/list.html#collect"><span class="number">6.1.</span>collect</a></li>
+              <li class="numbered visible"><a href="../collection/list.html#inject"><span class="number">6.2.</span>inject</a></li>
+              <li class="numbered visible"><a href="../collection/list.html#find"><span class="number">6.3.</span>find</a></li>
+              <li class="numbered visible"><a href="../collection/list.html#findall"><span class="number">6.4.</span>findAll</a></li>
+              <li class="numbered visible"><a href="../collection/list.html#id-a3b0399fa150d0a6ed3d5fdb94debdbc965b43be"><span class="number">6.5.</span>まとめ</a></li>
             </ul>
           </li>
           <li class="numbered visible">
@@ -108,10 +108,10 @@
             </ul>
           </li>
           <li class="numbered visible">
-            <a href="map.html" data-alt-hash="id-5408c1debd592f8b0779d2c9a302fbff89fb39ba"><span class="number">8.</span>マップ</a>
+            <a href="../collection/map.html" data-alt-hash="id-5408c1debd592f8b0779d2c9a302fbff89fb39ba"><span class="number">8.</span>マップ</a>
             <ul>
-              <li class="numbered visible"><a href="map.html#id-44e8571a56f022b3396fee07d6450bfd950e1a67"><span class="number">8.1.</span>繰り返し</a></li>
-              <li class="numbered visible"><a href="map.html#id-f8648999b740988e6ed27a5561760fe061ecb760"><span class="number">8.2.</span>リストとマップを組みあせる</a></li>
+              <li class="numbered visible"><a href="../collection/map.html#id-44e8571a56f022b3396fee07d6450bfd950e1a67"><span class="number">8.1.</span>繰り返し</a></li>
+              <li class="numbered visible"><a href="../collection/map.html#id-f8648999b740988e6ed27a5561760fe061ecb760"><span class="number">8.2.</span>リストとマップを組みあせる</a></li>
             </ul>
           </li>
           <li class="numbered visible">
@@ -180,9 +180,9 @@
             </ul>
           </li>
           <li class="numbered visible">
-            <a href="../gpars/index.html" data-alt-hash="gpars"><span class="number">17.</span>GPars</a>
+            <a href="index.html" data-alt-hash="gpars"><span class="number">17.</span>GPars</a>
             <ul>
-              <li class="numbered visible"><a href="../gpars/actor.html" data-alt-hash="actor"><span class="number">17.1.</span>Actor</a></li>
+              <li class="numbered visible"><a href="actor.html" data-alt-hash="actor"><span class="number">17.1.</span>Actor</a></li>
             </ul>
           </li>
           <li class="numbered visible">
@@ -212,146 +212,202 @@
         <div class="content-handle"></div>
         <div class="content-container">
           <div class="content-nav content-nav-top">
-            <a class="prev-page" href="../closure/index.html">
+            <a class="prev-page" href="index.html">
             <i class="fa fa-angle-left"></i>
-            <span class="number">7.</span>
-            クロージャ
+            <span class="number">17.</span>
+            GPars
             </a>
-            <a class="next-page" href="../null-safe/index.html">
-            <span class="number">9.</span>
-            Nullセーフ
+            <a class="next-page" href="../practice/index.html">
+            <span class="number">18.</span>
+            実践/サンプル集
             <i class="fa fa-angle-right"></i>
             </a>
           </div>
           <div class="page-toc">
             <ul>
-              <li class="numbered visible">
-                <a href="#id-5408c1debd592f8b0779d2c9a302fbff89fb39ba"><span class="number">8.</span>マップ</a>
-                <ul>
-                  <li class="numbered visible"><a href="#id-44e8571a56f022b3396fee07d6450bfd950e1a67"><span class="number">8.1.</span>繰り返し</a></li>
-                  <li class="numbered visible"><a href="#id-f8648999b740988e6ed27a5561760fe061ecb760"><span class="number">8.2.</span>リストとマップを組みあせる</a></li>
-                </ul>
-              </li>
+              <li class="numbered visible"><a href="#actor"><span class="number">17.1.</span>Actor</a></li>
             </ul>
           </div>
           <div class="main-content">
-            <h1 id="id-5408c1debd592f8b0779d2c9a302fbff89fb39ba"><span class="number">8.</span>マップ</h1>
-            <p>マップとは、PHPでいう連想配列（のようなもの）、JavaのHashtableなどに該当するものです。<br/>大雑把に言うと、リストの中にある各値に専用の名前をつけてあげることが出来ます。</p>
-            <ul>
-              <li>PHPの場合</li>
-            </ul>
-            <pre><code class="php">map = array(
-    &quot;foo&quot; =&gt; &quot;bar&quot;,
-    &quot;bar&quot; =&gt; &quot;foo&quot;,
-);
+            <h2 id="actor"><span class="number">17.1.</span>Actor</h2>
+            <pre><code class="groovy">import static groovyx.gpars.actor.Actors.actor
 
-// 5.4 以降
-$map = [
-      &quot;foo&quot; =&gt; &quot;bar&quot;,
-      &quot;bar&quot; =&gt; &quot;foo&quot;,
-];
-</code></pre>
-            <ul>
-              <li>Javaの場合</li>
-            </ul>
-            <pre><code class="java">import java.util.*
-Hashtable hashtable = new Hashtable()
-hashtable.put(&quot;foo&quot;, &quot;bar&quot;)
-hashtable.put(&quot;bar&quot;, &quot;foo&quot;)
-</code></pre>
-            <p>ではGroovyの場合を見て行きましょう。</p>
-            <pre><code class="groovy">Map map = [foo:&quot;bar&quot;, bar:&quot;foo&quot;]
-</code></pre>
-            <p>JavaよりはPHPの連想配列の作り方に似ていますね。<br/>上記の最も基本的なMapの宣言方法を見て分かるとおり、リストの中に<code>キー:値</code>という形式で値を記述します。<br/>実際に使ってみましょう。</p>
-            <pre><code class="groovy">Map map = [foo:&quot;bar&quot;, bar:&quot;foo&quot;]
-
-// 値の取り出し
-assert map.foo == &quot;bar&quot;
-assert map.get(&quot;foo&quot;) == &quot;bar&quot;
-assert map[&quot;foo&quot;] == &quot;bar&quot;
-assert map.bar == &quot;foo&quot;
-
-// 値の上書き
-map[&quot;bar&quot;] = &quot;foo_updated&quot;
-assert map.bar == &quot;foo_updated&quot;
-map.put(&quot;bar&quot;, &quot;foot_updated2&quot;)
-assert map.bar ==  &quot;foot_updated2&quot;
-
-// 値の追加
-map[&quot;hoge&quot;] = &quot;hoge_value&quot;
-assert map.size() == 3
-assert map.hoge == &quot;hoge_value&quot;
-
-map.put(&quot;piyo&quot;, &quot;piyo_value&quot;)
-assert map.size() == 4
-assert map.piyo == &quot;piyo_value&quot;
-</code></pre>
-            <p>とてもシンプルですね。<br/>値の取り出し方や、セットの仕方は複数あります。目的にあった方法を選択しましょう。<br/>例えば、変数に入っている値をキーにしてMapから値を取得する場合、以下のような方法が有ります。 </p>
-            <pre><code class="groovy">Map map = [foo:&quot;bar&quot;, bar:&quot;foo&quot;]
-String key = &quot;bar&quot;
-
-assert map[key] == &quot;foo&quot;
-</code></pre>
-            <h2 id="id-44e8571a56f022b3396fee07d6450bfd950e1a67"><span class="number">8.1.</span>繰り返し</h2>
-            <p>マップにもリストのように、便利な繰り返しメソッドが備わっています。<br/>いつもの<code>each</code>メソッドを試してみましょう。 </p>
-            <pre><code class="groovy">Map map = [foo:&quot;bar&quot;, bar:&quot;foo&quot;]
-map.each {
-   println it
-}
-</code></pre>
-            <p>実行結果として</p>
-            <pre><code class="nohighlight">foo=bar
-bar=foo
-</code></pre>
-            <p>と表示されましたね？ でもコレだとキーと値を別個に取得できません。<br/>そこで、Mapの場合は<code>key</code>と<code>value</code>というプロパティが存在します。</p>
-            <pre><code class="groovy">Map map = [foo:&quot;bar&quot;, bar:&quot;foo&quot;]
-map.each {
-    println &quot;key = ${it.key}, value = ${it.value}&quot;
-}
-</code></pre>
-            <p>ちゃんとキーとプロパティを別個に取得出来ましたね。</p>
-            <h2 id="id-f8648999b740988e6ed27a5561760fe061ecb760"><span class="number">8.2.</span>リストとマップを組みあせる</h2>
-            <p>それでは少し応用を効かせてリストとマップを組み合わせてみましょう。<br/>内容は、Mapでユーザの情報を持ち、その情報をそれぞれListにて保持するというものです。</p>
-            <pre><code class="groovy">List userList = [
-    [&quot;name&quot;: &quot;aaa&quot;, age:20],
-    [&quot;name&quot;: &quot;bbb&quot;, age:25],
-    [&quot;name&quot;: &quot;ccc&quot;, age:30],
-    [&quot;name&quot;: &quot;ddd&quot;, age:35]
-]
-</code></pre>
-            <p>それでは、全てのユーザの名前を表示してみましょう。</p>
-            <pre><code class="groovy">userList.each {Map user -&gt;
-    println user.name
-}
-</code></pre>
-            <p>ユーザ名が一覧で表示されましたか？ </p>
-            <p>それでは今度は逆に、マップの中にリストを突っ込んでみましょう！<br/>例えば各ユーザが複数の得意なプログラミング言語を持っている場合を想定しましょう。</p>
-            <pre><code class="groovy">List userList = [
-    [&quot;name&quot;: &quot;aaa&quot;, age:20, languages:[&quot;Java&quot;]],
-    [&quot;name&quot;: &quot;bbb&quot;, age:25, languages:[&quot;Java&quot;, &quot;PHP&quot;]],
-    [&quot;name&quot;: &quot;ccc&quot;, age:30, languages:[]],
-    [&quot;name&quot;: &quot;ddd&quot;, age:35, languages:[&quot;Groovy&quot;]]
-]
-
-userList.each {Map user -&gt;
-    println &quot;userName:${user.name}&quot;
-    user.languages.each {
-        println it
+def server = actor {
+    loop {
+        react { message -&gt; 
+            switch(message) {
+                case String:
+                    println &quot;Got: ${message}&quot;
+                    reply message.reverse()
+                    break
+                default:
+                    println &quot;Stop Actor&quot;
+                    stop()
+            }
+        }
     }
-    println &quot;&quot; // 見やすくするために改行
 }
+
+def client = actor {
+    sleep(1000)
+    server.send(&quot;ABCDEFG&quot;)
+    sleep(1000)
+    react {
+        println &quot;Returned: ${it}&quot;
+        server.send false
+
+    }
+}
+
+println &quot;Start&quot;
+[server, client]*.join()
+println &quot;End&quot;
 </code></pre>
-            <p>複雑そうに見えますが、基本的にリストやマップで用意されている<code>each</code>などのメソッドを使って、素直に処理を書いていくだけです。<br/>Mapはそれ単体でももちろん利用しますが、リストと組み合わせて利用されることが多いので、色々試してみましょう。</p>
+            <p>上記のコードを実行すると、</p>
+            <pre><code class="terminal">Start
+Got: ABCDEFG
+Returned: GFEDCBA
+Stop Actor
+End
+</code></pre>
+            <p>という結果にります。<br/>もしもActorインスタンスで<code>join()</code>を使っていない場合は、メインスレッドの処理はActorの処理の終了を待たずに先に進む事になります。<br/>つまり、上記のActorの宣言部分のコードはそのままに、実行部分を</p>
+            <pre><code class="groovy">println &quot;Start&quot;
+//[server, client]*.join() コメントアウト。
+println &quot;End&quot;
+</code></pre>
+            <p>とすると、実行結果は</p>
+            <pre><code class="terminal">Start
+End
+Got: ABCDEFG
+Returned: GFEDCBA
+Stop Actor
+</code></pre>
+            <p>となります。</p>
+            <p>このことから分かるように、FactoryメソッドでActorを宣言すると、宣言時点でActorが生成、実行されます。<br/>もし実行のタイミングを自分で制御したい場合は、<code>DefaultActor</code>クラスを継承します。</p>
+            <pre><code class="groovy">import static groovyx.gpars.actor.Actors.actor
+import groovyx.gpars.actor.DefaultActor
+
+class Server extends DefaultActor {
+    @Override protected void act() {
+        loop {
+            react { message -&gt; 
+                switch(message) {
+                    case String:
+                        println &quot;Got: ${message}&quot;
+                        reply message.reverse()
+                        break
+                    default:
+                        println &quot;Stop Actor&quot;
+                        stop()
+                }
+            }
+        }
+    }
+}
+
+class Client extends DefaultActor {
+    def server
+    def Client(Server server) {
+        super()
+        this.server = server
+
+    }
+    @Override protected void act() {
+
+        sleep(1000)
+        server.send(&quot;ABCDEFG&quot;)
+        sleep(1000)
+        react {
+            println &quot;Returned: ${it}&quot;
+            server.send false
+
+        }
+    }
+}
+def server = new Server()
+def client = new Client(server)
+println &quot;Start&quot;
+[server, client]*.start()
+println &quot;End&quot;
+</code></pre>
+            <p>これを実行すると、</p>
+            <pre><code class="terminal">Start
+End
+Got: ABCDEFG
+Returned: GFEDCBA
+Stop Actor
+</code></pre>
+            <p>となります。Factoryメソッドのパターンで<code>join()</code>を使わない場合と同じですね。<br/>既に述べたように、<code>DefaultActor</code>を継承したクラスを利用するとActorの実行タイミングを管理できます。<br/>上記のコードの実行部分を以下のようにすれば、Actorがそもそも実行されない（つまり実行のタイミングを自分で決められる）事が解ると思います。</p>
+            <pre><code class="groovy">def server = new Server()
+def client = new Client(server)
+println &quot;Start&quot;
+println &quot;End&quot;
+</code></pre>
+            <p>というコードを実行すると実行結果は</p>
+            <pre><code class="terminal">Start
+End
+</code></pre>
+            <p>のみになります。</p>
+            <pre><code class="groovy">import static groovyx.gpars.actor.Actors.actor
+import groovyx.gpars.actor.DefaultActor
+import groovy.util.logging.*
+import groovy.transform.Immutable
+
+@Immutable class Ping {String message}
+@Immutable class Pong {String message}
+
+def server = actor {
+    loop {
+        react { message -&gt; 
+            switch(message) {
+                case Ping:
+                    println &quot;Got: ${message.message}&quot;
+                    reply new Pong(message: message.message.reverse())
+                    break
+                default:
+                    println &quot;Stop Actor&quot;
+                    stop()
+            }
+        }
+    }
+}
+
+def client = actor {
+    loop {
+        react {message -&gt;
+            switch(message) {
+                case String:
+                    reply new Ping(message: message)
+                    break
+                case Pong:
+                    println &quot;Returned: ${message.message}&quot;
+                    reply false // sendで指定されたActorに送信                   
+                    stop() // 自Actorを停止
+            }
+        }
+    }
+}
+
+println &quot;Start&quot;
+assert server.isActive()
+assert client.isActive()
+client.send &quot;TEST&quot;, server // 第2引数に別のActorを指定することで、reactの中のreplyの送信先を指定することができる。
+[server, client]*.join(2, java.util.concurrent.TimeUnit.SECONDS)
+println &quot;End&quot;
+// タイムアウト（joinで2秒と指定）した場合、Actorがまだstopしていない場合は以下は両方trueとなる。
+assert !server.isActive()
+assert !client.isActive()
+</code></pre>
           </div>
           <div class="content-nav content-nav-bottom">
-            <a class="prev-page" href="../closure/index.html">
+            <a class="prev-page" href="index.html">
             <i class="fa fa-angle-left"></i>
-            <span class="number">7.</span>
-            クロージャ
+            <span class="number">17.</span>
+            GPars
             </a>
-            <a class="next-page" href="../null-safe/index.html">
-            <span class="number">9.</span>
-            Nullセーフ
+            <a class="next-page" href="../practice/index.html">
+            <span class="number">18.</span>
+            実践/サンプル集
             <i class="fa fa-angle-right"></i>
             </a>
           </div>

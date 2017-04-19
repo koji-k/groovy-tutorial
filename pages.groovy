@@ -17,6 +17,9 @@
 "regular-expression/index.md"()
 "meta/index.md"()
 "static-groovy/index.md"()
+"gpars/index.md"() {
+    "gpars/actor.md"()
+}
 "practice/index.md"(){
     "practice/dataset-and-trait-orm.md"()
     "practice/convert-decimal.md"()
