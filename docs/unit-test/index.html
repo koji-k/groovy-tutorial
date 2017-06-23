@@ -161,7 +161,8 @@
               <li class="numbered visible"><a href="index.html#id-bdd1a5a8c07a267571c3bd781ab9082669c5959f"><span class="number">13.3.</span>フィクスチャーメソッド</a></li>
               <li class="numbered visible"><a href="index.html#id-b3c1ea2a3b540798f7cd793487a346fffeec9c09"><span class="number">13.4.</span>各フィーチャーメソッドで共通して利用する変数</a></li>
               <li class="numbered visible"><a href="index.html#id-efba724c0eb52b004593236e37d0a25a1544ad6b"><span class="number">13.5.</span>実践</a></li>
-              <li class="numbered visible"><a href="index.html#id-0a441a00637070d401d9e5a2653510c5967d9a05"><span class="number">13.6.</span>まとめ</a></li>
+              <li class="numbered visible"><a href="index.html#bdd"><span class="number">13.6.</span>テストをより分かりやすくする（BDDスタイル）</a></li>
+              <li class="numbered visible"><a href="index.html#id-0a441a00637070d401d9e5a2653510c5967d9a05"><span class="number">13.7.</span>まとめ</a></li>
             </ul>
           </li>
           <li class="numbered visible"><a href="../regular-expression/index.html" data-alt-hash="regular-expression"><span class="number">14.</span>Regular Expression</a></li>
@@ -246,7 +247,8 @@
                   <li class="numbered visible"><a href="#id-bdd1a5a8c07a267571c3bd781ab9082669c5959f"><span class="number">13.3.</span>フィクスチャーメソッド</a></li>
                   <li class="numbered visible"><a href="#id-b3c1ea2a3b540798f7cd793487a346fffeec9c09"><span class="number">13.4.</span>各フィーチャーメソッドで共通して利用する変数</a></li>
                   <li class="numbered visible"><a href="#id-efba724c0eb52b004593236e37d0a25a1544ad6b"><span class="number">13.5.</span>実践</a></li>
-                  <li class="numbered visible"><a href="#id-0a441a00637070d401d9e5a2653510c5967d9a05"><span class="number">13.6.</span>まとめ</a></li>
+                  <li class="numbered visible"><a href="#bdd"><span class="number">13.6.</span>テストをより分かりやすくする（BDDスタイル）</a></li>
+                  <li class="numbered visible"><a href="#id-0a441a00637070d401d9e5a2653510c5967d9a05"><span class="number">13.7.</span>まとめ</a></li>
                 </ul>
               </li>
             </ul>
@@ -730,7 +732,58 @@ It should either:
   * groovy-all-2.4.1.jar
 </code></pre>
             <p>なので、テスト用クラスは、テストクラスのあとに宣言するようにしてください。（あくまでSpockの動作を勉強する際の話です。）</p>
-            <h2 id="id-0a441a00637070d401d9e5a2653510c5967d9a05"><span class="number">13.6.</span>まとめ</h2>
+            <h2 id="bdd"><span class="number">13.6.</span>テストをより分かりやすくする（BDDスタイル）</h2>
+            <p>さて、宣言的な記述が出来るGroovyとSpockですが、よりさらにテストを分かりやすく書くことが出来ます。<br/>先程のコードに、誕生日を迎えた際に年齢を1カウントアップするメソッドを追加して、それが正しく動作しているかを確認するようにしてみましょう。</p>
+            <pre><code class="groovy">@Grab(group=&#39;org.spockframework&#39;, module=&#39;spock-core&#39;, version=&#39;1.0-groovy-2.4&#39;)
+import spock.lang.*
+
+class MyFirstSpock extends Specification {
+
+    @Unroll
+    def &quot;PersonクラスのisAdultメソッドをテストするよ&quot;() {
+    
+        given: &quot;Personインスタンスを生成して準備をする&quot;
+        Person p = new Person()
+        and: &quot;年齢をセットする&quot;
+        p.age = age
+                
+        when: &quot;誕生日を迎える&quot;
+        p.birthday()
+        
+        then: &quot;1歳年をとる&quot;
+        p.age == age + 1
+        and: &quot;20を超えると成人&quot;
+        p.isAdult() == result
+
+                
+        where:
+        age || result
+        18 || false
+        19 || true
+        20 || true
+    }
+}
+
+class Person {
+    Integer age = 0
+    
+    Boolean isAdult() {
+        age &gt;= 20
+    }
+    
+    // これを追加。
+    def void birthday() {
+        age++
+    }
+}
+</code></pre>
+            <p>さて、ぱっと目につく大きな違いが有ります。<br/>それは、 <strong>フィクスチャーブロックにコメントが入っている</strong> 、という点です。<br/>これはプログラムで言うコメント（<code>/*comment*/</code>, <code>//comment</code>）とは根本的に違う、Spock独自の構文です。<br/>このコメント自体はプログラム（テスト）の動作に全く影響を与えません。<br/>これは、テスト自体ではなく、そのフィクスチャーブロックが何を意味するものか、を説明するために用いるものです。 </p>
+            <p><code>given:</code>については、単純に<code>setup:</code>の別名です。<br/><code>and:</code>はそれ以降に記述するもののラベリング目的に利用するもので、フィクスチャーメソッドのトップレベルであればどこでも記述することが出来ます。<br/>上記のサンプルコードでは、<code>given:</code>と<code>then:</code>の後でそれぞれ利用しています。 </p>
+            <p>基本的にはコメント加えただけでしょ？と思われるかも知れません。基本的にはそのとおりです！<br/>しかし、<code>given:</code>、<code>when:</code>、<code>then:</code>という用語を用いて、テスト対象の振る舞いを明示するBDDスタイルを用いることで、よりよい表現方法でテストが記述できるようになります。<br/>BDDでは、今まで述べていた通常のUnitテストと技術的に何かが違う、というものではなく、どういったスタンスでテストを記述するのか、という点が異なります。 </p>
+            <p><code>given:</code>: givenに記述した <strong>状態の時</strong> 、<br/><code>when:</code>：whenにある <strong>操作が行われると</strong> 、<br/><code>then</code>：thenに記述された <strong>状態になる</strong> 。 </p>
+            <p>という形式でテストを記述していきます。<br/>こうすることで、表現方法とプロセスが統一されるので、テストがより分かりやすいものになっていく、というものです。</p>
+            <p>SpockのUnitテストによってテスト対象の動作がテストされ、安全なコードになります。<br/>その上で更に、各フィクスチャーブロックが何をしようとしているのかを統一された用語とスタイルで示すBDD形式で記述することで、Spockのテスト自体がテスト対象の仕様書になります。 </p>
+            <h2 id="id-0a441a00637070d401d9e5a2653510c5967d9a05"><span class="number">13.7.</span>まとめ</h2>
             <p>Spockを使うと簡単にテストが実行できることが分かったと思います。<br/>また、<code>where</code>を使うことでデータ駆動テストが簡単に実現できます。<br/>今回はSpockの使い方を学ぶということを念頭に置いたのでGroovyConsoleで実行しました。<br/>実際のプロダクトでは、テストを記述するファイルには本当にテストだけを記述して、Gradleなどのビルドツールから一気にテストを実行することになります。<br/>また、Groovy向けのWEBフレームワークであるGrailsは、標準でSpockを搭載していて、さらにWEB向けのテストがしやすいように専用の機能が追加で提供されています。</p>
           </div>
           <div class="content-nav content-nav-bottom">
