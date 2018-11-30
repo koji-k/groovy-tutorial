@@ -293,7 +293,7 @@ assert [2,4,6] == list.collect(doubled)
 }
 </code></pre>
             <p>このように、Groovyではリストに用意されているメソッドに対してクロージャを渡して処理をしていきます。<br/>このことから、Groovyにとって如何にクロージャが重要な機能なのかがわかります。 </p>
-            <p>あれ？ <code>doubled</code>を渡す時って<code>doubled()</code>じゃないの？と思われた方も居るかもしれません。<br/>doubledはあくまでクロージャを可能した <strong>変数</strong> です。そのため、<code>each(doubled)</code>としてあげることで、<code>each</code>メソッドに<code>doubled変数の中に格納されたクロージャの本体</code>を渡してあげています。<br/>ここで<code>each(doubled())</code>とすると、コレは<code>each</code>というメソッドに<code>doubled変数の中に格納されたクロージャの実行結果</code>を渡すということになってしまいます。<br/>ちなみに、その点を考慮すると単純に</p>
+            <p>あれ？ <code>doubled</code>を渡す時って<code>doubled()</code>じゃないの？と思われた方も居るかもしれません。<br/>doubledはあくまでクロージャを格納した <strong>変数</strong> です。そのため、<code>each(doubled)</code>としてあげることで、<code>each</code>メソッドに<code>doubled変数の中に格納されたクロージャの本体</code>を渡してあげています。<br/>ここで<code>each(doubled())</code>とすると、コレは<code>each</code>というメソッドに<code>doubled変数の中に格納されたクロージャの実行結果</code>を渡すということになってしまいます。<br/>ちなみに、その点を考慮すると単純に</p>
             <pre><code class="groovy">List list = [1,2,3]
 
 // クロージャを宣言して、変数doubledに格納
