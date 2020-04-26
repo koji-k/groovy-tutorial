@@ -82,10 +82,10 @@ REPLを利用することで手軽に、即座にコードを確認すること�
 Groovy Shell (2.3.11, JVM: 1.8.0_60)
 Type ':help' or ':h' for help.
 ------------------------------
-groovy:000> a = "Hallo"
-===> Hallo
+groovy:000> a = "Hello"
+===> Hello
 groovy:000> println a
-Hallo
+Hello
 ===> null
 groovy:000> 2 * 4
 ===> 8
