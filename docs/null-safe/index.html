@@ -279,7 +279,7 @@ assert null == npe?.toInteger()?.class?.name
 assert null == null?.toInteger()?.class?.name
 assert &quot;java.lang.Integer&quot; == &quot;1&quot;?.toInteger()?.class?.name
 </code></pre>
-            <p>メソッドやプロパティへのアクセスが<code>.</code>の代わりに<code>?.</code>を利用しただけでです。<br/>この<code>?.</code>を使うとGroovyはレシーバがnullの場合、レシーバが実行しようとしているメソッド or クロージャは実行せずに単純にnullを返します。<br/>その返されたnullをチェーンして、再度別のメソッドが呼ばれる際にも<code>?.</code>を利用すれば同様にnullが返されて&hellip;という処理が最後まで続き、最終的には当然nullが返されます。<br/>また、<a href="/groovy-tutorial/if/index.html">If文</a>で述べた<code>エルビス演算子</code>と併用する事も当然可能です。</p>
+            <p>メソッドやプロパティへのアクセスが<code>.</code>の代わりに<code>?.</code>を利用しただけです。<br/>この<code>?.</code>を使うとGroovyはレシーバがnullの場合、レシーバが実行しようとしているメソッド or クロージャは実行せずに単純にnullを返します。<br/>その返されたnullをチェーンして、再度別のメソッドが呼ばれる際にも<code>?.</code>を利用すれば同様にnullが返されて&hellip;という処理が最後まで続き、最終的には当然nullが返されます。<br/>また、<a href="/groovy-tutorial/if/index.html">If文</a>で述べた<code>エルビス演算子</code>と併用する事も当然可能です。</p>
             <pre><code class="groovy">def a = &quot;1&quot;?.toInteger()?.class?.name ?: &#39;this is null&#39;
 assert a == &#39;java.lang.Integer&#39;
 

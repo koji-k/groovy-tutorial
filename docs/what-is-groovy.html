@@ -285,10 +285,10 @@ assert 25 == sigma(1, 5) {it + 2}
 Groovy Shell (2.3.11, JVM: 1.8.0_60)
 Type &#39;:help&#39; or &#39;:h&#39; for help.
 ------------------------------
-groovy:000&gt; a = &quot;Hallo&quot;
-===&gt; Hallo
+groovy:000&gt; a = &quot;Hello&quot;
+===&gt; Hello
 groovy:000&gt; println a
-Hallo
+Hello
 ===&gt; null
 groovy:000&gt; 2 * 4
 ===&gt; 8
@@ -310,7 +310,7 @@ groovy:000&gt;
 def someClass = new SomeClass()
 assert &quot;groovy&quot; == someClass.someMethod()
 </code></pre>
-            <p>最後の行がパワーアサートの部分です。<br/>この例だとsomeMethodの戻り値は先頭が大文字なのに、意図した結果は先頭小文字なので、当然エラーがになります。<br/>エラーなお内容は非常に分かりやすく表示されます。 </p>
+            <p>最後の行がパワーアサートの部分です。<br/>この例だとsomeMethodの戻り値は先頭が大文字なのに、意図した結果は先頭小文字なので、当然エラーになります。<br/>エラーなお内容は非常に分かりやすく表示されます。 </p>
             <pre><code class="terminal">Assertion failed: 
 
 assert &quot;groovy&quot; == someClass.someMethod()
